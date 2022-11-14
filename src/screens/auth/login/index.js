@@ -13,7 +13,7 @@ function Login({navigation}) {
       <Button
         title="Go to Register Page"
         onPress={() =>
-          navigation.navigate('Register', {
+          navigation.navigate('Drawer', {
             itemId: 86,
             otherParam: 'anything you want here',
           })

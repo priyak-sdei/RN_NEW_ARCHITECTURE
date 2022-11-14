@@ -20,6 +20,11 @@ class Home extends Component {
             })
           }
         />
+
+        <Button
+          title="Toggle Menu"
+          onPress={() => this.props.navigation.openDrawer()}
+        />
       </View>
     );
   }
