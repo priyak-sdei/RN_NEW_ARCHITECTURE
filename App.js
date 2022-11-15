@@ -8,7 +8,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-
+import {Button, View, Text, Image, Pressable, Linking} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Home from './src/screens/dashboard/home';
@@ -16,20 +16,10 @@ import Chat from './src/screens/dashboard/chat';
 
 import Login from './src/screens/auth/login';
 import Register from './src/screens/auth/register';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
-function AuthStack() {
-  return (
-    <Stack.Navigator screenOptions={{headerShown: true}}>
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Register" component={Register} />
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Chat" component={Chat} />
-    </Stack.Navigator>
-  );
-}
 
 function TabNav() {
   return (
@@ -58,46 +48,104 @@ function TabNav() {
 }
 function DrawerNav() {
   return (
-    <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Chat" component={Chat} />
+    <Drawer.Navigator
+      initialRouteName="Home"
+      screenOptions={{headerShown: false}}
+      drawerContent={props => <CustomDrawerContent {...props} />}>
+      <Drawer.Screen name="Home" component={TabNav} />
     </Drawer.Navigator>
   );
 }
 function CustomDrawerContent(props) {
+  const {navigation} = props;
   return (
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
+    <DrawerContentScrollView
+      {...props}
+      style={{
+        backgroundColor: 'rgba(10,71,113,1)',
+        padding: 0,
+        marginTop: 0,
+      }}>
+      <View
+        style={{
+          alignItems: 'center',
+          padding: 10,
+        }}>
+        <Pressable
+          style={{alignSelf: 'flex-end'}}
+          onPress={() => navigation.closeDrawer()}>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: 15,
+
+              paddingBottom: 10,
+            }}>
+            Close
+          </Text>
+        </Pressable>
+
+        <Image
+          resizeMode="cover"
+          style={{height: 100, width: 100, borderRadius: 10}}
+          source={{uri: 'https://picsum.photos/200/300'}}
+        />
+        <Text style={{padding: 10, fontSize: 20}}>Welcome Priya</Text>
+      </View>
       <DrawerItem
-        label="Close drawer"
-        onPress={() => props.navigation.closeDrawer()}
+        inactiveTintColor={'black'}
+        activeBackgroundColor={'white'}
+        activeTintColor={'black'}
+        focused={true}
+        label={({focused, color}) => (
+          <Text
+            style={{
+              color: focused ? 'rgba(10,71,113,1)' : '#757575',
+              fontSize: 20,
+            }}>
+            Home
+          </Text>
+        )}
+        icon={({focused, color, size}) => (
+          <Icon
+            color={focused ? 'rgba(10,71,113,1)' : '#757575'}
+            size={25}
+            name={focused ? 'home' : 'home'}
+          />
+        )}
+        onPress={() => navigation.navigate('Home')}
+        style={{padding: 0}}
       />
       <DrawerItem
-        label="Toggle drawer"
-        onPress={() => props.navigation.toggleDrawer()}
+        inactiveTintColor={'black'}
+        activeBackgroundColor={'white'}
+        activeTintColor={'black'}
+        focused={false}
+        label={({focused, color}) => (
+          <Text
+            style={{
+              color: focused ? 'rgba(10,71,113,1)' : '#757575',
+              fontSize: 20,
+            }}>
+            Logout
+          </Text>
+        )}
+        icon={({focused, color, size}) => (
+          <Icon
+            color={focused ? 'rgba(10,71,113,1)' : '#757575'}
+            size={25}
+            name={focused ? 'sign-out' : 'sign-out'}
+          />
+        )}
+        onPress={() => Linking.openURL('https://mywebsite.com/help')}
+        style={{padding: 0}}
       />
     </DrawerContentScrollView>
   );
 }
-
 export default function App() {
   return (
     <NavigationContainer>
-      {/* <Drawer.Navigator
-        // useLegacyImplementation={true}
-        // screenOptions={{
-        //   drawerStyle: {
-        //     backgroundColor: 'white',
-        //     zIndex: 100,
-        //     marginLeft: '20%',
-        //     width: '100%',
-        //   },
-        //   drawerPosition: 'right',
-        // }}
-        // drawerContent={props => <CustomDrawerContent {...props} />}
-        initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Home} />
-      </Drawer.Navigator> */}
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
