@@ -17,6 +17,9 @@ import Chat from './src/screens/dashboard/chat';
 import Login from './src/screens/auth/login';
 import Register from './src/screens/auth/register';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import {Provider} from 'react-redux';
+import setup from './src/store/configureStore';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -144,23 +147,26 @@ function CustomDrawerContent(props) {
   );
 }
 export default function App() {
+  //console.log('ghghg', setup());
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen
-          name="MyTabs"
-          component={TabNav}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Drawer"
-          component={DrawerNav}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={setup()}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Register" component={Register} />
+          <Stack.Screen
+            name="MyTabs"
+            component={TabNav}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Drawer"
+            component={DrawerNav}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 console.disableYellowBox = true;
