@@ -10,7 +10,9 @@ function Login(props) {
 
   /**Adding event On Mount */
   useEffect(() => {
-    dispatch(AppActions.login(Math.random()));
+    dispatch(AppActions.saveEvent([{name: 121211}]));
+    // dispatch(AppActions.addLoginUserData({ name: 'Priya', action: "Demo react" }))
+    // dispatch(AppActions.addition())
   }, []);
 
   useEffect(() => {
