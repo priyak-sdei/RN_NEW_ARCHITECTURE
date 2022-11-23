@@ -14,22 +14,31 @@ function Login(props) {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      dispatch(AppActions.login(Math.random()));
-    }, 4000);
+    // setTimeout(() => {
+    //   dispatch(AppActions.login(Math.random()));
+    // }, 4000);
   }, []);
 
   /*****dding listener  everytime props.x changes ***/
   useEffect(() => {
-    setUserCount('change' + Math.random());
-    console.log(props, 'props...', authReducer);
-    return () => {
-      // removing the listener when props.x changes
-    };
+    // setUserCount('change' + Math.random());
+    // console.log(props, 'props...', authReducer);
+    // return () => {
+    //   // removing the listener when props.x changes
+    // };
   }, [authReducer.value]);
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>
+      <Text style={{fontFamily: 'Nunito-Light'}}>
+        Logins screen {authReducer.value} {userCount}
+      </Text>
+      <Text style={{fontFamily: 'Nunito-Medium'}}>
+        Logins screen {authReducer.value} {userCount}
+      </Text>
+      <Text style={{fontFamily: 'Nunito-Regular'}}>
+        Logins screen {authReducer.value} {userCount}
+      </Text>
+      <Text style={{fontFamily: 'Nunito-Bold'}}>
         Logins screen {authReducer.value} {userCount}
       </Text>
       <Icon name="rocket" size={30} color="#900" />
