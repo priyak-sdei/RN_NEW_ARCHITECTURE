@@ -3,8 +3,7 @@ const initialState = {
   isLoading: false,
   loginData: null,
   total: 0,
-  event_list: []
-
+  event_list: [],
 };
 
 function authReducer(state = initialState, action) {

@@ -7,7 +7,7 @@ import setup from './src/store/configureStore';
 const Stack = createNativeStackNavigator();
 
 import AuthStackNavigator from './src/navigator/AuthStack';
-import DrawerNavigator from './src/navigator/DrawerNavigator';
+import DrawerNavigator from './src/navigator/DrawerNavigator'
 
 export default function App() {
   return (

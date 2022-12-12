@@ -18,8 +18,6 @@ export function addLoginUserData(data) {
   };
 }
 
-
-
 export function addition() {
   return async (dispatch, getState) => {
     dispatch({
@@ -28,7 +26,6 @@ export function addition() {
     });
   };
 }
-
 
 export function saveEvent(data) {
   return async (dispatch, getState) => {

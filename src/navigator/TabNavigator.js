@@ -1,5 +1,5 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Button, View, Text, Image, Pressable, Linking} from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Button, View, Text, Image, Pressable, Linking } from 'react-native';
 import Home from '../screens/dashboard/home';
 import Chat from '../screens/dashboard/chat';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -8,8 +8,8 @@ const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color, size}) => {
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === 'Home') {
             iconName = focused

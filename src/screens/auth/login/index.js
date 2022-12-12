@@ -1,7 +1,7 @@
-import {Button, View, Text} from 'react-native';
+import { Button, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import React, {useState, useEffect, useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import * as AppActions from '../../../actions';
 function Login(props) {
   let [userCount, setUserCount] = useState(0);
@@ -10,7 +10,7 @@ function Login(props) {
 
   /**Adding event On Mount */
   useEffect(() => {
-    dispatch(AppActions.saveEvent([{name: 121211}]));
+    dispatch(AppActions.saveEvent([{ name: 121211 }]));
     // dispatch(AppActions.addLoginUserData({ name: 'Priya', action: "Demo react" }))
     // dispatch(AppActions.addition())
   }, []);
@@ -30,17 +30,17 @@ function Login(props) {
     // };
   }, [authReducer.value]);
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text style={{fontFamily: 'Nunito-Light'}}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{ fontFamily: 'Nunito-Light' }}>
         Logins screen {authReducer.value} {userCount}
       </Text>
-      <Text style={{fontFamily: 'Nunito-Medium'}}>
+      <Text style={{ fontFamily: 'Nunito-Medium' }}>
         Logins screen {authReducer.value} {userCount}
       </Text>
-      <Text style={{fontFamily: 'Nunito-Regular'}}>
+      <Text style={{ fontFamily: 'Nunito-Regular' }}>
         Logins screen {authReducer.value} {userCount}
       </Text>
-      <Text style={{fontFamily: 'Nunito-Bold'}}>
+      <Text style={{ fontFamily: 'Nunito-Bold' }}>
         Logins screen {authReducer.value} {userCount}
       </Text>
       <Icon name="rocket" size={30} color="#900" />

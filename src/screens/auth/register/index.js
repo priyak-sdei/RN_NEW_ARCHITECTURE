@@ -1,7 +1,7 @@
 // screens/Blog.js
-import React, {Component} from 'react';
-import {Button, View, Text} from 'react-native';
-import {StackActions, CommonActions} from '@react-navigation/native';
+import React, { Component } from 'react';
+import { Button, View, Text } from 'react-native';
+import { StackActions, CommonActions } from '@react-navigation/native';
 
 class Register extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Register extends Component {
   }
   render() {
     return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Register screen</Text>
         <Button
           title="Go back to Login"
@@ -25,7 +25,7 @@ class Register extends Component {
               routes: [
                 {
                   name: 'Home',
-                  params: {someParam: 'Param1'},
+                  params: { someParam: 'Param1' },
                 },
               ],
             });
