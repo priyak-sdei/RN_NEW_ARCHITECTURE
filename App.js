@@ -1,9 +1,9 @@
 import {NavigationContainer} from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
+import {View} from 'react-native'
 import {Provider} from 'react-redux';
-import setup from './src/store/configureStore';
+import setup from '@store/configureStore';
 const Stack = createNativeStackNavigator();
 
 import AuthStackNavigator from './src/navigator/AuthStack';

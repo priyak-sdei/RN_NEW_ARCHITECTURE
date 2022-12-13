@@ -20,9 +20,11 @@ const commonPlugins = [
         '^@/(.+)': './src/\\1', // @/folder will be an alias to <root>/src/folder
       },
     },
+    'react-native-reanimated/plugin'
   ],
+  
 ];
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
-  plugins: [...commonPlugins],
+  plugins: [...commonPlugins, "react-native-reanimated/plugin"],
 };

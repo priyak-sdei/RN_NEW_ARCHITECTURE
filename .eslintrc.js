@@ -9,8 +9,8 @@ module.exports = {
         'plugin:react/recommended',
         '@react-native-community', 
         "prettier",
-        "prettier/react"
     ],
+    'ignorePatterns': ["!.*", "dist", "node_modules"],
     'overrides': [
     ],
     'parserOptions': {

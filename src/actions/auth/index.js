@@ -28,7 +28,7 @@ export function addition() {
 }
 
 export function saveEvent(data) {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     dispatch({
       type: 'addEvent',
       payload: data,

@@ -1,8 +1,8 @@
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import * as AppActions from '../../../actions';
+import * as AppActions from '@actions';
 function Login(props) {
   let [userCount, setUserCount] = useState(0);
   const dispatch = useDispatch();
