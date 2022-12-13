@@ -1,5 +1,3 @@
-import GLOBALS from '../../constants';
-const { actionType } = GLOBALS;
 export function login(data) {
   return async (dispatch, getState) => {
     dispatch({
@@ -28,7 +26,7 @@ export function addition() {
 }
 
 export function saveEvent(data) {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch({
       type: 'addEvent',
       payload: data,
