@@ -3,6 +3,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as AppActions from '@actions';
+import Analytics from 'appcenter-analytics';
+
 function Login(props) {
   let [userCount, setUserCount] = useState(0);
   const dispatch = useDispatch();
@@ -11,6 +13,8 @@ function Login(props) {
   /**Adding event On Mount */
   useEffect(() => {
     dispatch(AppActions.saveEvent([{ name: 121211 }]));
+    Analytics.startSession();
+
     // dispatch(AppActions.addLoginUserData({ name: 'Priya', action: "Demo react" }))
     // dispatch(AppActions.addition())
   }, []);
