@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "link-font": "npx react-native-asset",
     "format": "prettier --check ./src",
-    "write": "prettier --write ./src"
+    "write": "prettier --write ./src",
+    "lintFix": "eslint -- --fix"
   },
   "husky": {
     "hooks": {
