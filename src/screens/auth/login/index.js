@@ -29,6 +29,15 @@ function Login(props) {
     //   // removing the listener when props.x changes
     // };
   }, [authReducer.value]);
+
+  const registerPage = () => {
+    cdncj;
+    props.navigation.navigate('Drawer', {
+      itemId: 86,
+      otherParam: 'anything you want here',
+    });
+  };
+
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontFamily: 'Nunito-Light' }}>
@@ -44,15 +53,7 @@ function Login(props) {
         Logins screen {authReducer.value} {userCount}
       </Text>
       <Icon name="rocket" size={30} color="#900" />
-      <Button
-        title="Go to Register Page"
-        onPress={() =>
-          props.navigation.navigate('Drawer', {
-            itemId: 86,
-            otherParam: 'anything you want here',
-          })
-        }
-      />
+      <Button title="Go to Register Page" onPress={() => registerPage()} />
 
       <Button
         title="Go to Tab Page"
