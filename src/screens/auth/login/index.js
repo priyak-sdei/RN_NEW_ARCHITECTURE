@@ -1,9 +1,26 @@
-import { Button, View, Text, Image, TouchableOpacity } from 'react-native';
+import {
+  Button,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as AppActions from '@actions';
 import Analytics from 'appcenter-analytics';
+import {
+  insertDataToDB,
+  insertDataToDB1,
+  getUserFromDB,
+  getUserFromDB1,
+  insertOrUpdate,
+  deleteByPatientId,
+  deleteUserTable,
+  joinTables,
+} from '../../../helpers/dbUtils';
 
 function Login(props) {
   let [userCount, setUserCount] = useState(0);
@@ -35,10 +52,115 @@ function Login(props) {
   }, [authReducer.value]);
 
   const registerPage = () => {
-    cdncj;
-    props.navigation.navigate('Drawer', {
-      itemId: 86,
-      otherParam: 'anything you want here',
+    let user_name = 'ABC';
+    let user_contact = '6788989';
+    let user_address = 'Mohali';
+    let user_lastName = '123';
+
+    /******Insert data from DB *****/
+    insertDataToDB(user_name, user_contact, user_address, res => {
+      console.log(res, 'res.......');
+      if (res) {
+        /***** Get data from DB ******/
+        getUserFromDB(res => {
+          console.log('res', res);
+          if (res.rowsAffected >= 0) {
+            Alert.alert(
+              'Success',
+              'You are Registered Successfully',
+              [
+                {
+                  text: 'Ok',
+                  onPress: () =>
+                    props.navigation.navigate('Drawer', {
+                      itemId: 86,
+                      otherParam: 'anything you want here',
+                    }),
+                },
+              ],
+              { cancelable: false },
+            );
+          } else {
+            alert('Failed');
+          }
+        });
+      }
+    });
+
+    /****** Insert Another table for JOIN *****/
+    insertDataToDB1(user_name, user_lastName, res => {
+      console.log(res, 'Another table res.......');
+      /***** Get data from  another DB ******/
+      getUserFromDB1(res => {
+        console.log(' get another table res', res);
+      });
+    });
+  };
+
+  /****** Update User Data *******/
+  const updateUser = () => {
+    let user_name = 'XYZ';
+    let user_contact = '9898745667';
+    let user_address = 'Chandigarh';
+    let id = 1;
+
+    insertOrUpdate(id, user_name, user_contact, user_address, res => {
+      console.log('Insert data', res);
+      if (res.rowsAffected > 0) {
+        Alert.alert(
+          'Success',
+          'User updated successfully',
+          [
+            {
+              text: 'Ok',
+              onPress: () =>
+                props.navigation.navigate('Drawer', {
+                  itemId: 86,
+                  otherParam: 'anything you want here',
+                }),
+            },
+          ],
+          { cancelable: false },
+        );
+      } else alert('Updation Failed');
+    });
+  };
+
+  const deleteData = () => {
+    let id = 1;
+    deleteByPatientId(id, res => {
+      console.log('DELETE data', res);
+    });
+  };
+
+  const deleteTableData = () => {
+    deleteUserTable(res => {
+      console.log('delete table data', res);
+      if (res.rowsAffected > 0) {
+        Alert.alert(
+          'Success',
+          'Delete Table Successfully',
+          [
+            {
+              text: 'Ok',
+              onPress: () =>
+                props.navigation.navigate('Drawer', {
+                  itemId: 86,
+                  otherParam: 'anything you want here',
+                }),
+            },
+          ],
+          { cancelable: false },
+        );
+      } else {
+        alert('failed');
+      }
+    });
+  };
+
+  const joinTable = () => {
+    joinTables(res => {
+      console.log('JOIN TABLE--=====', res.rows.raw());
     });
   };
 
@@ -65,6 +187,14 @@ function Login(props) {
           props.navigation.navigate('MyTabs');
         }}
       />
+      <Button title="Update user Data" onPress={() => updateUser()} />
+
+      <Button title="Delete data By user Id" onPress={() => deleteData()} />
+      <Button
+        title="Delete data of user table"
+        onPress={() => deleteTableData()}
+      />
+      <Button title="Join Table" onPress={() => joinTable()} />
     </View>
   );
 }

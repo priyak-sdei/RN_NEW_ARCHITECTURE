@@ -22,15 +22,15 @@
 		6FC49B2E25544B86AD7CFA21 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 254BD8EECCB8427194D3DD32 /* Nunito-Bold.ttf */; };
 		71423D78292161720085CD7C /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 71423D77292161720085CD7C /* fonts */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8774105C5ACD38DA2265C53A /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9454B34F3DE1AB2C556588E /* libPods-BaseProject.a */; };
 		9A889736BB9E403E8B762156 /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65A29380073F4D50839B841E /* Nunito-BoldItalic.ttf */; };
+		A54F5B72D2D76F237333EFB3 /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E133C026B454126CA9E852 /* libPods-BaseProject.a */; };
 		BD135F3908734DC99B51F70E /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DD72BD3729F4B5BA2DB930E /* Nunito-MediumItalic.ttf */; };
 		BE210AB02AC04B76B6379C23 /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17CDEBE5E36F44A08550D3FF /* Nunito-ExtraBoldItalic.ttf */; };
 		C33D5A7EB3134F6A8C9F236D /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3817832A044AE39468AD9F /* Nunito-Black.ttf */; };
+		C42E49C45D711D44193B6A19 /* libPods-BaseProject-BaseProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19666486F8580A0C1D0418C3 /* libPods-BaseProject-BaseProjectTests.a */; };
 		D1975D8D67DC49E2B03BDDBD /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B867336AC844E07A1ED8BAD /* Nunito-ExtraLight.ttf */; };
 		DF2CDC5580ED4566933A6658 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB04276CDF9E48D4BC03D27C /* Nunito-Regular.ttf */; };
 		E3EBBDFADAC740C0980C376B /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D2310C9F9114666B8261BC7 /* Nunito-ExtraLightItalic.ttf */; };
-		E5696F556018D1C9559B84E3 /* libPods-BaseProject-BaseProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 132E7F2E342E9A7336D1A90E /* libPods-BaseProject-BaseProjectTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* BaseProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseProjectTests.m; sourceTree = "<group>"; };
 		0DD72BD3729F4B5BA2DB930E /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-MediumItalic.ttf"; path = "../src/assets/fonts/Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
-		132E7F2E342E9A7336D1A90E /* libPods-BaseProject-BaseProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject-BaseProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = BaseProject/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = BaseProject/AppDelegate.mm; sourceTree = "<group>"; };
@@ -56,28 +55,29 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BaseProject/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = BaseProject/main.m; sourceTree = "<group>"; };
 		17CDEBE5E36F44A08550D3FF /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		19666486F8580A0C1D0418C3 /* libPods-BaseProject-BaseProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject-BaseProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		254BD8EECCB8427194D3DD32 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../src/assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		33DE2A9D0D6B45F6BBBD0FDC /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBold.ttf"; path = "../src/assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		3B867336AC844E07A1ED8BAD /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraLight.ttf"; path = "../src/assets/fonts/Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
 		3DB6368FB3FF41FB9161CB2E /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-BlackItalic.ttf"; path = "../src/assets/fonts/Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
 		4944E66ECF794958920D2788 /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		57438D78E5844CCBB4DC128F /* Nunito-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Medium.ttf"; path = "../src/assets/fonts/Nunito-Medium.ttf"; sourceTree = "<group>"; };
-		587AAFB26EB93532288691DC /* Pods-BaseProject-BaseProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject-BaseProjectTests.release.xcconfig"; path = "Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		65A29380073F4D50839B841E /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-BoldItalic.ttf"; path = "../src/assets/fonts/Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
 		6D2310C9F9114666B8261BC7 /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		71423D77292161720085CD7C /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
-		7E2234BBC5F1586FD3070090 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
 		812DA0ED6202425FA527976D /* Nunito-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Light.ttf"; path = "../src/assets/fonts/Nunito-Light.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BaseProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8AE9A0B93DD5688F5B66EDA4 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
+		8E4D24EDD8A0DFFE105BB10F /* Pods-BaseProject-BaseProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject-BaseProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D8E41073C134C93842E657D /* Nunito-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Italic.ttf"; path = "../src/assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		A1862CFCD993FC4706D58BD7 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A7A920709A6F45CBB2BD4CEA /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraBold.ttf"; path = "../src/assets/fonts/Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
-		B73CD522E82E4C90AEBA4246 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
+		B62F0FEDB9E0DBA6F80846C3 /* Pods-BaseProject-BaseProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject-BaseProjectTests.release.xcconfig"; path = "Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		B9E133C026B454126CA9E852 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB04276CDF9E48D4BC03D27C /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../src/assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		D9887EE481D34F65810E2E19 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-LightItalic.ttf"; path = "../src/assets/fonts/Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		DE3817832A044AE39468AD9F /* Nunito-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Black.ttf"; path = "../src/assets/fonts/Nunito-Black.ttf"; sourceTree = "<group>"; };
-		E9454B34F3DE1AB2C556588E /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F38653DD7E936E9C65763D29 /* Pods-BaseProject-BaseProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject-BaseProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5696F556018D1C9559B84E3 /* libPods-BaseProject-BaseProjectTests.a in Frameworks */,
+				C42E49C45D711D44193B6A19 /* libPods-BaseProject-BaseProjectTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8774105C5ACD38DA2265C53A /* libPods-BaseProject.a in Frameworks */,
+				A54F5B72D2D76F237333EFB3 /* libPods-BaseProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				E9454B34F3DE1AB2C556588E /* libPods-BaseProject.a */,
-				132E7F2E342E9A7336D1A90E /* libPods-BaseProject-BaseProjectTests.a */,
+				B9E133C026B454126CA9E852 /* libPods-BaseProject.a */,
+				19666486F8580A0C1D0418C3 /* libPods-BaseProject-BaseProjectTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,10 +199,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B73CD522E82E4C90AEBA4246 /* Pods-BaseProject.debug.xcconfig */,
-				7E2234BBC5F1586FD3070090 /* Pods-BaseProject.release.xcconfig */,
-				F38653DD7E936E9C65763D29 /* Pods-BaseProject-BaseProjectTests.debug.xcconfig */,
-				587AAFB26EB93532288691DC /* Pods-BaseProject-BaseProjectTests.release.xcconfig */,
+				A1862CFCD993FC4706D58BD7 /* Pods-BaseProject.debug.xcconfig */,
+				8AE9A0B93DD5688F5B66EDA4 /* Pods-BaseProject.release.xcconfig */,
+				8E4D24EDD8A0DFFE105BB10F /* Pods-BaseProject-BaseProjectTests.debug.xcconfig */,
+				B62F0FEDB9E0DBA6F80846C3 /* Pods-BaseProject-BaseProjectTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -214,12 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "BaseProjectTests" */;
 			buildPhases = (
-				392AD37DB832D60DA8E5C04F /* [CP] Check Pods Manifest.lock */,
+				BA75C0173680190EB03CCD76 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				939B9F6FD71A6D47FBBFC9DA /* [CP] Embed Pods Frameworks */,
-				38C3A893A36B60E1C9383FAB /* [CP] Copy Pods Resources */,
+				3949459D9BA5F2A9B1B9557E /* [CP] Embed Pods Frameworks */,
+				8DFEBF915E3D2C352A842E1C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,14 +235,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BaseProject" */;
 			buildPhases = (
-				517834BCB7A5C41CA4DC4FE5 /* [CP] Check Pods Manifest.lock */,
+				C6B1857EB1527EAFF0308357 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				1267B72BC851F5E702280D41 /* [CP] Embed Pods Frameworks */,
-				E05C3488C5D5EBEF8CC4FBDD /* [CP] Copy Pods Resources */,
+				47AB9BF054549DC028EE3993 /* [CP] Embed Pods Frameworks */,
+				31C783A39724FBD51AAFDEC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,7 +342,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		1267B72BC851F5E702280D41 /* [CP] Embed Pods Frameworks */ = {
+		31C783A39724FBD51AAFDEC3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3949459D9BA5F2A9B1B9557E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47AB9BF054549DC028EE3993 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,7 +393,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		38C3A893A36B60E1C9383FAB /* [CP] Copy Pods Resources */ = {
+		8DFEBF915E3D2C352A842E1C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -376,7 +410,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		392AD37DB832D60DA8E5C04F /* [CP] Check Pods Manifest.lock */ = {
+		BA75C0173680190EB03CCD76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,7 +432,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		517834BCB7A5C41CA4DC4FE5 /* [CP] Check Pods Manifest.lock */ = {
+		C6B1857EB1527EAFF0308357 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,40 +452,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		939B9F6FD71A6D47FBBFC9DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E05C3488C5D5EBEF8CC4FBDD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -506,7 +506,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F38653DD7E936E9C65763D29 /* Pods-BaseProject-BaseProjectTests.debug.xcconfig */;
+			baseConfigurationReference = 8E4D24EDD8A0DFFE105BB10F /* Pods-BaseProject-BaseProjectTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -533,7 +533,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 587AAFB26EB93532288691DC /* Pods-BaseProject-BaseProjectTests.release.xcconfig */;
+			baseConfigurationReference = B62F0FEDB9E0DBA6F80846C3 /* Pods-BaseProject-BaseProjectTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -557,7 +557,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B73CD522E82E4C90AEBA4246 /* Pods-BaseProject.debug.xcconfig */;
+			baseConfigurationReference = A1862CFCD993FC4706D58BD7 /* Pods-BaseProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -586,7 +586,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E2234BBC5F1586FD3070090 /* Pods-BaseProject.release.xcconfig */;
+			baseConfigurationReference = 8AE9A0B93DD5688F5B66EDA4 /* Pods-BaseProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

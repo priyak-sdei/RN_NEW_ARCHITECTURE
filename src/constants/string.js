@@ -69,5 +69,6 @@ let Strings = {
       'Your new password must be different to previously used passwords.',
     enter_code: 'Enter 4 digit code',
   },
+  DB_NAME: 'UserDatabase.db',
 };
 module.exports = Strings;
