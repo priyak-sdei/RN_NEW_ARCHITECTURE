@@ -29,7 +29,7 @@ function Login(props) {
 
   /**Adding event On Mount */
   useEffect(() => {
-    dispatch(AppActions.saveEvent([{ name: 121211 }]));
+    console.log('authReducer===>', JSON.stringify(authReducer));
     Analytics.startSession();
 
     // dispatch(AppActions.addLoginUserData({ name: 'Priya', action: "Demo react" }))
@@ -52,6 +52,9 @@ function Login(props) {
   }, [authReducer.value]);
 
   const registerPage = () => {
+    dispatch(AppActions.saveEvent([{ name: 11 }]));
+    dispatch(AppActions.login(userCount + 1));
+
     let user_name = 'ABC';
     let user_contact = '6788989';
     let user_address = 'Mohali';
@@ -167,16 +170,16 @@ function Login(props) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontFamily: 'Nunito-Light' }}>
-        Logins screen {authReducer.value} {userCount}
+        Logins screen {authReducer?.event_list[0]?.name} {authReducer?.value}
       </Text>
       <Text style={{ fontFamily: 'Nunito-Medium' }}>
-        Logins screen {authReducer.value} {userCount}
+        Logins screen {authReducer?.event_list[0]?.name} {userCount}
       </Text>
       <Text style={{ fontFamily: 'Nunito-Regular' }}>
-        Logins screen {authReducer.value} {userCount}
+        Logins screen {authReducer?.event_list[0]?.name} {userCount}
       </Text>
       <Text style={{ fontFamily: 'Nunito-Bold' }}>
-        Logins screen {authReducer.value} {userCount}
+        Logins screen {authReducer?.event_list[0]?.name} {userCount}
       </Text>
       <Icon name="rocket" size={30} color="#900" />
       <Button title="Go to Register Page" onPress={() => registerPage()} />

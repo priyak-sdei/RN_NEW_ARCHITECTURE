@@ -1,4 +1,5 @@
 export function login(data) {
+  console.log('login data', data);
   return async (dispatch, getState) => {
     dispatch({
       type: 'increment',

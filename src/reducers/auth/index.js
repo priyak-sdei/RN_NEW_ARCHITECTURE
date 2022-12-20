@@ -4,6 +4,7 @@ const initialState = {
   loginData: null,
   total: 0,
   event_list: [],
+  value: 0,
 };
 
 function authReducer(state = initialState, action) {
