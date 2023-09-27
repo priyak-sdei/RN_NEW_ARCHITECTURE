@@ -24,7 +24,9 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+import GLOBALS from './constants';
+//import Hi from '@constants';
+const {FONTS} = GLOBALS;
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -40,7 +42,7 @@ function Section({children, title}: SectionProps): JSX.Element {
             color: isDarkMode ? Colors.white : Colors.black,
           },
         ]}>
-        {title}
+        {title}sfsdf
       </Text>
       <Text
         style={[
@@ -57,7 +59,7 @@ function Section({children, title}: SectionProps): JSX.Element {
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-
+  // console.log(Hi, 'GLOBALS.....');
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
@@ -103,7 +105,8 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 24,
-    fontWeight: '600',
+    // fontWeight: '600',
+    fontFamily: FONTS.NUNITO_BOLD,
   },
   sectionDescription: {
     marginTop: 8,
