@@ -1,4 +1,4 @@
-'use-strict';
+'use-strict'
 const fonts: {[key: string]: string} = {
   BOLD: 'Inter-Bold',
   LIGHT: 'Inter-Light',
@@ -10,6 +10,6 @@ const fonts: {[key: string]: string} = {
   NUNITO_MEDIUM: 'Nunito-Medium',
   NUNITO_SEMI_BOLD: 'Nunito-SemiBold',
   NUNITO_BOLD: 'Nunito-Bold',
-};
+}
 
-export default fonts;
+export default fonts
