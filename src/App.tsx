@@ -5,8 +5,8 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React from 'react'
+import type {PropsWithChildren} from 'react'
 import {
   SafeAreaView,
   ScrollView,
@@ -15,7 +15,7 @@ import {
   Text,
   useColorScheme,
   View,
-} from 'react-native';
+} from 'react-native'
 
 import {
   Colors,
@@ -23,16 +23,15 @@ import {
   Header,
   LearnMoreLinks,
   ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import GLOBALS from './constants';
-//import Hi from '@constants';
-const {FONTS} = GLOBALS;
+} from 'react-native/Libraries/NewAppScreen'
+import GLOBALS from '@constants/index'
+const {FONTS} = GLOBALS
 type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+  title: string
+}>
 
 function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === 'dark'
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -54,15 +53,14 @@ function Section({children, title}: SectionProps): JSX.Element {
         {children}
       </Text>
     </View>
-  );
+  )
 }
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  // console.log(Hi, 'GLOBALS.....');
+  const isDarkMode = useColorScheme() === 'dark'
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  }
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -70,17 +68,15 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+      <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
         <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+            <Text style={styles.highlight}>App.tsx</Text> to change this screen and then come back
+            to see your edits.
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
@@ -88,34 +84,35 @@ function App(): JSX.Element {
           <Section title="Debug">
             <DebugInstructions />
           </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
+          <Section title="Learn More">Read the docs to discover what to do next:</Section>
           <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
+  highlight: {
+    fontWeight: '700',
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
   },
-  sectionTitle: {
-    fontSize: 24,
-    // fontWeight: '600',
-    fontFamily: FONTS.NUNITO_BOLD,
-  },
   sectionDescription: {
-    marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
+    marginTop: 8,
   },
-  highlight: {
-    fontWeight: '700',
+  sectionTitle: {
+    fontFamily: FONTS.NUNITO_BOLD,
+    fontSize: 24,
+    // fontWeight: '600',
   },
-});
+  new: {
+    color: 'red',
+  },
+})
 
-export default App;
+export default App
