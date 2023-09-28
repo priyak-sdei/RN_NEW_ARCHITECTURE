@@ -17,7 +17,7 @@ module.exports = {
           '.json',
         ],
         alias: {
-          '@constants/*': ['./src/constants/*'],
+          '@constants': './src/constants',
         },
       },
     ],
