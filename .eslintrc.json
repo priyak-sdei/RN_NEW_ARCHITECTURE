@@ -39,10 +39,10 @@
         "react-native/rn-no-color-literals": "off",
 
         //Best Practices
-        "eqeqeq": 1, //Enforces strict equality checks (=== and !==).
-        "no-loop-func": 1, // Disallows function declarations within loops
+        "eqeqeq": 2, //Enforces strict equality checks (=== and !==).
+        "no-loop-func": 2, // Disallows function declarations within loops
 
         //Stylistic Issues:
-        "quotes": 1 // Enforces the use of single or double quotes consistently.
+        "quotes": 2 // Enforces the use of single or double quotes consistently.
     }
 }

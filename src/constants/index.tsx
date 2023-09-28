@@ -1,6 +1,6 @@
-import FONTS from './fonts';
+import FONTS from "./fonts";
 
 export default {
   FONTS,
-  BASE_URL: 'Hi',
+  BASE_URL: "Hi",
 };

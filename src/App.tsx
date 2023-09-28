@@ -5,8 +5,8 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React from "react";
+import type {PropsWithChildren} from "react";
 import {
     SafeAreaView,
     ScrollView,
@@ -16,7 +16,7 @@ import {
     useColorScheme,
     View,
     Dimensions,
-} from 'react-native';
+} from "react-native";
 
 import {
     Colors,
@@ -24,8 +24,8 @@ import {
     Header,
     LearnMoreLinks,
     ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import GLOBALS from '@constants/index';
+} from "react-native/Libraries/NewAppScreen";
+import GLOBALS from "@constants/index";
 
 const {FONTS} = GLOBALS;
 type SectionProps = PropsWithChildren<{
@@ -33,7 +33,7 @@ type SectionProps = PropsWithChildren<{
 }>;
 
 function Section({children, title}: SectionProps): JSX.Element {
-    const isDarkMode = useColorScheme() === 'dark';
+    const isDarkMode = useColorScheme() === "dark";
     return (
         <View style={styles.sectionContainer}>
             <Text
@@ -60,17 +60,17 @@ function Section({children, title}: SectionProps): JSX.Element {
 }
 
 function App(): JSX.Element {
-    const isDarkMode = useColorScheme() === 'dark';
+    const isDarkMode = useColorScheme() === "dark";
     function add(x: string) {
-        const a = '1';
+        const a = "1";
         const b = 2;
-        if (a == x) {
-            console.log('true');
+        if (a === x) {
+            console.log("true");
         } else {
-            console.log('gogd');
+            console.log("gogd");
         }
     }
-    add('122');
+    add("122");
     const backgroundStyle = {
         backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
     };
@@ -78,7 +78,7 @@ function App(): JSX.Element {
     return (
         <SafeAreaView style={backgroundStyle}>
             <StatusBar
-                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                barStyle={isDarkMode ? "light-content" : "dark-content"}
                 backgroundColor={backgroundStyle.backgroundColor}
             />
             <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
@@ -107,7 +107,7 @@ function App(): JSX.Element {
 
 const styles = StyleSheet.create({
     highlight: {
-        fontWeight: '700',
+        fontWeight: "700",
     },
     sectionContainer: {
         marginTop: 32,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     },
     sectionDescription: {
         fontSize: 18,
-        fontWeight: '400',
+        fontWeight: "400",
         marginTop: 8,
     },
     sectionTitle: {

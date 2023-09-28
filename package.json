@@ -14,15 +14,7 @@
     },
     "lint-staged": {
         "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-            "eslint ."
-        ],
-        "*.js": [
-            "eslint ."
-        ],
-        "*.json": [
-            "eslint ."
-        ],
-        "*.tsx": [
+            "eslint --fix",
             "eslint ."
         ]
     },
