@@ -7,6 +7,7 @@
 
 import React from "react";
 import type {PropsWithChildren} from "react";
+import Icon from "react-native-vector-icons/Ionicons";
 import {
     SafeAreaView,
     ScrollView,
@@ -83,6 +84,7 @@ function App(): JSX.Element {
             />
             <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
                 <Header />
+                <Icon name="add-outline" size={30} color="#4F8EF7" />
                 <View
                     style={{
                         backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -97,7 +99,9 @@ function App(): JSX.Element {
                     <Section title="Debug">
                         <DebugInstructions />
                     </Section>
-                    <Section title="Learn More">Read the docs to discover what to do next:</Section>
+                    <Section title="Learn More">
+                        12Read the docs to discover what to do next:
+                    </Section>
                     <LearnMoreLinks />
                 </View>
             </ScrollView>

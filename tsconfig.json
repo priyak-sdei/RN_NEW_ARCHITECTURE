@@ -1,9 +1,10 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@constants/*": ["./src/constants/*"]
+    "extends": "@tsconfig/react-native/tsconfig.json",
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "baseUrl": ".",
+        "paths": {
+            "@constants/*": ["./src/constants/*"]
+        }
     }
-  }
 }
