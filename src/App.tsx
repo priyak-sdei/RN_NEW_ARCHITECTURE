@@ -18,6 +18,7 @@ import {
     View,
     Dimensions,
 } from "react-native";
+import CustomInput from "./components/common/CustomInput";
 
 import {
     Colors,
@@ -104,6 +105,12 @@ function App(): JSX.Element {
                     </Section>
                     <LearnMoreLinks />
                 </View>
+                <CustomInput
+                    label="User Form"
+                    onChangeText={txt => {
+                        console.log(txt, "l");
+                    }}
+                />
             </ScrollView>
         </SafeAreaView>
     );
