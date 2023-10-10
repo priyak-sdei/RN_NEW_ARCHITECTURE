@@ -60,7 +60,7 @@ function Section({children, title}: SectionProps): JSX.Element {
     );
 }
 
-function App(): JSX.Element {
+function Login(): JSX.Element {
     const isDarkMode = useColorScheme() === "dark";
     function add(x: string) {
         const a = "1";
@@ -90,8 +90,8 @@ function App(): JSX.Element {
                         backgroundColor: isDarkMode ? Colors.black : Colors.white,
                     }}>
                     <Section title="Step One">
-                        <Text style={styles.highlight}>App.tsx</Text> to change this screen and then
-                        come back to see your edits. d d d fgwgfjwf fwfwe
+                        <Text style={styles.highlight}>Login.tsx</Text> to change this screen and
+                        then come back to see your edits. d d d fgwgfjwf fwfwe
                     </Section>
                     <Section title="See Your Changes">
                         <ReloadInstructions />
@@ -131,4 +131,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default App;
+export default Login;
