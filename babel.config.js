@@ -20,8 +20,10 @@ module.exports = {
                     '@constants': './src/constants',
                     '@components': './src/components',
                     '@screens': './src/screens',
+                    '@assets': './src/assets',
                 },
             },
         ],
+        'react-native-reanimated/plugin',
     ],
 };
