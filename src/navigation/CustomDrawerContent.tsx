@@ -32,7 +32,6 @@ function CustomDrawerContent(props): JSX.Element {
     };
 
     const onLogOutPress =()=>{
-        console.log("On logout..");
         navigation.reset({
             index: 1,
             routes: [

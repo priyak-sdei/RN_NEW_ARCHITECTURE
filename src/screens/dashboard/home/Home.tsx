@@ -12,8 +12,6 @@ import {View, Text, StyleSheet} from 'react-native';
 const {FONTS} = GLOBALS;
 
 function Home(props): JSX.Element {
-    console.log(props, 'kooooooo');
-
     useEffect(() => {
         //  props.navigation.openDrawer();
         return () => {};
