@@ -15,7 +15,7 @@ function CustomDrawerContent(props): JSX.Element {
     /**On Main Menu item click, highlight background color  */
     const onMenuItemClick = menu_item => {
         let updatedMenu = [...menuItems].map(item => {
-            item.id === menu_item.id ? (item.isSelected = true) : (item.isSelected = false);
+            item.id === menu_item.id ? (item.isSelected = !item.isSelected ) : (item.isSelected = false);
             item.sub_menu = item.sub_menu.map(sub_item => {
                 sub_item.isSelected = false;
                 return sub_item;
@@ -23,10 +23,32 @@ function CustomDrawerContent(props): JSX.Element {
             return item;
         });
         setMenuItems(updatedMenu);
-        // navigation.navigate('DashboardStack', {
-        //     screen: menu_item.screen,
-        // });
+        if(menu_item.screen){
+            navigation.navigate('HomeDrawer', {
+            screen: menu_item.screen,
+        });
+        }
+       
     };
+
+    const onLogOutPress =()=>{
+        console.log("On logout..");
+        navigation.reset({
+            index: 1,
+            routes: [
+              {
+                name: 'AuthStack',
+                state: {
+                  routes: [
+                    {
+                      name: 'Login',
+                    },
+                  ],
+                },
+              },
+            ],
+          });
+    }
 
     /**Handle selected background color of sub menu item */
     const onSubMenuItemClick = ({sub_index}) => {
@@ -103,7 +125,7 @@ function CustomDrawerContent(props): JSX.Element {
                 })}
             </DrawerContentScrollView>
 
-            <TouchableOpacity style={[styles.bottomContainer]}>
+            <TouchableOpacity style={[styles.bottomContainer]} onPress={() =>onLogOutPress()}>
                 <Avatar
                     size="small"
                     icon={{name: 'logout', type: 'material', color: 'white', size: 20}}

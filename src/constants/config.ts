@@ -2,8 +2,16 @@ import {IMAGES} from '@assets/images/index';
 const CONFIG: {[key: string]: Array<any>} = {
     menu_item: [
         {
+            id: 0,
+            title: 'Home Native Bridge',
+            isSelected: false,
+            icon: IMAGES.bell,
+            sub_menu: [],
+            screen: 'Home',
+        },
+        {
             id: 1,
-            title: 'Redux Toolkit Demo',
+            title: 'Profile Form',
             isSelected: false,
             icon: IMAGES.bell,
             sub_menu: [],
@@ -11,10 +19,12 @@ const CONFIG: {[key: string]: Array<any>} = {
         },
         {
             id: 2,
-            title: 'Form and Components',
+           
+            title: 'Redux Toolkit Demo',
             isSelected: false,
             icon: IMAGES.bell,
             sub_menu: [],
+            screen: 'Profile',
         },
         {
             id: 3,
@@ -33,6 +43,7 @@ const CONFIG: {[key: string]: Array<any>} = {
             sub_menu: [],
             isSelected: false,
             icon: IMAGES.bell,
+            screen: 'Profile',
         },
     ],
 };
