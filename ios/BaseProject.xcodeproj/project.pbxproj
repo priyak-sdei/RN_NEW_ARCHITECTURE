@@ -20,6 +20,8 @@
 		5023823023A443D1806FDD9D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7656E64495B492BBC994021 /* Inter-Regular.ttf */; };
 		51326FBB2ACC3676004E81DF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 51326FBA2ACC3676004E81DF /* Fonts */; };
 		5428737D5D784BDCAEAC0056 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A53B35AD989946E1A03DC49D /* Inter-SemiBold.ttf */; };
+		55A691372AEA2832007A6755 /* CustomModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A691362AEA2832007A6755 /* CustomModule.swift */; };
+		55A691392AEA2AFE007A6755 /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A691382AEA2AFE007A6755 /* CustomModule.m */; };
 		5870EA6C954B4A29B6965FE2 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92D3F72B4A154A1B80F504F8 /* Nunito-Italic.ttf */; };
 		5AA2FF56A1724FB28C65056A /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 146FE5CA40E446F391E73723 /* Nunito-ExtraBoldItalic.ttf */; };
 		5AEDD8E668B944B59745BDAD /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1BEAFFFF304E78A18B4655 /* Nunito-Medium.ttf */; };
@@ -73,6 +75,9 @@
 		45B92182F2F24FBA92FEAB5B /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		5089D30A7B6F4F1AAB3F727C /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-MediumItalic.ttf"; path = "../src/assets/fonts/Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
 		51326FBA2ACC3676004E81DF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
+		55A691352AEA2831007A6755 /* BaseProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		55A691362AEA2832007A6755 /* CustomModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModule.swift; sourceTree = "<group>"; };
+		55A691382AEA2AFE007A6755 /* CustomModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-BaseProject-BaseProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject-BaseProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject-BaseProjectTests/Pods-BaseProject-BaseProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +150,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				55A691362AEA2832007A6755 /* CustomModule.swift */,
+				55A691352AEA2831007A6755 /* BaseProject-Bridging-Header.h */,
+				55A691382AEA2AFE007A6755 /* CustomModule.m */,
 			);
 			name = BaseProject;
 			sourceTree = "<group>";
@@ -293,7 +301,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -524,7 +532,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A691372AEA2832007A6755 /* CustomModule.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				55A691392AEA2AFE007A6755 /* CustomModule.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +554,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-BaseProject-BaseProjectTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -571,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-BaseProject-BaseProjectTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = BaseProjectTests/Info.plist;
@@ -614,6 +626,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.baseproject;
 				PRODUCT_NAME = BaseProject;
+				SWIFT_OBJC_BRIDGING_HEADER = "BaseProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -642,6 +655,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.baseproject;
 				PRODUCT_NAME = BaseProject;
+				SWIFT_OBJC_BRIDGING_HEADER = "BaseProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
