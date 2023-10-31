@@ -20,6 +20,8 @@
 		5023823023A443D1806FDD9D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7656E64495B492BBC994021 /* Inter-Regular.ttf */; };
 		51326FBB2ACC3676004E81DF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 51326FBA2ACC3676004E81DF /* Fonts */; };
 		5428737D5D784BDCAEAC0056 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A53B35AD989946E1A03DC49D /* Inter-SemiBold.ttf */; };
+		555C0D532AF0D2CE0095426C /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C0D512AF0D2CE0095426C /* NativeViewController.swift */; };
+		555C0D562AF0D4100095426C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555C0D552AF0D4100095426C /* Main.storyboard */; };
 		55A691372AEA2832007A6755 /* CustomModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A691362AEA2832007A6755 /* CustomModule.swift */; };
 		55A691392AEA2AFE007A6755 /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A691382AEA2AFE007A6755 /* CustomModule.m */; };
 		5870EA6C954B4A29B6965FE2 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92D3F72B4A154A1B80F504F8 /* Nunito-Italic.ttf */; };
@@ -75,6 +77,8 @@
 		45B92182F2F24FBA92FEAB5B /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		5089D30A7B6F4F1AAB3F727C /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-MediumItalic.ttf"; path = "../src/assets/fonts/Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
 		51326FBA2ACC3676004E81DF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
+		555C0D512AF0D2CE0095426C /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
+		555C0D552AF0D4100095426C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		55A691352AEA2831007A6755 /* BaseProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		55A691362AEA2832007A6755 /* CustomModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModule.swift; sourceTree = "<group>"; };
 		55A691382AEA2AFE007A6755 /* CustomModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		13B07FAE1A68108700A75B9A /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				555C0D4E2AF0C4BE0095426C /* Controller */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				51326FBA2ACC3676004E81DF /* Fonts */,
@@ -165,6 +170,15 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-BaseProject-BaseProjectTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		555C0D4E2AF0C4BE0095426C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				555C0D512AF0D2CE0095426C /* NativeViewController.swift */,
+				555C0D552AF0D4100095426C /* Main.storyboard */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -360,6 +374,7 @@
 				A875212527C2417A84BAAC4C /* Nunito-Light.ttf in Resources */,
 				AB2A95C2C5A74EAFB632B911 /* Nunito-LightItalic.ttf in Resources */,
 				5AEDD8E668B944B59745BDAD /* Nunito-Medium.ttf in Resources */,
+				555C0D562AF0D4100095426C /* Main.storyboard in Resources */,
 				4D1CE2B9C6F54F58AEF35F5C /* Nunito-MediumItalic.ttf in Resources */,
 				2D26C4095BED46C58E6EFD4E /* Nunito-Regular.ttf in Resources */,
 				C412D5DFB4BD4FB09A690996 /* Nunito-SemiBold.ttf in Resources */,
@@ -534,6 +549,7 @@
 			files = (
 				55A691372AEA2832007A6755 /* CustomModule.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				555C0D532AF0D2CE0095426C /* NativeViewController.swift in Sources */,
 				55A691392AEA2AFE007A6755 /* CustomModule.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -730,10 +746,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -803,10 +816,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

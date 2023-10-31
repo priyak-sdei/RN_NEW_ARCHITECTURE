@@ -16,11 +16,12 @@ const buttonsTitle = [
     },
     {
         id: 2,
-        title: "Function With Arguments"
+        title: "Function With Callback"
     },
     {
         id: 3,
-        title: "Function With Callback"
+
+        title: "Function With Arguments"
     },
     {
         id: 4,
@@ -40,7 +41,7 @@ function Home(props): JSX.Element {
             })
         } else if (index === 2) {
             CustomModule.simpleMethodWithParams(
-                'Kajal Verma',
+                'User',
                 (result:any) => {
                     Alert.alert(result)
                 }
@@ -63,7 +64,7 @@ function Home(props): JSX.Element {
                     <CustomButton onClick={() => onButtonClick(index)} label={item.title} />
                 </View>
             ))}
-
+         <CustomButton onClick={() => CustomModule.NativeView()} label={'Go in Native Screen'} />
         </View>
     );
 }

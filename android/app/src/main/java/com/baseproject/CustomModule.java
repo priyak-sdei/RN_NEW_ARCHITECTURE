@@ -1,10 +1,9 @@
 package com.baseproject;
 
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -43,5 +42,12 @@ public class CustomModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void resolvePromise(Promise promise) {
         promise.resolve("Function Resolved");
+    }
+
+    @ReactMethod
+    public void NativeView(Promise promise) {
+        Intent intent = new Intent(context, NativeView.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }
