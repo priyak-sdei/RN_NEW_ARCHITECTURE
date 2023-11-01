@@ -19,7 +19,7 @@ const CustomButton: React.FC<MyComponentProps> = ({ label = "ClickMe", onClick }
 };
 const style = StyleSheet.create({
     buttonContainer: {
-        backgroundColor: COLORS.DARK_GRAY,
+        backgroundColor: COLORS.THEME,
         padding: 15,
         justifyContent:'center',
         alignItems:'center'

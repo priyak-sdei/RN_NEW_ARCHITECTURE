@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     logoStyle: {width: 30, height: 30, borderRadius: 5, marginRight: 10},
     logoText: {fontFamily: FONTS.NUNITO_BOLD, fontSize: 18},
     bottomContainer: {
-        backgroundColor: COLORS.DARK_GRAY,
+        backgroundColor: COLORS.THEME,
         borderRadius: 5,
         marginBottom: '10%',
         flexDirection: 'row',
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     menuItem: {
         fontSize: 18,
         fontFamily: FONTS.NUNITO_MEDIUM,
-        color: COLORS.DARK_GRAY,
+        color: COLORS.THEME,
         paddingRight: 10,
     },
     subMenuContainer: {
@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
     subMenuItem: {
         fontSize: 19,
         fontFamily: FONTS.NUNITO_MEDIUM,
-        color: COLORS.DARK_GRAY,
+        color: COLORS.THEME,
     },
     subMenuOuterContainer: {
         borderLeftWidth: 1,
