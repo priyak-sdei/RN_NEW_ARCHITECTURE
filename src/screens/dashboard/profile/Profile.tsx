@@ -14,7 +14,7 @@ import {setMessage} from 'src/redux/slices/userSlice';
 import CustomHeader from '@components/common/CustomHeader';
 import {Icon} from '@rneui/themed';
 import styles from './Profile.style';
-function Profile(): JSX.Element {
+function Profile(props): JSX.Element {
     const dispatch = useDispatch();
     const {message} = useSelector((state: any) => state.user);
 
@@ -28,7 +28,7 @@ function Profile(): JSX.Element {
         <View style={styles.mainContainer}>
             <CustomHeader
                 onRightIconPress={() => console.log('right click')}
-                onLeftIconPress={() => console.log('onLeftIconPress click')}
+                onLeftIconPress={() => props.navigation.openDrawer()}
                 headerTitle={'Profile'}
                 showBack={false}
                 leftIcon={<Icon name="menu" color={COLORS.WHITE} type="ionicon" />}
