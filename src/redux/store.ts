@@ -13,9 +13,12 @@ import {
     REGISTER,
 } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { api } from './service/GetFakeData';
+import { setupListeners } from '@reduxjs/toolkit/query';
 
 const reducer = combineReducers({
     user: userSlice,
+    [api.reducerPath]:api.reducer
 });
 
 const persistConfig = {
@@ -31,8 +34,8 @@ const store = configureStore({
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        }).concat(logger),
+        }).concat(logger,api.middleware),
     devTools: true,
 });
-
+setupListeners(store.dispatch)
 export default store;
