@@ -26,6 +26,8 @@
         // "noFallthroughCasesInSwitch": true,
         // "forceConsistentCasingInFileNames": true,
         "noImplicitAny": false,
+        "noUnusedLocals":true,
+        "noUnusedParameters": true,
         "baseUrl": ".",
         "paths": {
             "@constants/*": ["./src/constants/*"],
