@@ -1,21 +1,24 @@
-import {IMAGES} from '@assets/images/index';
-import GLOBALS from '@constants/index';
-import {DrawerContentScrollView} from '@react-navigation/drawer';
-import {Avatar, Icon} from '@rneui/themed';
-import React, {useState} from 'react';
-import {Image, Pressable, Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {styles} from './Navigation.style';
-const {CONFIG, COLORS} = GLOBALS;
-
+import {IMAGES} from "@assets/images/index";
+import GLOBALS from "@constants/index";
+import {DrawerContentScrollView} from "@react-navigation/drawer";
+import {Avatar, Icon} from "@rneui/themed";
+import React, {useState} from "react";
+import {Image, Pressable, Text, View} from "react-native";
+import {TouchableOpacity} from "react-native-gesture-handler";
+import {styles} from "./Navigation.style";
+const {CONFIG} = GLOBALS;
+import GLOBAL_THEME from "@theme/index"
+const {COLORS, FONTS} = GLOBAL_THEME;
 function CustomDrawerContent(props): JSX.Element {
     const {navigation} = props;
     const [menuItems, setMenuItems] = useState(CONFIG.menu_item);
 
     /**On Main Menu item click, highlight background color  */
     const onMenuItemClick = menu_item => {
-        let updatedMenu = [...menuItems].map(item => {
-            item.id === menu_item.id ? (item.isSelected = !item.isSelected ) : (item.isSelected = false);
+        const updatedMenu = [...menuItems].map(item => {
+            item.id === menu_item.id
+                ? (item.isSelected = !item.isSelected)
+                : (item.isSelected = false);
             item.sub_menu = item.sub_menu.map(sub_item => {
                 sub_item.isSelected = false;
                 return sub_item;
@@ -23,35 +26,34 @@ function CustomDrawerContent(props): JSX.Element {
             return item;
         });
         setMenuItems(updatedMenu);
-        if(menu_item.screen){
-            navigation.navigate('HomeDrawer', {
-            screen: menu_item.screen,
-        });
+        if (menu_item.screen) {
+            navigation.navigate("HomeDrawer", {
+                screen: menu_item.screen,
+            });
         }
-       
     };
 
-    const onLogOutPress =()=>{
+    const onLogOutPress = () => {
         navigation.reset({
             index: 1,
             routes: [
-              {
-                name: 'AuthStack',
-                state: {
-                  routes: [
-                    {
-                      name: 'Login',
+                {
+                    name: "AuthStack",
+                    state: {
+                        routes: [
+                            {
+                                name: "Login",
+                            },
+                        ],
                     },
-                  ],
                 },
-              },
             ],
-          });
-    }
+        });
+    };
 
     /**Handle selected background color of sub menu item */
     const onSubMenuItemClick = ({sub_index}) => {
-        let updatedMenu = [...menuItems].map(item => {
+        const updatedMenu = [...menuItems].map(item => {
             item.sub_menu = item.sub_menu.map((sub_item, index) => {
                 index === sub_index ? (sub_item.isSelected = true) : (sub_item.isSelected = false);
                 return sub_item;
@@ -63,7 +65,7 @@ function CustomDrawerContent(props): JSX.Element {
 
     /**Render side menu items */
     const renderItem = props => {
-        let {item, index} = props;
+        const {item, index} = props;
         return (
             <View key={index}>
                 <TouchableOpacity
@@ -73,12 +75,12 @@ function CustomDrawerContent(props): JSX.Element {
                         styles.container,
                         item.isSelected ? {backgroundColor: COLORS.SELECTED_GRAY} : {},
                     ]}>
-                    <Image source={item.icon} style={[styles.logoStyle]} resizeMode="contain" />
+                    <Image source={item.icon} style={styles.logoStyle} resizeMode="contain" />
                     <Text style={styles.menuItem}>{item.title}</Text>
                     {item.sub_menu.length > 0 && (
                         <Icon
                             size={35}
-                            name={!item.isSelected ? 'chevron-down' : 'chevron-up'}
+                            name={!item.isSelected ? "chevron-down" : "chevron-up"}
                             type="material-community"
                             color="#5D7285"
                         />
@@ -124,12 +126,12 @@ function CustomDrawerContent(props): JSX.Element {
                 })}
             </DrawerContentScrollView>
 
-            <TouchableOpacity style={[styles.bottomContainer]} onPress={() =>onLogOutPress()}>
+            <TouchableOpacity style={styles.bottomContainer} onPress={() => onLogOutPress()}>
                 <Avatar
                     size="small"
-                    icon={{name: 'logout', type: 'material', color: 'white', size: 20}}
+                    icon={{name: "logout", type: "material", color: "white", size: 20}}
                 />
-                <Text style={[styles.menuItem, {color: COLORS.WHITE}]}>{'Logout'}</Text>
+                <Text style={[styles.menuItem, {color: COLORS.WHITE}]}>{"Logout"}</Text>
             </TouchableOpacity>
         </View>
     );

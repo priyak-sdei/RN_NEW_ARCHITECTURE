@@ -1,6 +1,7 @@
 import {StyleSheet} from "react-native";
-import GLOBALS from "@constants/index";
-const {FONTS} = GLOBALS;
+
+import GLOBAL_THEME from "@theme/index";
+const {COLORS, FONTS} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
     highlight: {

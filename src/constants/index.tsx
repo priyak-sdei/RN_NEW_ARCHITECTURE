@@ -1,10 +1,6 @@
-import FONTS from './fonts';
-import CONFIG from './config';
-import COLORS from './colors';
+import CONFIG from "./config";
 
 export default {
-    FONTS,
-    BASE_URL: 'Hi',
+    BASE_URL: "Hi",
     CONFIG,
-    COLORS,
 };
