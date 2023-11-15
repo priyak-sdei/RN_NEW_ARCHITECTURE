@@ -4,26 +4,25 @@
  *
  * @format
  */
-
-import GLOBALS from '@constants/index';
-import React, {useEffect} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-
-const {FONTS} = GLOBALS;
+import {strings} from "@localization/Localization";
+import React, {useEffect} from "react";
+import {View, Text, StyleSheet} from "react-native";
+import GLOBAL_THEME from "@theme/index";
+import styles from "./Home.style";
+const {COLORS, FONTS, SPACING, moderateScale} = GLOBAL_THEME;
 
 function Home(props): JSX.Element {
     useEffect(() => {
+        console.log("COLORS", COLORS);
         //  props.navigation.openDrawer();
-        return () => {};
     }, []);
 
     return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <View style={styles.mainContainer}>
+            <Text>hi{strings.common.loading}</Text>
             <Text>Welcome to home page</Text>
         </View>
     );
 }
-
-const styles = StyleSheet.create({});
 
 export default Home;

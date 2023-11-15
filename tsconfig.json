@@ -31,7 +31,10 @@
             "@constants/*": ["./src/constants/*"],
             "@components/*": ["./src/components/*"],
             "@screens/*": ["./src/screens/*"],
-            "@assets/*": ["./src/assets/*"]
+            "@assets/*": ["./src/assets/*"],
+            "@theme/*": ["./src/theme/*"],
+            "@localization/*": ["./src/localization/*"],
+            "@/*": ["./src/*"]
         }
     },
     "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]

@@ -1,42 +1,37 @@
-import {Header} from '@rneui/base';
-import * as React from 'react';
-import GLOBALS from '@constants/index';
-import {Icon} from '@rneui/themed';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
-const {FONTS, COLORS} = GLOBALS;
-/**
-Type Safety: Interfaces help provide type safety in your code. TypeScript will check that objects you pass
-to your components match the expected structure defined in the interface.
-This can catch type-related errors at compile time, which can be very helpful in preventing runtime errors.
-Interfaces in TypeScript are a powerful tool for ensuring the consistency
-and correctness of data structures and can be particularly useful when working with 
-React Native to maintain clean and well-typed code.
- */
+import {Header} from "@rneui/base";
+import {Icon} from "@rneui/themed";
+import {useNavigation} from "@react-navigation/native";
+import React from "react";
+import {Image, Text, View, TouchableOpacity} from "react-native";
+import {styles} from "./CustomHeader.styles";
+import GLOBAL_THEME from "@theme/index";
+const {COLORS} = GLOBAL_THEME;
 interface MyComponentProps {
-    headerTitle: string;
-    showBack: boolean;
+    title: string;
+    showBack?: boolean;
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode[]; //show support for multiple icons
-    onBackPress?: () => void; // Callback function prop
     onRightIconPress?: () => void; // Callback function prop
     onLeftIconPress?: () => void;
 }
 
-const CustomHeader: React.FC<MyComponentProps> = props => {
-    let {
-        headerTitle = '',
+export const CustomHeader: React.FC<MyComponentProps> = props => {
+    const {
+        title = "",
         showBack = false,
-        onBackPress,
         onRightIconPress,
         onLeftIconPress,
         leftIcon,
         rightIcon,
     } = props;
+    const navigation = useNavigation();
+    const onBackPress = () => navigation.goBack();
+
     return (
         <Header
             containerStyle={styles.headerContainer}
             centerComponent={{
-                text: headerTitle,
+                text: title,
                 style: styles.headingTitle,
             }}
             leftComponent={
@@ -78,33 +73,3 @@ const CustomHeader: React.FC<MyComponentProps> = props => {
         />
     );
 };
-
-export default CustomHeader;
-
-const styles = StyleSheet.create({
-    headerContainer: {
-        backgroundColor: COLORS.THEME,
-    },
-    headingTitle: {
-        color: COLORS.WHITE,
-        fontSize: 22,
-        fontFamily: FONTS.SEMI_BOLD,
-    },
-    headerRight: {
-        display: 'flex',
-        flexDirection: 'row',
-        marginTop: 5,
-    },
-    leftMargin: {
-        marginLeft: 10,
-    },
-    centerText: {
-        justifyContent: 'center',
-    },
-});
-
-/**
- * By using React.FC, you get the benefit of TypeScript's type inference for props,
- *  which can help catch type-related errors early in development.
- *  It also makes it clear that MyComponent is a functional component, making your code more self-documenting.
- */
