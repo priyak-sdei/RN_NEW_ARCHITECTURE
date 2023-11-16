@@ -1,16 +1,18 @@
 import * as React from "react";
-import { StyleSheet, Text, TouchableHighlight} from "react-native";
+import { StyleSheet, Text, TouchableHighlight, ViewStyle} from "react-native";
 import COLORS from "@theme/colors";
 import FONTS from "@theme/fonts";
+import { SPACING } from "@theme/spacing";
 
 interface MyComponentProps {
     label?: string;
     onClick: () => void;
+    additionalStyle?: ViewStyle
 }
 
-const CustomButton: React.FC<MyComponentProps> = ({ label = "ClickMe", onClick }) => {
+const CustomButton: React.FC<MyComponentProps> = ({ label = "ClickMe", onClick, additionalStyle }) => {
     return (
-        <TouchableHighlight style={style.buttonContainer} onPress={onClick}>
+        <TouchableHighlight style={[style.buttonContainer, additionalStyle ]} onPress={onClick}>
             <Text style={style.buttonText}>
                 {label}
             </Text>
@@ -22,7 +24,7 @@ const style = StyleSheet.create({
         alignItems:"center",
         backgroundColor: COLORS.THEME,
         justifyContent:"center",
-        padding: 15
+        padding: SPACING.s
     },
     buttonText: {
      color:COLORS.WHITE,

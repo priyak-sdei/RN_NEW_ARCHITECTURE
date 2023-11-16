@@ -70,7 +70,7 @@ function Home(props): JSX.Element {
                     <CustomButton onClick={() => onButtonClick(index)} label={item.title} />
                 </View>
             ))}
-            <CustomButton onClick={() => CustomModule.NativeView()} label={"Go in Native Screen"} />
+            <CustomButton onClick={() => CustomModule.NativeView()} label={"Go in Native Screen"} additionalStyle={{ width: "90%" }} />
         </View>
     );
 }
