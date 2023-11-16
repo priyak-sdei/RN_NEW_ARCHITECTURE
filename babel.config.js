@@ -23,6 +23,7 @@ module.exports = {
                     '@assets': './src/assets',
                     '@theme': './src/theme',
                     '@localization': './src/localization',
+                    '@helpers': './src/helpers',
                     '@': './src',
                 },
             },
