@@ -1,7 +1,7 @@
-import {configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import userSlice from './slices/userSlice';
 import logger from 'redux-logger';
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import {
     persistStore,
     persistReducer,
@@ -14,11 +14,11 @@ import {
 } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { auth } from './service/authService';
+import { createApiService } from './service/apiService';
 
 const reducer = combineReducers({
     user: userSlice,
-    [auth.reducerPath]:auth.reducer
+    [createApiService.reducerPath]: createApiService.reducer,
 });
 
 const persistConfig = {
@@ -34,7 +34,7 @@ const store = configureStore({
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        }).concat(logger,auth.middleware),
+        }).concat(logger, createApiService.middleware),
     devTools: true,
 });
 setupListeners(store.dispatch)
