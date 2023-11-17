@@ -7,4 +7,9 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.WHITE,
         flex: 1,
     },
+    Loader: {
+        backgroundColor: COLORS.WHITE,
+      },
+      keyboardAvoidingContainer:{
+      }
 });

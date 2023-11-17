@@ -1,7 +1,7 @@
 import urlMapping from "@constants/urlMapping";
-import { createApiService } from "./apiService";
+import { clientApi } from "./clientApi";
 
-const authService = createApiService.injectEndpoints({
+const authService = clientApi.injectEndpoints({
     endpoints: (builder) => ({
         Login: builder.query({
             query: (body) => ({

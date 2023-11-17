@@ -1,7 +1,7 @@
 import urlMapping from "@constants/urlMapping";
-import { createApiService } from "./apiService";
+import { clientApi } from "./clientApi";
 
-const userService = createApiService.injectEndpoints({
+const userService = clientApi.injectEndpoints({
     endpoints: (builder) => ({
         updateProfile: builder.mutation<any, { id: number; body: any }>({
             query: ({ id, body }) => {
@@ -16,4 +16,4 @@ const userService = createApiService.injectEndpoints({
     overrideExisting: false,
 })
 
-export const {useUpdateProfileMutation} = userService
+export const { useUpdateProfileMutation } = userService
