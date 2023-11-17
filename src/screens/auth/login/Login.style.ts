@@ -1,24 +1,37 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet} from 'react-native';
 
-import GLOBAL_THEME from "@theme/index";
-const {COLORS, FONTS} = GLOBAL_THEME;
+import GLOBAL_THEME from '@theme/index';
+const {COLORS, FONTS, moderateScale, SPACING} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
-    highlight: {
-        fontWeight: "700",
+    accountText: {
+        color: COLORS.BLACK,
     },
-    sectionContainer: {
-        marginTop: 32,
-        paddingHorizontal: 24,
+    forgotContainer: {
+        alignItems: 'flex-end',
+        paddingBottom: moderateScale(15),
+        marginTop: moderateScale(-20),
     },
-    sectionDescription: {
-        fontSize: 18,
-        fontWeight: "400",
-        marginTop: 8,
+    innerContainer: {
+        paddingVertical: moderateScale(SPACING.l),
+        marginTop: moderateScale(SPACING.l),
+        justifyContent: 'flex-end',
+        flex: 1,
     },
-    sectionTitle: {
-        fontFamily: FONTS.NUNITO_BOLD,
-        fontSize: 24,
+    mainContainer: {
+        flex: 1,
+        padding: moderateScale(10),
+    },
+    logoStyle: {
+        height: moderateScale(120),
+        width: moderateScale(120),
+        alignSelf: 'center',
+        marginBottom: '20%',
+    },
+    signUpContainer: {
+        justifyContent: 'center',
+        paddingBottom: moderateScale(0),
+        flexDirection: 'row',
     },
 });
 
