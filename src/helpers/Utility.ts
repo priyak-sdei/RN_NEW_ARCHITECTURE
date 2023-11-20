@@ -1,7 +1,7 @@
-import {Alert, Platform} from 'react-native';
+import { Alert } from 'react-native';
 
 const alertWithoutPromise = (title = '', message, btn1Text = 'Ok') => {
-    Alert.alert(title, message, [{text: btn1Text}], {cancelable: false});
+    Alert.alert(title, message, [{ text: btn1Text }], { cancelable: false });
 };
 
 const alertWithOneBtn = (title, message, btn1Text) => {
@@ -15,7 +15,7 @@ const alertWithOneBtn = (title, message, btn1Text) => {
                     onPress: () => resolve(false),
                 },
             ],
-            {cancelable: false},
+            { cancelable: false },
         );
     });
 };
@@ -35,7 +35,7 @@ const alertWithTwoBtn = (title, message, btn1Text, btn2Text) => {
                     onPress: () => resolve(true),
                 },
             ],
-            {cancelable: false},
+            { cancelable: false },
         );
     });
 };
@@ -56,9 +56,15 @@ const alertWithTwoBtnCancel = (title, message, btn1Text, btn2Text) => {
                     onPress: () => resolve(true),
                 },
             ],
-            {cancelable: false},
+            { cancelable: false },
         );
     });
 };
 
-export {alertWithoutPromise, alertWithTwoBtn, alertWithOneBtn, alertWithTwoBtnCancel};
+//convert object into form data
+function getFormData(object) {
+    const formData = new FormData();
+    Object.keys(object).forEach(key => formData.append(key, object[key]));
+    return formData;
+}
+export { alertWithoutPromise, alertWithTwoBtn, alertWithOneBtn, alertWithTwoBtnCancel, getFormData };
