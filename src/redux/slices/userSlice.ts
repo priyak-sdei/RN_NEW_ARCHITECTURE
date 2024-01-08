@@ -1,4 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {clientApi} from '../service/clientApi';
+import {userService} from '../service/userService';
+// Access the list of injectEndpoints values in slices
 
 const userSlice = createSlice({
     name: 'user',
@@ -10,6 +13,13 @@ const userSlice = createSlice({
             console.log('actionnnn', action);
             state.message = action.payload;
         },
+    },
+    extraReducers: builder => {
+        builder.addMatcher(userService.endpoints.currentPost.matchFulfilled, (state, action) => {
+            // Access the injectedEndpoint data from the action payload
+            console.log(state, action, 'hiiiiii');
+            state.message = action.payload;
+        });
     },
 });
 
