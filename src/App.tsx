@@ -9,10 +9,14 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Provider} from 'react-redux';
 import store from './redux/store';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 import Navigator from './navigation/Navigator';
-
-console.log(store.getState(), 'Store....');
+GoogleSignin.configure({
+    iosClientId: '191749400981-sboe438b8rk5dvhfk66rhkkikvu79gt1.apps.googleusercontent.com',
+    webClientId: '191749400981-ao9hfteleqfd9p4g731kskmst84608ir.apps.googleusercontent.com', // Replace with your web client ID
+});
+console.log(store.getState(), 'Store.1...');
 function App(): JSX.Element {
     return (
         <Provider store={store}>

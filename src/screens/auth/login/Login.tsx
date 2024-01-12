@@ -21,6 +21,7 @@ import {
     useCurrentPostMutation,
     useUpdateCurrentPostMutation,
 } from '@/redux/service/userService';
+import GoogleSignIn from '@components/common/SocialSignIn/google/GoogleSignin';
 
 const leftIcon = (
     <Icon
@@ -57,7 +58,6 @@ function Login(_props): JSX.Element {
                     />
                     <CustomInput
                         value={username}
-                        errorMessage={''}
                         label={strings.login.username}
                         placeholder={strings.login.usernameHint}
                         leftIcon={leftIcon}
@@ -65,7 +65,6 @@ function Login(_props): JSX.Element {
                     />
                     <CustomInput
                         value={password}
-                        errorMessage={''}
                         label={strings.login.password}
                         placeholder={strings.login.passwordHint}
                         leftIcon={leftIcon}
@@ -79,7 +78,6 @@ function Login(_props): JSX.Element {
                         customContainerStyle={{marginTop: 20}}
                         title={strings.login.signIn}
                         btnIcon={signInIcon}
-                        //  onBtnPress={onSignInPress}
                         onBtnPress={async () => {
                             await updateCurrentPost({
                                 id: 1,
@@ -89,6 +87,7 @@ function Login(_props): JSX.Element {
                             });
                         }}
                     />
+                    <GoogleSignIn />
                     <TouchableOpacity
                         style={styles.signUpContainer}
                         onPress={async () => {
