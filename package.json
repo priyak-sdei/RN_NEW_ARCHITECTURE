@@ -9,7 +9,7 @@
         "lint:fix": "eslint --fix .",
         "start": "react-native start",
         "test": "jest",
-        "project_rename": "npx react-native-rename 'BaseProject' -b 'com.baseproject'",
+        "project_rename": "npx react-native-rename 'baseproject' -b 'com.baseproject'",
         "link-asset": "npx react-native-asset"
     },
     "lint-staged": {

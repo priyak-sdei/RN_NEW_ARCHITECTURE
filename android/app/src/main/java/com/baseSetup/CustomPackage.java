@@ -1,4 +1,4 @@
-package com.baseproject;
+package com.baseSetup;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;

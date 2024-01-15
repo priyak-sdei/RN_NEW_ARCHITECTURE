@@ -1,4 +1,4 @@
-package com.baseproject;
+package com.baseSetup;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;

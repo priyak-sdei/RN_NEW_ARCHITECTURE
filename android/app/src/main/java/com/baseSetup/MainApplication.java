@@ -1,4 +1,4 @@
-package com.baseproject;
+package com.baseSetup;
 
 import android.app.Application;
 

@@ -87,7 +87,11 @@ function Login(_props): JSX.Element {
                             });
                         }}
                     />
-                    <GoogleSignIn />
+                    <GoogleSignIn
+                        onSignInSuccess={res => {
+                            console.log('Hi', res);
+                        }}
+                    />
                     <TouchableOpacity
                         style={styles.signUpContainer}
                         onPress={async () => {

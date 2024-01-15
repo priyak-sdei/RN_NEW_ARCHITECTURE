@@ -1,16 +1,19 @@
-import {View} from 'react-native';
-import React from 'react';
 import {
     GoogleSignin,
     GoogleSigninButton,
+    GoogleSigninButtonProps,
+    NativeModuleError,
     User,
     statusCodes,
-    NativeModuleError,
-    GoogleSigninButtonProps,
 } from '@react-native-google-signin/google-signin';
+import React from 'react';
+import {View} from 'react-native';
 import {styles} from './GoogleSignin.styles';
 
-const GoogleSignIn: React.FC = () => {
+interface GoogleSignInProps {
+    onSignInSuccess: (userInfo: User) => void;
+}
+const GoogleSignIn: React.FC<GoogleSignInProps> = ({onSignInSuccess}) => {
     /**Handle Sign In button click */
     const signIn = async () => {
         try {
@@ -24,7 +27,7 @@ const GoogleSignIn: React.FC = () => {
 
     /**Handle user data on succesfull login */
     function handleSignInSuccess(userInfo: User): void {
-        console.log(userInfo, 'handleSignInSuccess.....');
+        onSignInSuccess(userInfo);
     }
 
     /**Handle sign in errors based on errro code */
