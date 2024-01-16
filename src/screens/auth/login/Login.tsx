@@ -5,6 +5,8 @@ import {
     CustomInput,
     CustomTextView,
     ParentContainer,
+    GoogleSignIn,
+    FacebookSignIn,
 } from '@components/index';
 import {useAuth} from './hooks/useAuth';
 import {strings} from '@localization/Localization';
@@ -21,7 +23,6 @@ import {
     useCurrentPostMutation,
     useUpdateCurrentPostMutation,
 } from '@/redux/service/userService';
-import GoogleSignIn from '@components/common/SocialSignIn/google/GoogleSignin';
 
 const leftIcon = (
     <Icon
@@ -89,7 +90,12 @@ function Login(_props): JSX.Element {
                     />
                     <GoogleSignIn
                         onSignInSuccess={res => {
-                            console.log('Hi', res);
+                            console.log('Callback resonse from google login', res);
+                        }}
+                    />
+                    <FacebookSignIn
+                        onSignInSuccess={res => {
+                            console.log('Callback resonse from fb login', res);
                         }}
                     />
                     <TouchableOpacity

@@ -10,6 +10,10 @@ import React from 'react';
 import {View} from 'react-native';
 import {styles} from './GoogleSignin.styles';
 
+GoogleSignin.configure({
+    iosClientId: '191749400981-sboe438b8rk5dvhfk66rhkkikvu79gt1.apps.googleusercontent.com',
+    webClientId: '191749400981-hg38o6jkvk04tb5qp7pe94t203v1nf9h.apps.googleusercontent.com', // Replace with your web client ID
+});
 interface GoogleSignInProps {
     onSignInSuccess: (userInfo: User) => void;
 }

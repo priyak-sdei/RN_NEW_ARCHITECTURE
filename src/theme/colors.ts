@@ -8,6 +8,7 @@ const COLORS: {[key: string]: string} = {
     blackAlpha4: 'rgba(0,0,0,0.4)',
     blue: '#295DA1',
     ERROR_RED: '#FC4040',
+    FB_COLOR: '#316FF6',
 };
 
 export default COLORS;

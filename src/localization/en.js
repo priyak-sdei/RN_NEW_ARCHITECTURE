@@ -32,6 +32,7 @@ export const en = {
         explore: 'Explore your heritage, curate family moments, and share the magic of stories.',
         alreadyHaveAccount: 'Already have an account?',
         forgotPassword: 'Forgot Password?',
+        fbLogin: 'Sign in with facebook',
     },
 
     editProfile: {
