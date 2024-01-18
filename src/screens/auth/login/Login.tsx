@@ -5,8 +5,7 @@ import {
     CustomInput,
     CustomTextView,
     ParentContainer,
-    GoogleSignIn,
-    FacebookSignIn,
+    SocialSignIn,
 } from '@components/index';
 import {useAuth} from './hooks/useAuth';
 import {strings} from '@localization/Localization';
@@ -88,16 +87,7 @@ function Login(_props): JSX.Element {
                             });
                         }}
                     />
-                    <GoogleSignIn
-                        onSignInSuccess={res => {
-                            console.log('Callback resonse from google login', res);
-                        }}
-                    />
-                    <FacebookSignIn
-                        onSignInSuccess={res => {
-                            console.log('Callback resonse from fb login', res);
-                        }}
-                    />
+
                     <TouchableOpacity
                         style={styles.signUpContainer}
                         onPress={async () => {
@@ -115,6 +105,12 @@ function Login(_props): JSX.Element {
                             text={` ${strings.login.signup}!`}
                         />
                     </TouchableOpacity>
+
+                    <SocialSignIn
+                        onFbSuccess={res => console.log(res, 'res fb')}
+                        onGoogleSuccess={res => console.log(res, 'res onGoogleSuccess')}
+                        onAppleSuccess={res => console.log(res, 'res onAppleSuccess')}
+                    />
                 </View>
             </KeyboardAwareScrollView>
         </ParentContainer>

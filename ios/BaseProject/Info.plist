@@ -28,25 +28,25 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.191749400981-sboe438b8rk5dvhfk66rhkkikvu79gt1</string>
-        <string>fb715434998893402</string>
+				<string>fb715434998893402</string>
 			</array>
 		</dict>
 	</array>
-  <key>FacebookAppID</key>
-  <string>715434998893402</string>
-  <key>FacebookClientToken</key>
-  <string>89d8458c6206587bb223fc74675ae446</string>
-  <key>FacebookDisplayName</key>
-   <string>SmartDataApp</string>
-   <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fb-messenger-api</string>
-      <string>fbauth2</string>
-      <string>fbshareextension</string>
-    </array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>715434998893402</string>
+	<key>FacebookClientToken</key>
+	<string>89d8458c6206587bb223fc74675ae446</string>
+	<key>FacebookDisplayName</key>
+	<string>SmartDataApp</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -61,7 +61,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-Black.ttf</string>

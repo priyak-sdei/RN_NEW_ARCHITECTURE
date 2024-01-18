@@ -78,6 +78,7 @@
 		5089D30A7B6F4F1AAB3F727C /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-MediumItalic.ttf"; path = "../src/assets/fonts/Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
 		510C8F552B555606009887EF /* BaseProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BaseProject.entitlements; path = BaseProject/BaseProject.entitlements; sourceTree = "<group>"; };
 		51326FBA2ACC3676004E81DF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
+		5157BF632B59520200B07336 /* BaseProjectDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BaseProjectDebug.entitlements; path = BaseProject/BaseProjectDebug.entitlements; sourceTree = "<group>"; };
 		555C0D512AF0D2CE0095426C /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
 		555C0D552AF0D4100095426C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		55A691352AEA2831007A6755 /* BaseProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		13B07FAE1A68108700A75B9A /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				5157BF632B59520200B07336 /* BaseProjectDebug.entitlements */,
 				510C8F552B555606009887EF /* BaseProject.entitlements */,
 				555C0D4E2AF0C4BE0095426C /* Controller */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -627,7 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = BaseProject/BaseProject.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BaseProject/BaseProjectDebug.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 33P3VUARHV;
 				ENABLE_BITCODE = NO;
@@ -643,7 +645,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baseproject;
+				PRODUCT_BUNDLE_IDENTIFIER = org.native.example.BaseProject;
 				PRODUCT_NAME = BaseProject;
 				SWIFT_OBJC_BRIDGING_HEADER = "BaseProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -673,7 +675,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baseproject;
+				PRODUCT_BUNDLE_IDENTIFIER = org.native.example.BaseProject;
 				PRODUCT_NAME = BaseProject;
 				SWIFT_OBJC_BRIDGING_HEADER = "BaseProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

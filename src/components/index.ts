@@ -6,6 +6,8 @@ import CustomButton from '@components/common/CustomButton/CustomButton';
 import CustomTextView from '@components/common/CustomTextView/CustomTextView';
 import GoogleSignIn from '@components/common/SocialSignIn/google/GoogleSignin';
 import FacebookSignIn from '@components/common/SocialSignIn/facebook/FacebookSignin';
+import AppleSignIn from '@components/common/SocialSignIn/apple/AppleSignin';
+import SocialSignIn from '@components/screens/Login/SocialSignIn';
 export {
     Loader,
     ParentContainer,
@@ -15,4 +17,6 @@ export {
     CustomTextView,
     GoogleSignIn,
     FacebookSignIn,
+    AppleSignIn,
+    SocialSignIn,
 };
