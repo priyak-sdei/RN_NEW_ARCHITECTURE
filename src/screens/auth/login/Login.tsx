@@ -7,6 +7,7 @@ import {
     ParentContainer,
     SocialSignIn,
 } from '@components/index';
+import {StackParamList} from '@constants/index';
 import {useAuth} from './hooks/useAuth';
 import {strings} from '@localization/Localization';
 import {Icon} from '@rneui/themed';
@@ -16,6 +17,8 @@ import {Image, TouchableOpacity, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './Login.styles';
 const {COLORS, FONTS, moderateScale} = GLOBAL_THEME;
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 import {
     useAllPostQuery,
@@ -34,7 +37,9 @@ const leftIcon = (
 const signInIcon = (
     <Icon name="login" type="simple-line-icon" color={COLORS.WHITE} size={moderateScale(15)} />
 );
-function Login(_props): JSX.Element {
+function Login(): JSX.Element {
+    const navigation = useNavigation<NativeStackNavigationProp<StackParamList>>();
+
     // const {data, isLoading, isSuccess, isError, error} = useAllPostQuery();
     const [currentPost, {data}] = useCurrentPostMutation();
     const [updateCurrentPost] = useUpdateCurrentPostMutation();
@@ -79,24 +84,26 @@ function Login(_props): JSX.Element {
                         title={strings.login.signIn}
                         btnIcon={signInIcon}
                         onBtnPress={async () => {
-                            await updateCurrentPost({
-                                id: 1,
-                                title: 'foo',
-                                body: 'bar',
-                                userId: 1,
-                            });
+                            navigation.navigate('Home');
+                            // await updateCurrentPost({
+                            //     id: 1,
+                            //     title: 'foo',
+                            //     body: 'bar',
+                            //     userId: 1,
+                            // });
                         }}
                     />
 
                     <TouchableOpacity
                         style={styles.signUpContainer}
                         onPress={async () => {
-                            await currentPost({
-                                id: 1,
-                                title: 'Meeee',
-                                body: 'Mee11',
-                                userId: 1,
-                            });
+                            navigation.navigate('SignUp');
+                            // await currentPost({
+                            //     id: 1,
+                            //     title: 'Meeee',
+                            //     body: 'Mee11',
+                            //     userId: 1,
+                            // });
                         }}>
                         <CustomTextView attr={{h3: true}} text={strings.login.account} />
                         <CustomTextView
