@@ -45,4 +45,8 @@ export const en = {
         picture: 'Profile Photo',
         location: 'Location',
     },
+    validation: {
+        require: 'Field is required',
+        invalid_email: 'Please enter valid mail',
+    },
 };

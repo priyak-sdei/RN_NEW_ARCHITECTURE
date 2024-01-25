@@ -1,5 +1,5 @@
-import GLOBAL_THEME from "@theme/index";
-import {StyleSheet} from "react-native";
+import GLOBAL_THEME from '@theme/index';
+import {StyleSheet} from 'react-native';
 const {COLORS} = GLOBAL_THEME;
 
 export const styles = StyleSheet.create({
@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     },
     Loader: {
         backgroundColor: COLORS.WHITE,
-      },
-      keyboardAvoidingContainer:{
-      }
+    },
+    keyboardAvoidingContainer: {},
 });

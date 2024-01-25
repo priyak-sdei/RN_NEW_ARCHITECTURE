@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     errorStyle: {
         fontFamily: FONTS.MEDIUM,
         color: COLORS.ERROR_RED,
-        fontSize: moderateScale(13),
+        fontSize: moderateScale(11),
+        marginTop: moderateScale(-0.5),
     },
     inputContainerStyle: {
         borderWidth: moderateScale(1),
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     labelStyle: {
         fontFamily: FONTS.LIGHT,
         color: COLORS.THEME,
-        fontSize: moderateScale(15),
+        fontSize: moderateScale(13),
         fontWeight: '400',
     },
     leftIconContainerStyle: {

@@ -1,40 +1,47 @@
+import {strings} from '@localization/Localization';
+import {SignUpFormValues} from '@type/Login';
 import {useFormik} from 'formik';
-
-interface LoginFormValues {
-    username: string;
-    password: string;
-}
-
+import * as Yup from 'yup';
 interface UseFormProps {
-    initialValues: LoginFormValues;
-    onSubmit: (values: LoginFormValues) => void;
+    initialValues: SignUpFormValues;
+    onSubmit: (values: SignUpFormValues) => void;
 }
 
 const useForm = ({initialValues, onSubmit}: UseFormProps) => {
     const formik = useFormik({
         initialValues,
         onSubmit,
-        validate: values => {
-            const errors: Partial<LoginFormValues> = {};
-
-            if (!values.username) {
-                errors.username = 'Username is required';
-            }
-
-            if (!values.password) {
-                errors.password = 'Password is required';
-            }
-
-            return errors;
-        },
+        validationSchema: Yup.object({
+            title: Yup.string()
+                .max(15, 'Must be 15 characters or less')
+                .required(strings.validation.require),
+            firstName: Yup.string()
+                .max(20, 'Must be 20 characters or less')
+                .required(strings.validation.require),
+            lastName: Yup.string()
+                .max(20, 'Must be 20 characters or less')
+                .required(strings.validation.require),
+            gender: Yup.string().required(strings.validation.require),
+            email: Yup.string()
+                .email(strings.validation.invalid_email)
+                .required(strings.validation.require),
+            dateOfBirth: Yup.string().required(strings.validation.require),
+            phone: Yup.string().required(strings.validation.require),
+            picture: Yup.string().required(strings.validation.require),
+        }),
     });
-    const setFieldValue = (field: keyof LoginFormValues, value: string) => {
+
+    const setFieldValue = (field: keyof SignUpFormValues, value: string) => {
         formik.setFieldValue(field, value);
+    };
+    const handleBlur = (field: keyof SignUpFormValues) => {
+        formik.handleBlur(field);
     };
 
     return {
         formik,
         setFieldValue,
+        handleBlur,
     };
 };
 

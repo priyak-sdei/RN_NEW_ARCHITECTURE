@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     //     flex: 1,
     // },
     mainContainer: {
-        flex: 1,
         padding: moderateScale(10),
         paddingVertical: moderateScale(SPACING.m),
     },

@@ -15,6 +15,7 @@ interface MyComponentProps {
     label?: string;
     placeholder?: string;
     onChangeText: (txt) => void; // Callback function prop
+    handleBlur?: () => void; // Optional function prop
     leftIcon?: IconNode;
     rightIcon?: IconNode;
     errorMessage?: string;
@@ -30,6 +31,7 @@ const CustomInput: React.FC<MyComponentProps> = props => {
         rightIcon = false,
         errorMessage = '',
         value = '',
+        handleBlur,
     } = props;
     return (
         <Input
@@ -50,6 +52,7 @@ const CustomInput: React.FC<MyComponentProps> = props => {
             rightIcon={rightIcon}
             rightIconContainerStyle={{}}
             value={value}
+            onBlur={handleBlur}
         />
     );
 };
