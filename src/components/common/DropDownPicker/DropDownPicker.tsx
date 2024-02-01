@@ -1,31 +1,56 @@
 import {Icon} from '@rneui/themed';
 import GLOBAL_THEME from '@theme/index';
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {FlatList, Modal, Text, TouchableOpacity, View} from 'react-native';
 import styles from './DropDownPicker.styles';
 const {COLORS} = GLOBAL_THEME;
 interface DropDownProps {
-    label: string;
-    options?: dropDownOptions[];
-    selectedValue: string;
+    showPicker: boolean;
+    hideModal: () => void;
+    onItemSelected: (data: dropDownOptions) => void;
+    options: dropDownOptions[];
+    selectedOption: string;
 }
 interface dropDownOptions {
     key: string;
-    value: number;
+    value: string;
 }
 
 const DropDownPicker: React.FC<DropDownProps> = props => {
-    const {label = '', selectedValue = ''} = props;
+    const {
+        showPicker = false,
+        hideModal = () => {},
+        options = [],
+        selectedOption = {},
+        onItemSelected = () => {},
+    } = props;
+
+    const renderItem = ({item}: {item: dropDownOptions}) => (
+        <TouchableOpacity style={styles.listContainer} onPress={() => onItemSelected(item)}>
+            <Text style={styles.labelStyle}>{item.key}</Text>
+            {selectedOption && selectedOption == item.key && (
+                <Icon name="checkmark-sharp" size={25} color={COLORS.BLACK} type="ionicon" />
+            )}
+        </TouchableOpacity>
+    );
+
     return (
-        <TouchableOpacity style={styles.container}>
-            <View style={styles.innerContainer}>
-                <Text style={styles.labelStyle}>{label}</Text>
-                <View style={styles.groupContainer}>
-                    <Text style={styles.selectedTextStyle}>{selectedValue}selectedValue</Text>
-                    <Icon name="arrow-forward-ios" color={COLORS.THEME} type="material" />
+        <Modal
+            animationType="slide"
+            transparent={false}
+            visible={showPicker}
+            onRequestClose={() => {}}>
+            <View style={styles.outer_container}>
+                <TouchableOpacity style={styles.header_container} onPress={() => hideModal()}>
+                    <Icon name="arrow-back-ios" size={25} color={COLORS.BLACK} type="material" />
+                    <Text style={styles.headingTitle}>Select Value</Text>
+                </TouchableOpacity>
+
+                <View style={styles.container}>
+                    <FlatList data={options} renderItem={renderItem} numColumns={1} />
                 </View>
             </View>
-        </TouchableOpacity>
+        </Modal>
     );
 };
 

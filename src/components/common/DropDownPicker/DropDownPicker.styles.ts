@@ -1,37 +1,42 @@
 import {StyleSheet} from 'react-native';
 
 import GLOBAL_THEME from '@theme/index';
-const {COLORS, FONTS, moderateScale, SPACING} = GLOBAL_THEME;
+const {COLORS, FONTS, moderateScale} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
-    container: {
-        borderWidth: moderateScale(0.5),
-        borderRadius: moderateScale(6),
-        borderColor: COLORS.GRAY_LINE,
-        paddingVertical: moderateScale(SPACING.xs),
-        paddingHorizontal: moderateScale(SPACING.xxs),
-        marginVertical: moderateScale(SPACING.xs),
-        marginHorizontal: moderateScale(SPACING.xxs),
+    outer_container: {
+        flex: 1,
+        padding: moderateScale(15),
     },
-    innerContainer: {
+    header_container: {
+        flexDirection: 'row',
+        paddingTop: '8%',
+        alignItems: 'center',
+    },
+    headingTitle: {
+        color: COLORS.BLACK,
+        fontFamily: FONTS.SEMI_BOLD,
+        fontSize: moderateScale(22),
+        padding: moderateScale(5),
+        flex: 1,
+        marginLeft: moderateScale(15),
+    },
+    listContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-    },
-    groupContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        padding: moderateScale(5),
+        borderBottomWidth: moderateScale(0.4),
+        borderColor: COLORS.GRAY_LINE,
+        paddingVertical: moderateScale(10),
     },
     labelStyle: {
+        color: COLORS.THEME,
         fontFamily: FONTS.SEMI_BOLD,
-        color: COLORS.THEME,
-        fontSize: moderateScale(SPACING.s),
+        fontSize: moderateScale(18),
     },
-    selectedTextStyle: {
-        fontFamily: FONTS.REGULAR,
-        color: COLORS.THEME,
-        fontSize: moderateScale(SPACING.s),
-        paddingRight: moderateScale(SPACING.xxs),
+    container: {
+        marginTop: moderateScale(20),
     },
 });
 

@@ -11,6 +11,8 @@ import {View} from 'react-native';
 import styles from './SignUp.styles';
 import useForm from './hooks/useForm';
 import {useSignUp} from './hooks/useSignUp';
+import GLOBALS from '@constants/index';
+const {DATA} = GLOBALS;
 const SignUp: React.FC = () => {
     const {onSignUpPress} = useSignUp();
     const {formik, setFieldValue, handleBlur} = useForm({
@@ -25,23 +27,30 @@ const SignUp: React.FC = () => {
             picture: '',
         },
         onSubmit: values => {
+            console.log(values, 'values');
             onSignUpPress(values);
         },
     });
-
     return (
         <ParentContainer>
             <CustomHeader title={strings.login.signup} showBack={true} />
             <View style={styles.mainContainer}>
-                <DropDown label={strings.signUp.title} selectedValue={formik.values.title} />
-                {/* <CustomInput
+                <DropDown
+                    options={DATA.TITLE}
                     label={strings.signUp.title}
-                    onChangeText={text => setFieldValue('title', text)}
-                    handleBlur={() => handleBlur('title')}
-                    value={formik.values.title}
-                    placeholder={strings.signUp.title}
-                    errorMessage={formik.errors.title ? formik.errors.title : ''}
-                /> */}
+                    selectedValue={formik.values.title}
+                    onOptionSelect={option => {
+                        setFieldValue('title', option.key);
+                    }}
+                />
+                <DropDown
+                    options={DATA.GENDER}
+                    label={strings.signUp.gender}
+                    selectedValue={formik.values.gender}
+                    onOptionSelect={option => {
+                        setFieldValue('gender', option.key);
+                    }}
+                />
                 <CustomInput
                     label={strings.signUp.firstName}
                     onChangeText={text => setFieldValue('firstName', text)}
@@ -58,14 +67,7 @@ const SignUp: React.FC = () => {
                     placeholder={strings.signUp.lastName}
                     errorMessage={formik.errors.lastName ? formik.errors.lastName : ''}
                 />
-                <CustomInput
-                    label={strings.signUp.gender}
-                    onChangeText={text => setFieldValue('gender', text)}
-                    handleBlur={() => handleBlur('gender')}
-                    value={formik.values.gender}
-                    placeholder={strings.signUp.gender}
-                    errorMessage={formik.errors.gender ? formik.errors.gender : ''}
-                />
+
                 <CustomInput
                     label={strings.signUp.email}
                     onChangeText={text => setFieldValue('email', text)}
