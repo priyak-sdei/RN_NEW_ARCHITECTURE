@@ -1,6 +1,6 @@
 const urlMapping = {
-    BASE_URL: 'https://jsonplaceholder.typicode.com/',
-    LOGIN: '',
+    API_BASE_URL: 'https://dummyapi.io/data/v1/',
+    LOGIN: 'user',
     SIGN_UP: '',
     UPDATE_PROFILE: '',
     GET_POST: 'posts',

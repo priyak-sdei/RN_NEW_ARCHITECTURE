@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
     errorStyle: {
         fontFamily: FONTS.MEDIUM,
         color: COLORS.ERROR_RED,
-        fontSize: moderateScale(11),
-        marginTop: moderateScale(-0.5),
+        fontSize: moderateScale(10),
+        marginTop: moderateScale(0),
     },
     inputContainerStyle: {
         borderWidth: moderateScale(1),

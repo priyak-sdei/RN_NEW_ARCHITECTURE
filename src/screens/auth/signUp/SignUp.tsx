@@ -1,17 +1,23 @@
 import {
     CustomButton,
     CustomHeader,
-    ParentContainer,
     CustomInput,
+    DateTimePicker,
     DropDown,
+    ParentContainer,
 } from '@components/index';
+import GLOBALS from '@constants/index';
 import {strings} from '@localization/Localization';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View} from 'react-native';
 import styles from './SignUp.styles';
 import useForm from './hooks/useForm';
 import {useSignUp} from './hooks/useSignUp';
-import GLOBALS from '@constants/index';
+import {
+    useGetAllUserQuery,
+    useGetUsersByIdQuery,
+    useCreateUserMutation,
+} from '@/redux/api/userAPIs/userAPI';
 const {DATA} = GLOBALS;
 const SignUp: React.FC = () => {
     const {onSignUpPress} = useSignUp();
@@ -31,6 +37,11 @@ const SignUp: React.FC = () => {
             onSignUpPress(values);
         },
     });
+
+    // const {data, error, isFetching} = useGetAllUserQuery({});
+    // const {data, error, isFetching} = useGetUsersByIdQuery({userId: '60d0fe4f5311236168a109ca'});
+    // console.log(data, error, isFetching, 'data.....');
+
     return (
         <ParentContainer>
             <CustomHeader title={strings.login.signup} showBack={true} />
@@ -51,13 +62,18 @@ const SignUp: React.FC = () => {
                         setFieldValue('gender', option.key);
                     }}
                 />
+
                 <CustomInput
                     label={strings.signUp.firstName}
                     onChangeText={text => setFieldValue('firstName', text)}
                     handleBlur={() => handleBlur('firstName')}
                     value={formik.values.firstName}
                     placeholder={strings.signUp.firstName}
-                    errorMessage={formik.errors.firstName ? formik.errors.firstName : ''}
+                    errorMessage={
+                        formik.errors.firstName && formik.touched?.firstName
+                            ? formik.errors.firstName
+                            : ' '
+                    }
                 />
                 <CustomInput
                     label={strings.signUp.lastName}
@@ -65,7 +81,11 @@ const SignUp: React.FC = () => {
                     handleBlur={() => handleBlur('lastName')}
                     value={formik.values.lastName}
                     placeholder={strings.signUp.lastName}
-                    errorMessage={formik.errors.lastName ? formik.errors.lastName : ''}
+                    errorMessage={
+                        formik.errors.lastName && formik.touched?.lastName
+                            ? formik.errors.lastName
+                            : ''
+                    }
                 />
 
                 <CustomInput
@@ -74,15 +94,20 @@ const SignUp: React.FC = () => {
                     handleBlur={() => handleBlur('email')}
                     value={formik.values.email}
                     placeholder={strings.signUp.email}
-                    errorMessage={formik.errors.email ? formik.errors.email : ''}
+                    errorMessage={
+                        formik.errors.email && formik.touched?.email ? formik.errors.email : ' '
+                    }
                 />
-                <CustomInput
+                <DateTimePicker
                     label={strings.signUp.dateOfBirth}
                     onChangeText={text => setFieldValue('dateOfBirth', text)}
-                    handleBlur={() => handleBlur('dateOfBirth')}
                     value={formik.values.dateOfBirth}
+                    handleBlur={() => {
+                        console.log('blurrrr');
+                        handleBlur('dateOfBirth');
+                    }}
                     placeholder={strings.signUp.dateOfBirth}
-                    errorMessage={formik.errors.dateOfBirth ? formik.errors.dateOfBirth : ''}
+                    errorMessage={formik.errors.dateOfBirth ? formik.errors.dateOfBirth : ' '}
                 />
                 <CustomInput
                     label={strings.signUp.phone}
@@ -90,7 +115,9 @@ const SignUp: React.FC = () => {
                     handleBlur={() => handleBlur('phone')}
                     value={formik.values.phone}
                     placeholder={strings.signUp.phone}
-                    errorMessage={formik.errors.phone ? formik.errors.phone : ''}
+                    errorMessage={
+                        formik.errors.phone && formik.touched?.phone ? formik.errors.phone : ' '
+                    }
                 />
                 <CustomInput
                     label={strings.signUp.picture}
@@ -98,12 +125,22 @@ const SignUp: React.FC = () => {
                     handleBlur={() => handleBlur('picture')}
                     value={formik.values.picture}
                     placeholder={strings.signUp.picture}
-                    errorMessage={formik.errors.picture ? formik.errors.picture : ''}
+                    errorMessage={
+                        formik.errors.picture && formik.touched?.picture
+                            ? formik.errors.picture
+                            : ' '
+                    }
                 />
                 <CustomButton
                     customContainerStyle={{marginTop: 20}}
                     title={strings.login.signup}
-                    onBtnPress={() => formik.handleSubmit()}
+                    onBtnPress={async () => {
+                        // await createUser({
+                        //     name: 'hi',
+                        // });
+                        //  onSignUpPress({});
+                        formik.handleSubmit();
+                    }}
                 />
             </View>
         </ParentContainer>

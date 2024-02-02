@@ -4,16 +4,16 @@
  *
  * @format
  */
-import GLOBAL_THEME from "@theme/index";
-import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import { setMessage } from "src/redux/slices/userSlice";
-const { COLORS } = GLOBAL_THEME;
+import GLOBAL_THEME from '@theme/index';
+import React, {useEffect, useState} from 'react';
+import {ActivityIndicator, Text, View} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {setMessage} from 'src/redux/slices/userSlice';
+const {COLORS} = GLOBAL_THEME;
 // import CustomHeader from '@components/common/CustomHeader';
 
-import { useLazyLoginQuery, useSignUpMutation } from "@/redux/service/authService";
-import styles from "./Profile.style";
+import {useLazyLoginQuery, useSignUpMutation} from '@/redux/api/authService';
+import styles from './Profile.style';
 
 type requestBodyType = {
     userId: number;
@@ -22,13 +22,13 @@ type requestBodyType = {
 };
 
 const requestBody: requestBodyType = {
-    title: "foo",
-    body: "bar",
+    title: 'foo',
+    body: 'bar',
     userId: 0,
 };
 function Profile(props): JSX.Element {
     const dispatch = useDispatch();
-    const { message } = useSelector((state: any) => state.user);
+    const {message} = useSelector((state: any) => state.user);
     const [isLoading, setIsLoading] = useState(true);
     const [Login] = useLazyLoginQuery();
 
@@ -36,19 +36,19 @@ function Profile(props): JSX.Element {
         try {
             const response = await Login({});
             setIsLoading(false);
-            console.log("Response ----->", response);
+            console.log('Response ----->', response);
         } catch (error) {
-            console.log("Error ----->", error);
+            console.log('Error ----->', error);
             setIsLoading(false);
         }
     };
 
     useEffect(() => {
         getTodoData();
-        dispatch(setMessage("Update...."));
+        dispatch(setMessage('Update....'));
     }, []);
     useEffect(() => {
-        console.log(message, "UpdateMessageee...");
+        console.log(message, 'UpdateMessageee...');
     }, [message]);
 
     return (
@@ -63,7 +63,7 @@ function Profile(props): JSX.Element {
             /> */}
             {isLoading ? (
                 <ActivityIndicator
-                    size={"large"}
+                    size={'large'}
                     color={COLORS.THEME}
                     style={styles.activityIndicator}
                 />

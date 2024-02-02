@@ -20,6 +20,8 @@ interface MyComponentProps {
     rightIcon?: IconNode;
     errorMessage?: string;
     value: string;
+    editable?: boolean;
+    onInputPress?: () => void;
 }
 
 const CustomInput: React.FC<MyComponentProps> = props => {
@@ -32,6 +34,8 @@ const CustomInput: React.FC<MyComponentProps> = props => {
         errorMessage = '',
         value = '',
         handleBlur,
+        editable = true,
+        onInputPress,
     } = props;
     return (
         <Input
@@ -53,6 +57,8 @@ const CustomInput: React.FC<MyComponentProps> = props => {
             rightIconContainerStyle={{}}
             value={value}
             onBlur={handleBlur}
+            editable={editable}
+            onPressIn={onInputPress}
         />
     );
 };

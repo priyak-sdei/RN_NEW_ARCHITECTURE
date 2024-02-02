@@ -24,7 +24,7 @@ import {
     useAllPostQuery,
     useCurrentPostMutation,
     useUpdateCurrentPostMutation,
-} from '@/redux/service/userService';
+} from '@/redux/api/userService';
 
 const leftIcon = (
     <Icon

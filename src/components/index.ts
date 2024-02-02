@@ -10,6 +10,7 @@ import AppleSignIn from '@components/common/SocialSignIn/apple/AppleSignin';
 import SocialSignIn from '@components/screens/Login/SocialSignIn';
 import DropDown from '@components/common/DropDown/DropDown';
 import DropDownPicker from '@components/common/DropDownPicker/DropDownPicker';
+import DateTimePicker from '@components/common/DateTimePicker/DateTimePicker';
 export {
     Loader,
     ParentContainer,
@@ -23,4 +24,5 @@ export {
     SocialSignIn,
     DropDown,
     DropDownPicker,
+    DateTimePicker,
 };

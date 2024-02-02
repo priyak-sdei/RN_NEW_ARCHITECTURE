@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {clientApi} from '../service/clientApi';
-import {userService} from '../service/userService';
+import {clientApi} from '../api/clientApi';
+import {userService} from '../api/userService';
 // Access the list of injectEndpoints values in slices
 
 const userSlice = createSlice({

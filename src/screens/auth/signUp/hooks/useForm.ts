@@ -32,10 +32,12 @@ const useForm = ({initialValues, onSubmit}: UseFormProps) => {
     });
 
     const setFieldValue = (field: keyof SignUpFormValues, value: string) => {
+        // console.log(formik, 'formik.....');
         formik.setFieldValue(field, value);
     };
     const handleBlur = (field: keyof SignUpFormValues) => {
         formik.handleBlur(field);
+        formik.setTouched({[field]: true});
     };
 
     return {

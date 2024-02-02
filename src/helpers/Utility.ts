@@ -1,7 +1,17 @@
-import { Alert } from 'react-native';
+import {Alert} from 'react-native';
+import Toast from 'react-native-toast-message';
+
+const showToast = (message, type = 'success', title = '') => {
+    Toast.show({
+        type,
+        text1: title,
+        text2: message,
+        position: 'top',
+    });
+};
 
 const alertWithoutPromise = (title = '', message, btn1Text = 'Ok') => {
-    Alert.alert(title, message, [{ text: btn1Text }], { cancelable: false });
+    Alert.alert(title, message, [{text: btn1Text}], {cancelable: false});
 };
 
 const alertWithOneBtn = (title, message, btn1Text) => {
@@ -15,7 +25,7 @@ const alertWithOneBtn = (title, message, btn1Text) => {
                     onPress: () => resolve(false),
                 },
             ],
-            { cancelable: false },
+            {cancelable: false},
         );
     });
 };
@@ -35,7 +45,7 @@ const alertWithTwoBtn = (title, message, btn1Text, btn2Text) => {
                     onPress: () => resolve(true),
                 },
             ],
-            { cancelable: false },
+            {cancelable: false},
         );
     });
 };
@@ -56,7 +66,7 @@ const alertWithTwoBtnCancel = (title, message, btn1Text, btn2Text) => {
                     onPress: () => resolve(true),
                 },
             ],
-            { cancelable: false },
+            {cancelable: false},
         );
     });
 };
@@ -67,4 +77,11 @@ function getFormData(object) {
     Object.keys(object).forEach(key => formData.append(key, object[key]));
     return formData;
 }
-export { alertWithoutPromise, alertWithTwoBtn, alertWithOneBtn, alertWithTwoBtnCancel, getFormData };
+export {
+    alertWithoutPromise,
+    alertWithTwoBtn,
+    alertWithOneBtn,
+    alertWithTwoBtnCancel,
+    getFormData,
+    showToast,
+};
