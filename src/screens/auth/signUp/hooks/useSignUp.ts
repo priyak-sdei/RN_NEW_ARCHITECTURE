@@ -8,7 +8,8 @@ interface ErrorResponse {
 }
 
 export const useSignUp = () => {
-    const [createUser, {isLoading, error: createUserError}] = useCreateUserMutation();
+    const [createUser, {isLoading, error: createUserError, isSuccess, data, status}] =
+        useCreateUserMutation();
 
     useEffect(() => {
         if (!isLoading && createUserError) {
@@ -19,7 +20,15 @@ export const useSignUp = () => {
                 }
             }
         }
+        console.log(createUserError, 'createUserError...');
     }, [isLoading, createUserError]);
+
+    useEffect(() => {
+        console.log(isSuccess, 'isSuccess...', data, status);
+        if (!isLoading && isSuccess) {
+            showToast('User created succesfully');
+        }
+    }, [isSuccess]);
 
     const onSignUpPress = async values => {
         console.log(values, 'values......');
