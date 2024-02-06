@@ -9,6 +9,7 @@ const COLORS: {[key: string]: string} = {
     blue: '#295DA1',
     ERROR_RED: '#FC4040',
     FB_COLOR: '#316FF6',
+    MAROON: '#800000',
 };
 
 export default COLORS;

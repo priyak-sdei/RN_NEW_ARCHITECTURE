@@ -11,6 +11,8 @@ import SocialSignIn from '@components/screens/Login/SocialSignIn';
 import DropDown from '@components/common/DropDown/DropDown';
 import DropDownPicker from '@components/common/DropDownPicker/DropDownPicker';
 import DateTimePicker from '@components/common/DateTimePicker/DateTimePicker';
+import CustomActionOption from '@components/common/CustomActionOption/CustomActionOption';
+import {BorderSeparator} from '@components/common/BorderSeparator/BorderSeparator';
 export {
     Loader,
     ParentContainer,
@@ -25,4 +27,6 @@ export {
     DropDown,
     DropDownPicker,
     DateTimePicker,
+    BorderSeparator,
+    CustomActionOption,
 };

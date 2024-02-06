@@ -1,23 +1,13 @@
-import {
-    CustomButton,
-    CustomHeader,
-    CustomInput,
-    DateTimePicker,
-    DropDown,
-    ParentContainer,
-} from '@components/index';
+import {CustomButton, CustomHeader, CustomInput, ParentContainer} from '@components/index';
 import GLOBALS from '@constants/index';
 import {strings} from '@localization/Localization';
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View} from 'react-native';
+import {SheetManager, SheetProvider} from 'react-native-actions-sheet';
 import styles from './SignUp.styles';
+import ProfileActionSheet from './component/ProfileActionSheet';
 import useForm from './hooks/useForm';
 import {useSignUp} from './hooks/useSignUp';
-import {
-    useGetAllUserQuery,
-    useGetUsersByIdQuery,
-    useCreateUserMutation,
-} from '@/redux/api/userAPIs/userAPI';
 const {DATA} = GLOBALS;
 const SignUp: React.FC = () => {
     const {onSignUpPress} = useSignUp();
@@ -46,7 +36,7 @@ const SignUp: React.FC = () => {
         <ParentContainer>
             <CustomHeader title={strings.login.signup} showBack={true} />
             <View style={styles.mainContainer}>
-                <DropDown
+                {/* <DropDown
                     options={DATA.TITLE}
                     label={strings.signUp.title}
                     selectedValue={formik.values.title}
@@ -118,7 +108,7 @@ const SignUp: React.FC = () => {
                     errorMessage={
                         formik.errors.phone && formik.touched?.phone ? formik.errors.phone : ' '
                     }
-                />
+                /> */}
                 <CustomInput
                     label={strings.signUp.picture}
                     onChangeText={text => setFieldValue('picture', text)}
@@ -135,14 +125,22 @@ const SignUp: React.FC = () => {
                     customContainerStyle={{marginTop: 20}}
                     title={strings.login.signup}
                     onBtnPress={async () => {
-                        // await createUser({
-                        //     name: 'hi',
-                        // });
-                        //  onSignUpPress({});
-                        formik.handleSubmit();
+                        SheetManager.show('ProfileActionSheet', {
+                            payload: {
+                                onOptionSelect: type => {
+                                    console.log(SheetManager, 'SheetManager');
+                                    //  SheetManager.hideAll();
+                                    console.log(type, 'Selected');
+                                },
+                            },
+                        });
+                        //formik.handleSubmit();
                     }}
                 />
             </View>
+            <SheetProvider>
+                <ProfileActionSheet sheetId={'ProfileActionSheet'} />
+            </SheetProvider>
         </ParentContainer>
     );
 };
