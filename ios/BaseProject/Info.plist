@@ -62,6 +62,12 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need access to Upload Profile image</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Our app requires access to camera to upload profile picture</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Access to Microphone</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-Black.ttf</string>

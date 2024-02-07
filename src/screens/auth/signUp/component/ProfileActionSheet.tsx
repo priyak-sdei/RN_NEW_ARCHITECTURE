@@ -11,11 +11,11 @@ import {useProfile} from '../hooks/useProfile';
 const actionOptions = [
     {
         title: 'Camera',
-        id: '',
+        id: 1,
     },
     {
         title: 'Gallery',
-        id: '',
+        id: 2,
     },
 ];
 declare module 'react-native-actions-sheet' {
@@ -34,31 +34,23 @@ const ProfileActionSheet: React.FC<SheetProps<'ProfileActionSheet'>> = props => 
     console.log(props, 'props..');
     const {onActionOptionSelect} = useProfile();
     const actionSheetRef = useRef(null);
-    const {payload} = props;
+
+    const renderItem = ({item}: {item: any}) => (
+        <CustomActionOption
+            option={item.title}
+            onPress={async () => {
+                await SheetManager.hide(props.sheetId);
+                onActionOptionSelect(item.id);
+                // setTimeout(() => {
+                //     onActionOptionSelect('camera');
+                // }, 1000);
+            }}
+        />
+    );
     return (
         <ActionSheet id={props.sheetId} ref={actionSheetRef}>
             <View>
-                <FlatList
-                    data={actionOptions}
-                    key={'id'}
-                    renderItem={({item, index}) => {
-                        return (
-                            <CustomActionOption
-                                option={item.title}
-                                onPress={() => {
-                                    SheetManager.hide(props.sheetId);
-                                    onActionOptionSelect('camera');
-                                    // if (payload) payload.onOptionSelect('camera');
-                                }}
-                            />
-                        );
-                    }}
-                />
-
-                <CustomActionOption
-                    option={'Gallery'}
-                    onPress={() => onActionOptionSelect('gallery')}
-                />
+                <FlatList data={actionOptions} key={'id'} renderItem={renderItem} />
             </View>
         </ActionSheet>
     );

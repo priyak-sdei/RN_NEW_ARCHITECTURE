@@ -49,4 +49,26 @@ export const en = {
         require: 'Field is required',
         invalid_email: 'Please enter valid mail',
     },
+    permission_text: {
+        permission_error: 'Permission Error',
+        permission_decline: 'User declined messaging permissions :(',
+        allow_text: 'Please Allow to procced further',
+        not_allow: "Don't Allow",
+        allow: 'Allow',
+        logout_text: 'Are you sure you want to logout?',
+        yes_text: 'Yes',
+        no_text: 'No',
+        exit_txt: 'Are you sure you want to exit the application?',
+        camera_denied:
+            'Unable to complete task without camera permission. Click here to enable CAMERA permission from Settings',
+        push_denied:
+            'You have denied request to receive push notification. Click here to enable PUSH permission from Settings to recieve all the updates regarding your patient, schedules etc.',
+        location_denied:
+            'You have denied request to access location. Click here to enable LOCATION permission from Settings.',
+        micro_camera_denied:
+            'You have denied request to access Camera/Microphone. Click here to enable Camera/Microphone permission from Settings.',
+
+        unable_to_fetch_location:
+            'Unable to fetch location. Kindly go in device settings and enable location services.',
+    },
 };

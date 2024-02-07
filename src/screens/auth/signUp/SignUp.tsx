@@ -1,4 +1,10 @@
-import {CustomButton, CustomHeader, CustomInput, ParentContainer} from '@components/index';
+import {
+    CustomButton,
+    CustomHeader,
+    CustomInput,
+    ParentContainer,
+    UserProfile,
+} from '@components/index';
 import GLOBALS from '@constants/index';
 import {strings} from '@localization/Localization';
 import React from 'react';
@@ -36,6 +42,7 @@ const SignUp: React.FC = () => {
         <ParentContainer>
             <CustomHeader title={strings.login.signup} showBack={true} />
             <View style={styles.mainContainer}>
+                <UserProfile />
                 {/* <DropDown
                     options={DATA.TITLE}
                     label={strings.signUp.title}
