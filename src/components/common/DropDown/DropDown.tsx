@@ -1,9 +1,9 @@
-import {Icon} from '@rneui/themed';
-import GLOBAL_THEME from '@theme/index';
-import React, {useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import DropDownPicker from '../DropDownPicker/DropDownPicker';
-import styles from './Dropdown.styles';
+import {Icon} from "@rneui/themed";
+import GLOBAL_THEME from "@theme/index";
+import React, {useState} from "react";
+import {Text, TouchableOpacity, View} from "react-native";
+import DropDownPicker from "../DropDownPicker/DropDownPicker";
+import styles from "./Dropdown.styles";
 const {COLORS} = GLOBAL_THEME;
 interface DropDownProps {
     label: string;
@@ -17,7 +17,7 @@ interface dropDownOptions {
 }
 
 const DropDown: React.FC<DropDownProps> = props => {
-    const {label = '', onOptionSelect = () => {}, options = []} = props;
+    const {label = "", onOptionSelect, options = []} = props;
     const [showOptions, setShowOptions] = useState(false);
     const [selectedItem, setSelectedItem] = useState({} as {key: string});
     return (

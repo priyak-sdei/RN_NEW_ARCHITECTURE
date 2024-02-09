@@ -1,7 +1,7 @@
-import * as React from 'react';
-import {IconNode, Input} from '@rneui/base';
-import styles from './CustomInput.styles';
-import GLOBAL_THEME from '@theme/index';
+import * as React from "react";
+import {IconNode, Input} from "@rneui/base";
+import styles from "./CustomInput.styles";
+import GLOBAL_THEME from "@theme/index";
 const {COLORS} = GLOBAL_THEME;
 /**
 Type Safety: Interfaces help provide type safety in your code. TypeScript will check that objects you pass
@@ -14,7 +14,7 @@ React Native to maintain clean and well-typed code.
 interface MyComponentProps {
     label?: string;
     placeholder?: string;
-    onChangeText: (txt) => void; // Callback function prop
+    onChangeText?: (txt) => void; // Callback function prop
     handleBlur?: () => void; // Optional function prop
     leftIcon?: IconNode;
     rightIcon?: IconNode;
@@ -26,13 +26,13 @@ interface MyComponentProps {
 
 const CustomInput: React.FC<MyComponentProps> = props => {
     const {
-        label = '',
-        placeholder = '',
+        label = "",
+        placeholder = "",
         onChangeText,
         leftIcon = false,
         rightIcon = false,
-        errorMessage = '',
-        value = '',
+        errorMessage = "",
+        value = "",
         handleBlur,
         editable = true,
         onInputPress,
@@ -51,7 +51,11 @@ const CustomInput: React.FC<MyComponentProps> = props => {
             labelProps={{}}
             leftIcon={leftIcon}
             leftIconContainerStyle={styles.leftIconContainerStyle}
-            onChangeText={txt => onChangeText(txt)}
+            onChangeText={txt => {
+                if (onChangeText) {
+                    onChangeText(txt);
+                }
+            }}
             placeholder={placeholder}
             rightIcon={rightIcon}
             rightIconContainerStyle={{}}

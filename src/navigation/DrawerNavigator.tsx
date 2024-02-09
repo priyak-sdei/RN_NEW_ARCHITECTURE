@@ -1,8 +1,8 @@
-import React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import TabNavigator from './TabNavigator';
-import CustomDrawerContent from './CustomDrawerContent';
-import {Home, Profile} from '@screens/index'
+import React from "react";
+import {createDrawerNavigator} from "@react-navigation/drawer";
+import TabNavigator from "./TabNavigator";
+import CustomDrawerContent from "./CustomDrawerContent";
+import {Home, Profile} from "@screens/index"
 
 const Drawer = createDrawerNavigator();
 

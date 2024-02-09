@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet} from "react-native";
 
-import GLOBAL_THEME from '@theme/index';
+import GLOBAL_THEME from "@theme/index";
 const {COLORS, FONTS, moderateScale, SPACING} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
@@ -8,30 +8,30 @@ const styles = StyleSheet.create({
         color: COLORS.BLACK,
     },
     forgotContainer: {
-        alignItems: 'flex-end',
-        paddingBottom: moderateScale(15),
+        alignItems: "flex-end",
         marginTop: moderateScale(-20),
+        paddingBottom: moderateScale(15),
     },
     innerContainer: {
-        paddingVertical: moderateScale(SPACING.l),
-        marginTop: moderateScale(SPACING.l),
-        justifyContent: 'flex-end',
         flex: 1,
+        justifyContent: "flex-end",
+        marginTop: moderateScale(SPACING.l),
+        paddingVertical: moderateScale(SPACING.l),
+    },
+    logoStyle: {
+        alignSelf: "center",
+        height: moderateScale(120),
+        marginBottom: "20%",
+        width: moderateScale(120),
     },
     mainContainer: {
         flex: 1,
         padding: moderateScale(10),
     },
-    logoStyle: {
-        height: moderateScale(120),
-        width: moderateScale(120),
-        alignSelf: 'center',
-        marginBottom: '20%',
-    },
     signUpContainer: {
-        justifyContent: 'center',
+        flexDirection: "row",
+        justifyContent: "center",
         paddingBottom: moderateScale(0),
-        flexDirection: 'row',
     },
 });
 

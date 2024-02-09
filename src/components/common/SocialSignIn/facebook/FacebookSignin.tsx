@@ -1,12 +1,12 @@
-import {CustomButton} from '@components/index';
-import {strings} from '@localization/Localization';
-import {Icon} from '@rneui/themed';
-import COLORS from '@theme/colors';
-import {moderateScale} from '@theme/common';
-import React from 'react';
-import {View} from 'react-native';
-import {LoginManager, Profile} from 'react-native-fbsdk-next';
-import {styles} from './FacebookSignin.styles';
+import {CustomButton} from "@components/index";
+import {strings} from "@localization/Localization";
+import {Icon} from "@rneui/themed";
+import COLORS from "@theme/colors";
+import {moderateScale} from "@theme/common";
+import React from "react";
+import {View} from "react-native";
+import {LoginManager, Profile} from "react-native-fbsdk-next";
+import {styles} from "./FacebookSignin.styles";
 const signInIcon = (
     <Icon name="facebook" type="Entypo" color={COLORS.WHITE} size={moderateScale(25)} />
 );
@@ -17,15 +17,15 @@ const FacebookSignIn: React.FC<FacebookSignInProps> = ({onSignInSuccess}) => {
     /**Handle Sign In button click */
     const signIn = async () => {
         try {
-            const permissionStatus = await LoginManager.logInWithPermissions(['public_profile']);
+            const permissionStatus = await LoginManager.logInWithPermissions(["public_profile"]);
             if (permissionStatus.isCancelled) {
-                console.log('Login cancelled');
+                console.log("Login cancelled");
             } else {
                 const userInfo = await Profile.getCurrentProfile();
                 handleSignInSuccess(userInfo);
             }
         } catch (error) {
-            console.log('Login fail with error: ' + error);
+            console.log("Login fail with error: " + error);
         }
     };
 

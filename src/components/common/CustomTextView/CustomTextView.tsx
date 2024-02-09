@@ -1,8 +1,8 @@
-import {IconNode} from '@rneui/base';
-import {Text} from '@rneui/themed';
-import * as React from 'react';
-import {StyleProp, ViewStyle} from 'react-native';
-import {styles} from './CustomTextView.styles';
+import {IconNode} from "@rneui/base";
+import {Text} from "@rneui/themed";
+import * as React from "react";
+import {StyleProp, ViewStyle} from "react-native";
+import {styles} from "./CustomTextView.styles";
 interface MyComponentProps {
     customh3Style?: object;
     customTextStyle?: object;
@@ -13,7 +13,7 @@ interface MyComponentProps {
 }
 
 const CustomTextView: React.FC<MyComponentProps> = props => {
-    const {text = '', customh3Style = {}, customTextStyle = {}, attr = {}} = props;
+    const {text = "", customh3Style = {}, customTextStyle = {}, attr = {}} = props;
 
     return (
         <Text

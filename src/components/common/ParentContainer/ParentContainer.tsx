@@ -1,8 +1,8 @@
-import React from 'react';
-import {KeyboardAvoidingView, Platform, View} from 'react-native';
-import {Loader} from '../..';
-import {styles} from './ParentContainer.styles';
-
+import React from "react";
+import {KeyboardAvoidingView, Platform, View} from "react-native";
+import {Loader} from "../..";
+import {styles} from "./ParentContainer.styles";
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 export const ParentContainer = props => {
     const {isLoading = true, children, style, keyboardAvoidingView, ...attributes} = props;
     return (
@@ -13,13 +13,18 @@ export const ParentContainer = props => {
                 <Loader loading={isLoading ? isLoading : false} />
             </View>} */}
             {keyboardAvoidingView === true ? (
-                <KeyboardAvoidingView
-                    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                    keyboardVerticalOffset={170}
-                    style={styles.keyboardAvoidingContainer}>
+                <KeyboardAwareScrollView
+                    enableAutomaticScroll={true}
+                    contentContainerStyle={styles.keyboardAvoidingContainer}>
                     {children}
-                </KeyboardAvoidingView>
+                </KeyboardAwareScrollView>
             ) : (
+                // <KeyboardAvoidingView
+                //     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                //     keyboardVerticalOffset={170}
+                //     style={styles.keyboardAvoidingContainer}>
+                //     {children}
+                // </KeyboardAvoidingView>
                 children
             )}
         </View>

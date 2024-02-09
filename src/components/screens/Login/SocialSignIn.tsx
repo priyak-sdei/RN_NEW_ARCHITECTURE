@@ -1,9 +1,9 @@
-import {AppleSignIn, FacebookSignIn, GoogleSignIn} from '@components/index';
-import {User} from '@react-native-google-signin/google-signin';
-import {AppleAuthRequestResponse} from '@type/index';
-import React from 'react';
-import {View} from 'react-native';
-import {ProfileMap} from 'react-native-fbsdk-next';
+import {AppleSignIn, FacebookSignIn, GoogleSignIn} from "@components/index";
+import {User} from "@react-native-google-signin/google-signin";
+import {AppleAuthRequestResponse} from "@type/index";
+import React from "react";
+import {View} from "react-native";
+import {ProfileMap} from "react-native-fbsdk-next";
 interface SocialSignInProps {
     onFbSuccess: (userInfo: ProfileMap) => void;
     onGoogleSuccess: (userInfo: User) => void;

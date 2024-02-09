@@ -1,1 +1,1 @@
-export * from '@type/Login';
+export * from "@type/Login";

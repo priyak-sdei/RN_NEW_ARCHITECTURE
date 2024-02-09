@@ -1,30 +1,30 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet} from "react-native";
 
-import GLOBAL_THEME from '@theme/index';
+import GLOBAL_THEME from "@theme/index";
 const {COLORS, FONTS, moderateScale, SPACING} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
     container: {
-        borderWidth: moderateScale(0.5),
-        borderRadius: moderateScale(6),
         borderColor: COLORS.GRAY_LINE,
-        paddingVertical: moderateScale(SPACING.xs),
-        paddingHorizontal: moderateScale(SPACING.xxs),
-        marginVertical: moderateScale(SPACING.xs),
+        borderRadius: moderateScale(6),
+        borderWidth: moderateScale(0.5),
         marginHorizontal: moderateScale(SPACING.xxs),
+        marginVertical: moderateScale(SPACING.xs),
+        paddingHorizontal: moderateScale(SPACING.xxs),
+        paddingVertical: moderateScale(SPACING.xs),
     },
     innerContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-between",
     },
     // groupContainer: {
     //     flexDirection: 'row',
     //     alignItems: 'center',
     // },
     labelStyle: {
-        fontFamily: FONTS.SEMI_BOLD,
         color: COLORS.THEME,
+        fontFamily: FONTS.SEMI_BOLD,
         fontSize: moderateScale(SPACING.s),
     },
     // selectedTextStyle: {

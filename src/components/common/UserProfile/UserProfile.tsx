@@ -1,23 +1,30 @@
-import React from 'react';
-import {View} from 'react-native';
-import {styles} from './UserProfile.styles';
-import {Avatar} from '@rneui/themed';
+import {Avatar} from "@rneui/themed";
+import React from "react";
+import {View} from "react-native";
+import {styles} from "./UserProfile.styles";
 
 interface ProfileProps {
     image_url?: string;
     default_txt?: string;
+    onBtnPress?: () => void;
 }
 
 const UserProfile: React.FC<ProfileProps> = props => {
-    const {image_url = 'https://randomuser.me/api/portraits/men/36.jpg'} = props;
+    console.log(props, "props..");
+    const {
+        image_url = "https://randomuser.me/api/portraits/men/36.jpg",
+        onBtnPress,
+        default_txt = "",
+    } = props;
     return (
-        <View style={[styles.container]}>
+        <View style={styles.container}>
             <Avatar
-                size={'large'}
+                onPress={onBtnPress}
+                size={"large"}
                 rounded
-                title="Rd"
-                containerStyle={{backgroundColor: 'blue'}}
-                source={{uri: image_url}}
+                title={default_txt}
+                containerStyle={styles.profileContainer}
+                source={{uri: image_url ? image_url : undefined}}
             />
         </View>
     );

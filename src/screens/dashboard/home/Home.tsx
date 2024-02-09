@@ -4,40 +4,40 @@
  *
  * @format
  */
-import {strings} from '@localization/Localization';
-import React, {useEffect} from 'react';
-import {View, Text, Alert, NativeModules} from 'react-native';
-import GLOBAL_THEME from '@theme/index';
-import styles from './Home.style';
-import CustomButton from '@components/common/CustomButton';
-import {StackParamList} from '@constants/index';
+import {strings} from "@localization/Localization";
+import React, {useEffect} from "react";
+import {View, Text, Alert, NativeModules} from "react-native";
+import GLOBAL_THEME from "@theme/index";
+import styles from "./Home.style";
+import CustomButton from "@components/common/CustomButton";
+import {StackParamList} from "@constants/index";
 const {COLORS, FONTS, SPACING, moderateScale} = GLOBAL_THEME;
-import {RouteProp, useRoute} from '@react-navigation/native';
+import {RouteProp, useRoute} from "@react-navigation/native";
 
-type HomeProp = RouteProp<StackParamList, 'Home'>;
+type HomeProp = RouteProp<StackParamList, "Home">;
 
 function Home(props): JSX.Element {
     const route = useRoute<HomeProp>();
-    console.log(route, 'route.........');
+    console.log(route, "route.........");
 
     const {CustomModule} = NativeModules;
     const buttonsTitle = [
         {
             id: 1,
-            title: 'Simple Function',
+            title: "Simple Function",
         },
         {
             id: 2,
-            title: 'Function With Callback',
+            title: "Function With Callback",
         },
         {
             id: 3,
 
-            title: 'Function With Arguments',
+            title: "Function With Arguments",
         },
         {
             id: 4,
-            title: 'Function With Promise',
+            title: "Function With Promise",
         },
     ];
 
@@ -49,7 +49,7 @@ function Home(props): JSX.Element {
                 Alert.alert(result);
             });
         } else if (index === 2) {
-            CustomModule.simpleMethodWithParams('User', (result: any) => {
+            CustomModule.simpleMethodWithParams("User", (result: any) => {
                 Alert.alert(result);
             });
         } else {
@@ -58,7 +58,7 @@ function Home(props): JSX.Element {
         }
     };
     useEffect(() => {
-        console.log('COLORS', COLORS);
+        console.log("COLORS", COLORS);
         //  props.navigation.openDrawer();
     }, []);
 
@@ -71,11 +71,7 @@ function Home(props): JSX.Element {
                     <CustomButton onClick={() => onButtonClick(index)} label={item.title} />
                 </View>
             ))}
-            <CustomButton
-                onClick={() => CustomModule.NativeView()}
-                label={'Go in Native Screen'}
-                additionalStyle={{width: '90%'}}
-            />
+            <CustomButton onClick={() => CustomModule.NativeView()} label={"Go in Native Screen"} />
         </View>
     );
 }

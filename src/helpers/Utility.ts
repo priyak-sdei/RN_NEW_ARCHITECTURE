@@ -1,16 +1,16 @@
-import {Alert} from 'react-native';
-import Toast from 'react-native-toast-message';
+import {Alert} from "react-native";
+import Toast from "react-native-toast-message";
 
-const showToast = (message, type = 'success', title = '') => {
+const showToast = (message, type = "success", title = "") => {
     Toast.show({
         type,
         text1: title,
         text2: message,
-        position: 'top',
+        position: "top",
     });
 };
 
-const alertWithoutPromise = (title = '', message, btn1Text = 'Ok') => {
+const alertWithoutPromise = (title = "", message, btn1Text = "Ok") => {
     Alert.alert(title, message, [{text: btn1Text}], {cancelable: false});
 };
 
@@ -59,7 +59,7 @@ const alertWithTwoBtnCancel = (title, message, btn1Text, btn2Text) => {
                 {
                     text: btn1Text,
                     onPress: () => resolve(false),
-                    style: 'cancel',
+                    style: "cancel",
                 },
                 {
                     text: btn2Text,

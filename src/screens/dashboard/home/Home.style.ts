@@ -6,15 +6,15 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
     },
+    buttonContainer: {
+        marginBottom: 10,
+        width: "90%"
+    },
     mainContainer: {
         backgroundColor: COLORS.border,
         flex: 1,
         justifyContent: "center",
         marginLeft: moderateScale(SPACING.xl),
-    },
-    buttonContainer: {
-        marginBottom: 10,
-        width: "90%"
     },
 });
 

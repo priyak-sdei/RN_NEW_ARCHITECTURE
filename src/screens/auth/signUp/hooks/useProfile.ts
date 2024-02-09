@@ -1,29 +1,27 @@
-import {useCreateUserMutation} from '@/redux/api/userAPIs/userAPI';
-import {showToast} from '@helpers/Utility';
-import {useEffect} from 'react';
-import * as ImagePicker from 'react-native-image-picker';
-import {selectImageFromLibrary, selectImageFromCamera} from '@helpers/Camera';
-interface ErrorResponse {
-    data?: {
-        error?: string;
-    };
-}
+import {selectImageFromCamera, selectImageFromLibrary} from "@helpers/Camera";
+import {useState} from "react";
+import {Asset} from "react-native-image-picker";
+export const useProfile = ({setUserProfileImage}) => {
+    const [userProfileImg, setProfileImg] = useState<Asset>({});
 
-export const useProfile = () => {
-    useEffect(() => {
-        console.log('UseProfile Hook');
-    }, []);
+    const chooseImageFromLibrary = async () => {
+        const imageResult: Asset[] = await selectImageFromLibrary();
+        console.log(imageResult, "imageResult");
+        setUserProfileImage(imageResult[0].uri);
+        setProfileImg(imageResult[0]);
+    };
 
     const onActionOptionSelect = async type => {
         try {
-            if (type == 1) await selectImageFromCamera();
-            else await selectImageFromLibrary();
+            if (type === 1) await selectImageFromCamera();
+            else await chooseImageFromLibrary();
         } catch (error) {
-            console.error('Error:', error);
+            console.error("Error:", error);
         }
     };
 
     return {
         onActionOptionSelect,
+        profileImg: userProfileImg?.uri ? userProfileImg?.uri : "",
     };
 };

@@ -1,5 +1,5 @@
-import {AppleRequestResponseFullName} from '@invertase/react-native-apple-authentication';
-import {IconNode, Input} from '@rneui/base';
+import {AppleRequestResponseFullName} from "@invertase/react-native-apple-authentication";
+import {IconNode, Input} from "@rneui/base";
 export interface AppleAuthRequestResponse {
     email: string;
     fullName: AppleRequestResponseFullName;

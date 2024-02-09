@@ -4,15 +4,15 @@ import {
     FetchBaseQueryError,
     FetchBaseQueryMeta,
     createApi,
-} from '@reduxjs/toolkit/query/react';
-import {EndpointBuilder} from '@reduxjs/toolkit/dist/query/endpointDefinitions';
+} from "@reduxjs/toolkit/query/react";
+import {EndpointBuilder} from "@reduxjs/toolkit/dist/query/endpointDefinitions";
 
-import {createBaseQuery} from '@helpers/api';
+import {createBaseQuery} from "@helpers/api";
 
 export type RTKBuilderType = EndpointBuilder<
-    BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError, {}, FetchBaseQueryMeta>,
+    BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError, object, FetchBaseQueryMeta>,
     string,
-    'api'
+    "api"
 >;
 
 export const clientApi = createApi({

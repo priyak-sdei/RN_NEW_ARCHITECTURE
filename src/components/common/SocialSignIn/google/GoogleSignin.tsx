@@ -5,14 +5,14 @@ import {
     NativeModuleError,
     User,
     statusCodes,
-} from '@react-native-google-signin/google-signin';
-import React from 'react';
-import {View} from 'react-native';
-import {styles} from './GoogleSignin.styles';
+} from "@react-native-google-signin/google-signin";
+import React from "react";
+import {View} from "react-native";
+import {styles} from "./GoogleSignin.styles";
 
 GoogleSignin.configure({
-    iosClientId: '191749400981-sboe438b8rk5dvhfk66rhkkikvu79gt1.apps.googleusercontent.com',
-    webClientId: '191749400981-hg38o6jkvk04tb5qp7pe94t203v1nf9h.apps.googleusercontent.com', // Replace with your web client ID
+    iosClientId: "191749400981-sboe438b8rk5dvhfk66rhkkikvu79gt1.apps.googleusercontent.com",
+    webClientId: "191749400981-hg38o6jkvk04tb5qp7pe94t203v1nf9h.apps.googleusercontent.com", // Replace with your web client ID
 });
 interface GoogleSignInProps {
     onSignInSuccess: (userInfo: User) => void;
@@ -36,7 +36,7 @@ const GoogleSignIn: React.FC<GoogleSignInProps> = ({onSignInSuccess}) => {
 
     /**Handle sign in errors based on errro code */
     function handleSignInError(error: NativeModuleError): void {
-        console.log(error, 'error...');
+        console.log(error, "error...");
         switch (error.code) {
             case statusCodes.SIGN_IN_CANCELLED:
                 // User cancelled the sign-in process
@@ -49,7 +49,7 @@ const GoogleSignIn: React.FC<GoogleSignInProps> = ({onSignInSuccess}) => {
                 break;
             default:
                 // Some other error
-                console.error('Google Sign-In Error:', error);
+                console.error("Google Sign-In Error:", error);
         }
     }
 

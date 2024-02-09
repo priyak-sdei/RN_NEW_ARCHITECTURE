@@ -6,15 +6,15 @@ type CommonList = {
 };
 const DATA: {[key: string]: Array<CommonList>} = {
     TITLE: [
-        {key: 'mr', value: 'Mr'},
-        {key: 'ms', value: 'Miss'},
-        {key: 'mrs', value: 'Mrs'},
-        {key: 'miss', value: 'Mrs'},
+        {key: "mr", value: "Mr"},
+        {key: "ms", value: "Miss"},
+        {key: "mrs", value: "Mrs"},
+        {key: "miss", value: "Mrs"},
     ],
     GENDER: [
-        {key: 'male', value: 'male'},
-        {key: 'female', value: 'female'},
-        {key: 'other', value: 'other'},
+        {key: "male", value: "male"},
+        {key: "female", value: "female"},
+        {key: "other", value: "other"},
     ],
 };
 

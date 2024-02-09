@@ -1,13 +1,13 @@
-import {IMAGES} from '@assets/images/index';
-import GLOBALS from '@constants/index';
-import {DrawerContentScrollView} from '@react-navigation/drawer';
-import {Avatar, Icon} from '@rneui/themed';
-import React, {useState} from 'react';
-import {Image, Pressable, Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {styles} from './Navigation.style';
+import {IMAGES} from "@assets/images/index";
+import GLOBALS from "@constants/index";
+import {DrawerContentScrollView} from "@react-navigation/drawer";
+import {Avatar, Icon} from "@rneui/themed";
+import React, {useState} from "react";
+import {Image, Pressable, Text, View} from "react-native";
+import {TouchableOpacity} from "react-native-gesture-handler";
+import {styles} from "./Navigation.style";
 const {CONFIG} = GLOBALS;
-import GLOBAL_THEME from '@theme/index';
+import GLOBAL_THEME from "@theme/index";
 const {COLORS, FONTS} = GLOBAL_THEME;
 function CustomDrawerContent(props): JSX.Element {
     const {navigation} = props;
@@ -27,7 +27,7 @@ function CustomDrawerContent(props): JSX.Element {
         });
         setMenuItems(updatedMenu);
         if (menu_item.screen) {
-            navigation.navigate('HomeDrawer', {
+            navigation.navigate("HomeDrawer", {
                 screen: menu_item.screen,
             });
         }
@@ -38,11 +38,11 @@ function CustomDrawerContent(props): JSX.Element {
             index: 1,
             routes: [
                 {
-                    name: 'AuthStack',
+                    name: "AuthStack",
                     state: {
                         routes: [
                             {
-                                name: 'Login',
+                                name: "Login",
                             },
                         ],
                     },
@@ -80,7 +80,7 @@ function CustomDrawerContent(props): JSX.Element {
                     {item.sub_menu.length > 0 && (
                         <Icon
                             size={35}
-                            name={!item.isSelected ? 'chevron-down' : 'chevron-up'}
+                            name={!item.isSelected ? "chevron-down" : "chevron-up"}
                             type="material-community"
                             color="#5D7285"
                         />
@@ -129,9 +129,9 @@ function CustomDrawerContent(props): JSX.Element {
             <TouchableOpacity style={styles.bottomContainer} onPress={() => onLogOutPress()}>
                 <Avatar
                     size="small"
-                    icon={{name: 'logout', type: 'material', color: 'white', size: 20}}
+                    icon={{name: "logout", type: "material", color: "white", size: 20}}
                 />
-                <Text style={[styles.menuItem, {color: COLORS.WHITE}]}>{'Logout'}</Text>
+                <Text style={[styles.menuItem, {color: COLORS.WHITE}]}>{"Logout"}</Text>
             </TouchableOpacity>
         </View>
     );

@@ -1,8 +1,8 @@
-import {IMAGES} from '@assets/images/index';
-import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {BorderSeparator} from '@components/index';
-import {styles} from './CustomActionOption.styles';
+import {IMAGES} from "@assets/images/index";
+import React from "react";
+import {Image, Text, TouchableOpacity, View} from "react-native";
+import {BorderSeparator} from "@components/index";
+import {styles} from "./CustomActionOption.styles";
 interface ActionOptionsProps {
     option: string;
     onPress?: () => void;

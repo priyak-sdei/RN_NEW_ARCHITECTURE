@@ -1,7 +1,7 @@
-import React from 'react';
-import {Home, Login, SignUp} from '@screens/index';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {StackParamList} from '@constants/index';
+import React from "react";
+import {Home, Login, SignUp} from "@screens/index";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {StackParamList} from "@constants/index";
 const AuthStack = createNativeStackNavigator<StackParamList>();
 
 const AuthStackNavigator = () => {

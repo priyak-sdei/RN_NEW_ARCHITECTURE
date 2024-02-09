@@ -1,4 +1,4 @@
-import {IMAGES} from '@assets/images/index';
+import {IMAGES} from "@assets/images/index";
 import {
     CustomButton,
     CustomHeader,
@@ -6,25 +6,25 @@ import {
     CustomTextView,
     ParentContainer,
     SocialSignIn,
-} from '@components/index';
-import {StackParamList} from '@constants/index';
-import {useAuth} from './hooks/useAuth';
-import {strings} from '@localization/Localization';
-import {Icon} from '@rneui/themed';
-import GLOBAL_THEME from '@theme/index';
-import React, {useEffect, useState} from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import styles from './Login.styles';
+} from "@components/index";
+import {StackParamList} from "@constants/index";
+import {useAuth} from "./hooks/useAuth";
+import {strings} from "@localization/Localization";
+import {Icon} from "@rneui/themed";
+import GLOBAL_THEME from "@theme/index";
+import React, {useEffect, useState} from "react";
+import {Image, TouchableOpacity, View} from "react-native";
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
+import styles from "./Login.styles";
 const {COLORS, FONTS, moderateScale} = GLOBAL_THEME;
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useNavigation} from "@react-navigation/native";
+import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 
 import {
     useAllPostQuery,
     useCurrentPostMutation,
     useUpdateCurrentPostMutation,
-} from '@/redux/api/userService';
+} from "@/redux/api/userService";
 
 const leftIcon = (
     <Icon
@@ -44,10 +44,10 @@ function Login(): JSX.Element {
     const [currentPost, {data}] = useCurrentPostMutation();
     const [updateCurrentPost] = useUpdateCurrentPostMutation();
     const {username, password, setUsername, setPassword, onSignInPress} = useAuth();
-    console.log(data, 'data........');
+    console.log(data, "data........");
 
     useEffect(() => {
-        console.log('hiiiii', data);
+        console.log("hiiiii", data);
     }, []);
     return (
         <ParentContainer>
@@ -80,11 +80,10 @@ function Login(): JSX.Element {
                     </TouchableOpacity>
 
                     <CustomButton
-                        customContainerStyle={{marginTop: 20}}
                         title={strings.login.signIn}
                         btnIcon={signInIcon}
                         onBtnPress={async () => {
-                            navigation.navigate('Home');
+                            navigation.navigate("Home");
                             // await updateCurrentPost({
                             //     id: 1,
                             //     title: 'foo',
@@ -97,7 +96,7 @@ function Login(): JSX.Element {
                     <TouchableOpacity
                         style={styles.signUpContainer}
                         onPress={async () => {
-                            navigation.navigate('SignUp');
+                            navigation.navigate("SignUp");
                             // await currentPost({
                             //     id: 1,
                             //     title: 'Meeee',
@@ -114,9 +113,9 @@ function Login(): JSX.Element {
                     </TouchableOpacity>
 
                     <SocialSignIn
-                        onFbSuccess={res => console.log(res, 'res fb')}
-                        onGoogleSuccess={res => console.log(res, 'res onGoogleSuccess')}
-                        onAppleSuccess={res => console.log(res, 'res onAppleSuccess')}
+                        onFbSuccess={res => console.log(res, "res fb")}
+                        onGoogleSuccess={res => console.log(res, "res onGoogleSuccess")}
+                        onAppleSuccess={res => console.log(res, "res onAppleSuccess")}
                     />
                 </View>
             </KeyboardAwareScrollView>

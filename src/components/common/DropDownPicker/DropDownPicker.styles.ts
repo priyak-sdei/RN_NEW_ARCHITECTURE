@@ -1,42 +1,42 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet} from "react-native";
 
-import GLOBAL_THEME from '@theme/index';
+import GLOBAL_THEME from "@theme/index";
 const {COLORS, FONTS, moderateScale} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
-    outer_container: {
-        flex: 1,
-        padding: moderateScale(15),
+    container: {
+        marginTop: moderateScale(20),
     },
     header_container: {
-        flexDirection: 'row',
-        paddingTop: '8%',
-        alignItems: 'center',
+        alignItems: "center",
+        flexDirection: "row",
+        paddingTop: "8%",
     },
     headingTitle: {
         color: COLORS.BLACK,
+        flex: 1,
         fontFamily: FONTS.SEMI_BOLD,
         fontSize: moderateScale(22),
-        padding: moderateScale(5),
-        flex: 1,
         marginLeft: moderateScale(15),
-    },
-    listContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
         padding: moderateScale(5),
-        borderBottomWidth: moderateScale(0.4),
-        borderColor: COLORS.GRAY_LINE,
-        paddingVertical: moderateScale(10),
     },
     labelStyle: {
         color: COLORS.THEME,
         fontFamily: FONTS.SEMI_BOLD,
         fontSize: moderateScale(18),
     },
-    container: {
-        marginTop: moderateScale(20),
+    listContainer: {
+        alignItems: "center",
+        borderBottomWidth: moderateScale(0.4),
+        borderColor: COLORS.GRAY_LINE,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        padding: moderateScale(5),
+        paddingVertical: moderateScale(10),
+    },
+    outer_container: {
+        flex: 1,
+        padding: moderateScale(15),
     },
 });
 
