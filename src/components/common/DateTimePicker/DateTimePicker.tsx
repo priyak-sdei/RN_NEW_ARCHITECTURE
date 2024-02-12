@@ -1,19 +1,10 @@
-import {Icon} from "@rneui/themed";
-import GLOBAL_THEME from "@theme/index";
-import React, {useState} from "react";
-import {Text, TouchableOpacity, View, Button} from "react-native";
-import DatePicker from "react-native-date-picker";
+import {CustomInput} from '@components/index';
+import GLOBAL_THEME from '@theme/index';
+import moment from 'moment';
+import React, {useState} from 'react';
+import {View, Platform} from 'react-native';
+import DatePicker from 'react-native-date-picker';
 const {COLORS} = GLOBAL_THEME;
-import styles from "./DateTimePicker.styles";
-import {
-    CustomButton,
-    CustomHeader,
-    ParentContainer,
-    CustomInput,
-    DropDown,
-} from "@components/index";
-import moment from "moment";
-import {strings} from "@localization/Localization";
 
 interface PickerProps {
     label?: string;
@@ -29,7 +20,7 @@ interface PickerProps {
 }
 
 const DateTimePicker: React.FC<PickerProps> = props => {
-    const {label = "", placeholder = "", onChangeText, errorMessage = "", value = ""} = props;
+    const {label = '', placeholder = '', onChangeText, errorMessage = '', value = ''} = props;
     const [date, setDate] = useState(new Date());
     const [showPicker, setShowPicker] = useState(false);
     return (
@@ -39,8 +30,10 @@ const DateTimePicker: React.FC<PickerProps> = props => {
                 value={value}
                 placeholder={placeholder}
                 errorMessage={errorMessage}
-                editable={false}
-                onInputPress={() => setShowPicker(true)}
+                editable={Platform.OS === 'ios' ? false : true}
+                onInputPress={() => {
+                    setShowPicker(true);
+                }}
             />
             <DatePicker
                 modal
@@ -49,7 +42,7 @@ const DateTimePicker: React.FC<PickerProps> = props => {
                 onConfirm={date => {
                     setShowPicker(false);
                     setDate(date);
-                    onChangeText(moment(date).format("DD/MM/YYYY"));
+                    onChangeText(moment(date).format('DD/MM/YYYY'));
                 }}
                 onCancel={() => {
                     setShowPicker(false);

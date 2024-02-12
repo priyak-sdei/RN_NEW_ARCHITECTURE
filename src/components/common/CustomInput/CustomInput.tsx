@@ -1,7 +1,7 @@
-import * as React from "react";
-import {IconNode, Input} from "@rneui/base";
-import styles from "./CustomInput.styles";
-import GLOBAL_THEME from "@theme/index";
+import * as React from 'react';
+import {IconNode, Input} from '@rneui/base';
+import styles from './CustomInput.styles';
+import GLOBAL_THEME from '@theme/index';
 const {COLORS} = GLOBAL_THEME;
 /**
 Type Safety: Interfaces help provide type safety in your code. TypeScript will check that objects you pass
@@ -26,13 +26,13 @@ interface MyComponentProps {
 
 const CustomInput: React.FC<MyComponentProps> = props => {
     const {
-        label = "",
-        placeholder = "",
+        label = '',
+        placeholder = '',
         onChangeText,
         leftIcon = false,
         rightIcon = false,
-        errorMessage = "",
-        value = "",
+        errorMessage = '',
+        value = '',
         handleBlur,
         editable = true,
         onInputPress,
@@ -62,7 +62,7 @@ const CustomInput: React.FC<MyComponentProps> = props => {
             value={value}
             onBlur={handleBlur}
             editable={editable}
-            onPressIn={onInputPress}
+            onTouchStart={onInputPress}
         />
     );
 };
