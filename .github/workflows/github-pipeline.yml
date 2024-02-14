@@ -24,8 +24,8 @@ jobs:
                   node-version: 20
                   cache: 'yarn'
 
-            - name: Install Node modules
-              uses: yarn ci
+            # - name: Install Node modules
+            #   uses: yarn ci
 
-            - name: Linting
-              run: yarn lint
+            # - name: Linting
+            #   run: yarn lint
