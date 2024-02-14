@@ -1,7 +1,8 @@
 name: Pull Request into Master, Main, Develop and Preprod
 
 on:
-    push:
+    # push:
+    workflow_call:
         branches:
             - 'master'
             - 'develop'
@@ -24,8 +25,13 @@ jobs:
                   node-version: 20
                   cache: 'yarn'
 
-            # - name: Install Node modules
-            #   uses: yarn ci
+            - name: Install Node modules
+              uses: yarn ci
 
-            # - name: Linting
-            #   run: yarn lint
+            - name: Linting
+              run: yarn lint
+    # Second Job
+    build-android:
+        needs: install-and-test
+        uses: ./.github/workflows/build-android.yml
+        secrets: inherit
