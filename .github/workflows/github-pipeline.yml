@@ -7,9 +7,13 @@ on:
             - 'develop'
             - 'preprod'
             - 'main'
+            - 'priya_dev'
 
 jobs:
     #First job
-
     install-and-test:
-    runs-on: ubuntu-latest
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Linting
+              run: yarn lint
