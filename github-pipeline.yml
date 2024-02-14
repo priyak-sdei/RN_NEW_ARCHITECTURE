@@ -1,0 +1,15 @@
+name: Pull Request into Master, Main, Develop and Preprod
+
+on:
+    push:
+        branches:
+            - 'master'
+            - 'develop'
+            - 'preprod'
+            - 'main'
+
+jobs:
+    #First job
+
+    install-and-test:
+    runs-on: ubuntu-latest
