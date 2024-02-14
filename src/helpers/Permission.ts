@@ -57,7 +57,7 @@ export const checkCameraAndMicrophonePermissions = async () => {
 export const checkPermission = (permission: Permission): Promise<boolean> => {
     return new Promise(resolve => {
         try {
-            if (Platform.OS === "ios") {
+            if (Platform.OS === "ios" || Platform.OS === "android") {
                 check(permission).then(status => {
                     console.log(status, "statuses", permission);
                     if (status === RESULTS.GRANTED) resolve(true);
