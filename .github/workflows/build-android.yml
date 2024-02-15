@@ -50,7 +50,7 @@ jobs:
 
             - name: Build Android
               run: |
-                  cd android && ./gradlew bundle${{ if eq(inputs.environment, 'release') }}Release{{ else }}Debug{{ endif }} --no-daemon
+                  cd android && ./gradlew bundleRelease --no-daemon
 
             - run: pwd
 
