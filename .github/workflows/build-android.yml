@@ -7,13 +7,7 @@ on:
                 required: false
                 type: string
                 default: 'release'
-            publish:
-                required: false
-                type: boolean
-                description: Publish to Appcenter
         secrets:
-            APPCENTER_TOKEN_ANDROID:
-                required: true
             ANDROID_KEYSTORE:
                 required: true
             ANDROID_KEY_ALIAS:
@@ -37,13 +31,13 @@ jobs:
               run: yarn ci
 
             - name: Cache Gradle Wrapper
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: ~/.gradle/wrapper
                   key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
 
             - name: Cache Gradle Dependencies
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: ~/.gradle/caches
                   key: ${{ runner.os }}-gradle-caches-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}

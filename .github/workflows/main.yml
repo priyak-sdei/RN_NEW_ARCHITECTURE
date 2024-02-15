@@ -1,8 +1,7 @@
 name: Pull Request into Master, Main, Develop and Preprod
 
 on:
-    # push:
-    workflow_call:
+    push:
         branches:
             - 'master'
             - 'develop'
