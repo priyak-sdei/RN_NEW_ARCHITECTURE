@@ -1,4 +1,4 @@
-name: Pull Request into Master, Main, Develop and Preprod
+name: Pull Request into Master, Main, Develop, and Preprod
 
 on:
     push:
@@ -24,7 +24,10 @@ jobs:
                   cache: 'yarn'
 
             - name: Install Node modules
-              uses: yarn ci
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - run: yarn ci
 
             - name: Linting
               run: yarn lint
