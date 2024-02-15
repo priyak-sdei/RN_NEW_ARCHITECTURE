@@ -10,7 +10,6 @@ on:
             - 'priya_dev'
 
 jobs:
-    #First job
     install-and-test:
         runs-on: ubuntu-latest
 
@@ -29,8 +28,3 @@ jobs:
 
             - name: Linting
               run: yarn lint
-    # # Second Job
-    # build-android:
-    #     needs: install-and-test
-    #     uses: ./.github/workflows/build-android.yml
-    #     secrets: inherit
