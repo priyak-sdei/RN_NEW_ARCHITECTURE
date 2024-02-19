@@ -32,7 +32,7 @@
         "react-native-gesture-handler": "^2.13.1",
         "react-native-keyboard-aware-scroll-view": "^0.9.5",
         "react-native-localization": "^2.3.2",
-        "react-native-reanimated": "^3.5.4",
+        "react-native-reanimated": "^3.7.0",
         "react-native-rename": "^3.2.13",
         "react-native-safe-area-context": "^4.7.2",
         "react-native-screens": "^3.25.0",
