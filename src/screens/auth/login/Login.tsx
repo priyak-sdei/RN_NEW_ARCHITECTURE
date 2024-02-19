@@ -101,18 +101,18 @@ function Login(): JSX.Element {
                         style={styles.signUpContainer}
                         onPress={async () => {
                             console.log("data", "data");
-                            try {
-                                await analytics().logEvent("basket", {
-                                    id: 3745092,
-                                    item: "mens grey t-shirt",
-                                    description: ["round neck", "long sleeved"],
-                                    size: "L",
-                                });
-                            } catch (error) {
-                                console.log(error, "error");
-                            }
+                            // try {
+                            //     await analytics().logEvent("basket", {
+                            //         id: 3745092,
+                            //         item: "mens grey t-shirt",
+                            //         description: ["round neck", "long sleeved"],
+                            //         size: "L",
+                            //     });
+                            // } catch (error) {
+                            //     console.log(error, "error");
+                            // }
 
-                            // crashlytics().crash();
+                            crashlytics().crash();
                             // navigation.navigate('SignUp');
                             // await currentPost({
                             //     id: 1,

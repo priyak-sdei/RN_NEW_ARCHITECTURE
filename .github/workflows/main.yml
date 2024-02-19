@@ -1,7 +1,7 @@
 name: Pull Request into Master, Main, Develop, and Preprod
 
 on:
-    push:
+    pull_request:
         branches:
             - 'master'
             - 'develop'

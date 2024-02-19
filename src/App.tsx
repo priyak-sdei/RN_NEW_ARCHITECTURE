@@ -13,9 +13,9 @@ import Navigator from "./navigation/Navigator";
 import {SheetProvider} from "react-native-actions-sheet";
 import "@components/screens/Actionsheets/sheet";
 import {requestUserNotificationPermission} from "@helpers/Notification";
-// import {handleDatabase} from './utils/FirebaseDB';
+import {handleDatabase} from "./utils/FirebaseDB";
 requestUserNotificationPermission();
-
+handleDatabase();
 function App(): JSX.Element {
     return (
         <Provider store={store}>

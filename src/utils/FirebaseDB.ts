@@ -1,4 +1,5 @@
 import database from "@react-native-firebase/database";
+
 export const handleDatabase = () => {
     addUserData();
 };
@@ -6,12 +7,13 @@ export const handleDatabase = () => {
 const addUserData = () => {
     // Adding a new user
     const newUser = {
-        username: "john_doe",
-        email: "john@example.com",
+        caption: "This is post by me1",
+        image: "my_base64 url",
+        added_by: "Priya1",
     };
     // Set the value for the new user at the specified path
     database()
-        .ref("/users/data")
+        .ref("/post/")
         .set(newUser)
         .then(
             () => {
@@ -30,7 +32,7 @@ const addUserData = () => {
 const getUserData = () => {
     // Read data once
     database()
-        .ref("/users/data")
+        .ref("/post")
         .once("value")
         .then(snapshot => {
             // Access the data from the snapshot
@@ -50,9 +52,10 @@ const getUserData = () => {
 const updateUserData = () => {
     // Read data once
     database()
-        .ref("/users/data")
+        .ref("/post")
         .update({
             age: 32,
+            caption: "This is post by me1 updated one",
         })
         .then(() => console.log("Data updated."));
 };
