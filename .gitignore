@@ -41,7 +41,7 @@ yarn.lock
 # BUCK
 buck-out/
 \.buckd/
-*.keystore
+#*.keystore
 !debug.keystore
 
 # fastlane
@@ -65,4 +65,4 @@ buck-out/
 /ios/Pods/
 /ios/Podfile.lock
 
-yarn.lock
+# yarn.lock

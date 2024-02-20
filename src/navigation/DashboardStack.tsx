@@ -1,7 +1,7 @@
-import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Home from '@screens/dashboard/home/Home';
-import Profile from '@screens/dashboard/profile/Profile';
+import React from "react";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import Home from "@screens/dashboard/home/Home";
+import Profile from "@screens/dashboard/profile/Profile";
 
 const DashboardStack = createNativeStackNavigator();
 

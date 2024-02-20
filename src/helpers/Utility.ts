@@ -1,6 +1,16 @@
-import {Alert, Platform} from 'react-native';
+import {Alert} from "react-native";
+import Toast from "react-native-toast-message";
 
-const alertWithoutPromise = (title = '', message, btn1Text = 'Ok') => {
+const showToast = (message, type = "success", title = "") => {
+    Toast.show({
+        type,
+        text1: title,
+        text2: message,
+        position: "top",
+    });
+};
+
+const alertWithoutPromise = (title = "", message, btn1Text = "Ok") => {
     Alert.alert(title, message, [{text: btn1Text}], {cancelable: false});
 };
 
@@ -49,7 +59,7 @@ const alertWithTwoBtnCancel = (title, message, btn1Text, btn2Text) => {
                 {
                     text: btn1Text,
                     onPress: () => resolve(false),
-                    style: 'cancel',
+                    style: "cancel",
                 },
                 {
                     text: btn2Text,
@@ -61,4 +71,17 @@ const alertWithTwoBtnCancel = (title, message, btn1Text, btn2Text) => {
     });
 };
 
-export {alertWithoutPromise, alertWithTwoBtn, alertWithOneBtn, alertWithTwoBtnCancel};
+//convert object into form data
+function getFormData(object) {
+    const formData = new FormData();
+    Object.keys(object).forEach(key => formData.append(key, object[key]));
+    return formData;
+}
+export {
+    alertWithoutPromise,
+    alertWithTwoBtn,
+    alertWithOneBtn,
+    alertWithTwoBtnCancel,
+    getFormData,
+    showToast,
+};

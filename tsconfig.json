@@ -26,6 +26,8 @@
         // "noFallthroughCasesInSwitch": true,
         // "forceConsistentCasingInFileNames": true,
         "noImplicitAny": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "baseUrl": ".",
         "paths": {
             "@constants/*": ["./src/constants/*"],
@@ -35,6 +37,8 @@
             "@theme/*": ["./src/theme/*"],
             "@localization/*": ["./src/localization/*"],
             "@helpers/*": ["./src/helpers/*"],
+            "@type/*": ["./src/types/*"],
+            "@utils/*": ["./src/utils/*"],
             "@/*": ["./src/*"]
         }
     },

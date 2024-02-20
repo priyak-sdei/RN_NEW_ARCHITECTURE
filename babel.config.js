@@ -24,6 +24,8 @@ module.exports = {
                     '@theme': './src/theme',
                     '@localization': './src/localization',
                     '@helpers': './src/helpers',
+                    '@type': './src/types',
+                    '@utils': './src/utils',
                     '@': './src',
                 },
             },
