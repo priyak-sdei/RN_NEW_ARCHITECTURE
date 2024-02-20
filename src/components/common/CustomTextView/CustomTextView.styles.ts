@@ -1,6 +1,6 @@
-import GLOBAL_THEME from '@theme/index';
+import GLOBAL_THEME from "@theme/index";
 const {COLORS, moderateScale, scale, FONTS} = GLOBAL_THEME;
-import {StyleSheet} from 'react-native';
+import {StyleSheet} from "react-native";
 
 export const styles = StyleSheet.create({
     h1Style: {

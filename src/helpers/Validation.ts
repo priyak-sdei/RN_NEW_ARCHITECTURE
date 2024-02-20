@@ -1,4 +1,4 @@
-const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const EMAIL_REGEX = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\w{2,3})+$/;
 const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,100}$/;
 // Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:
 const PHONE_REGEX = /^(\d{1})?\d{10}$/;
@@ -9,7 +9,7 @@ const SINGLE_DECIMAL_REGEX = /^\d+(\.\d{1})?$/;
 const FORCE_SINGLE_DECIMAL_REGEX = /^\d+\.\d{1}$/;
 
 const empty = input => {
-    return space(input) == '' || space(input) == 0 || space(input) == null;
+    return space(input) === "" || space(input) === 0 || space(input) === null;
 };
 
 const space = input => {
@@ -49,11 +49,11 @@ const errorDisplay = (msg, callback) => {
 };
 
 const removeMasking = data => {
-    let removePlus = data.replace('+', '');
-    let value = removePlus.replace('(', '');
-    let newNo = value.replace(')', '');
-    let space = newNo.replace(' ', '');
-    let dash = space.replace('-', '');
+    const removePlus = data.replace("+", "");
+    const value = removePlus.replace("(", "");
+    const newNo = value.replace(")", "");
+    const space = newNo.replace(" ", "");
+    const dash = space.replace("-", "");
     __DEV__ && console.log(dash);
     return dash;
 };

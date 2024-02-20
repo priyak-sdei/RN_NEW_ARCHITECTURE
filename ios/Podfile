@@ -1,13 +1,39 @@
+ENV['USE_HERMES'] = '0' 
 # Resolve react_native_pods.rb with node to allow for hoisting
-require Pod::Executable.execute_command('node', ['-p',
-  'require.resolve(
-    "react-native/scripts/react_native_pods.rb",
-    {paths: [process.argv[1]]},
-  )', __dir__]).strip
+# require Pod::Executable.execute_command('node', ['-p',  //Commented due to RN Permission
+#   'require.resolve(
+#     "react-native/scripts/react_native_pods.rb",
+#     {paths: [process.argv[1]]},
+#   )', __dir__]).strip
 
+ def node_require(script)
+   # Resolve script with node to allow for hoisting
+  require Pod::Executable.execute_command('node', ['-p',
+    "require.resolve(
+       '#{script}',
+       {paths: [process.argv[1]]},
+     )", __dir__]).strip
+ end
+
+node_require('react-native/scripts/react_native_pods.rb')
+node_require('react-native-permissions/scripts/setup.rb')
+#  use_modular_headers!
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+pod 'Firebase', :modular_headers => true
+pod 'FirebaseCoreInternal', :modular_headers => true
+pod 'GoogleUtilities', :modular_headers =>true
+pod 'FirebaseCore', :modular_headers =>true
+pod 'FirebaseInstallations', :modular_headers =>true
+pod 'FirebaseCoreExtension', :modular_headers =>true
+pod 'GoogleDataTransport', :modular_headers =>true
+pod 'nanopb', :modular_headers =>true
+pod 'leveldb-library', :modular_headers =>true
+pod 'FirebaseAppCheckInterop', :modular_headers =>true
+setup_permissions([
+'Camera','PhotoLibrary','PhotoLibraryAddOnly','Microphone','MediaLibrary',
+])
 # If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
 # because `react-native-flipper` depends on (FlipperKit,...) that will be excluded
 #
@@ -49,6 +75,7 @@ target 'BaseProject' do
     inherit! :complete
     # Pods for testing
   end
+  pod 'Toast-Swift'
 
   post_install do |installer|
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202

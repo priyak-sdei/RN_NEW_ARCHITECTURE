@@ -14,11 +14,14 @@ React Native to maintain clean and well-typed code.
 interface MyComponentProps {
     label?: string;
     placeholder?: string;
-    onChangeText: (txt) => void; // Callback function prop
+    onChangeText?: (txt) => void; // Callback function prop
+    handleBlur?: () => void; // Optional function prop
     leftIcon?: IconNode;
     rightIcon?: IconNode;
     errorMessage?: string;
     value: string;
+    editable?: boolean;
+    onInputPress?: () => void;
 }
 
 const CustomInput: React.FC<MyComponentProps> = props => {
@@ -30,6 +33,9 @@ const CustomInput: React.FC<MyComponentProps> = props => {
         rightIcon = false,
         errorMessage = '',
         value = '',
+        handleBlur,
+        editable = true,
+        onInputPress,
     } = props;
     return (
         <Input
@@ -45,11 +51,18 @@ const CustomInput: React.FC<MyComponentProps> = props => {
             labelProps={{}}
             leftIcon={leftIcon}
             leftIconContainerStyle={styles.leftIconContainerStyle}
-            onChangeText={txt => onChangeText(txt)}
+            onChangeText={txt => {
+                if (onChangeText) {
+                    onChangeText(txt);
+                }
+            }}
             placeholder={placeholder}
             rightIcon={rightIcon}
             rightIconContainerStyle={{}}
             value={value}
+            onBlur={handleBlur}
+            editable={editable}
+            onTouchStart={onInputPress}
         />
     );
 };
