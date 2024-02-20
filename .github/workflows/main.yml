@@ -1,13 +1,12 @@
-name: Pull Request into Master, Main, Develop, and Preprod
+name: Test EsLinting and Sonar cloud scan when code push in branch
 
 on:
     #pull_request:
     push:
         branches:
             - 'main'
-
 jobs:
-    install-and-test:
+    sonarscan-and-lintng:
         runs-on: ubuntu-latest
         permissions: read-all
         steps:
@@ -16,11 +15,11 @@ jobs:
               with:
                   fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
 
-            - name: SonarCloud Scann
+            - name: SonarCloud Scan
               uses: SonarSource/sonarcloud-github-action@master
               env:
                   GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-                  SONAR_TOKEN: d79ddb571a16e7fa0e94264e15e51f1d62dbdbf7
+                  SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
 
               with:
                   args: >
