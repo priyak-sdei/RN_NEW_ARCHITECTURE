@@ -25,7 +25,7 @@ jobs:
               with:
                   args: >
                       -Dsonar.organisation=priyak-sdei
-                      -Dsonar.projectKey=RN_NEW_ARCHITECTURE
+                      -Dsonar.projectKey=priyak-sdei_RN_NEW_ARCHITECTURE
 
             - name: Use Node.js 20
               uses: actions/setup-node@v4
