@@ -13,12 +13,15 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
 
             - name: SonarCloud Scann
-              uses: sonarsource/sonarcloud-github-action@master
+              uses: SonarSource/sonarcloud-github-action@master
               env:
-                  SONAR_TOKEN: d79ddb571a16e7fa0e94264e15e51f1d62dbdbf7
                   GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+                  SONAR_TOKEN: d79ddb571a16e7fa0e94264e15e51f1d62dbdbf7
+
               with:
                   args: >
                       -Dsonar.organisation=priyak-sdei
