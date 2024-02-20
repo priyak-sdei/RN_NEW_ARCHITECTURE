@@ -27,7 +27,7 @@ jobs:
                   sonarHostUrl: 'http://localhost:9000'
               env:
                   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-                  SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+                  SONAR_HOST_URL: 'http://localhost:9000'
 
             - name: SonarQube Status
               uses: sonarsource/sonarqube-quality-gate-action@master
