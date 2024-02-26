@@ -1,8 +1,8 @@
 name: Test EsLinting and Sonar cloud scan when code push in branch
 
 on:
-    #pull_request:
-    push:
+    pull_request:
+        #push:
         branches:
             - 'main'
 jobs:

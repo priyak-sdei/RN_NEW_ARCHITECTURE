@@ -4,6 +4,7 @@ type AuthStackParamList = {
     Login: object;
     Home: object | undefined;
     SignUp: object | undefined;
+    ForgotPassword: object | undefined;
 };
 
 export type StackParamList = Record<

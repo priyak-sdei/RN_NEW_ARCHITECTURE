@@ -68,6 +68,8 @@
 	<string>Access to Microphone</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Need access to Upload Profile image</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Play using while you are hiking</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-Black.ttf</string>
