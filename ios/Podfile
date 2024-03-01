@@ -1,4 +1,4 @@
-ENV['USE_HERMES'] = '0' 
+ENV['USE_HERMES'] = '1' 
 # Resolve react_native_pods.rb with node to allow for hoisting
 # require Pod::Executable.execute_command('node', ['-p',  //Commented due to RN Permission
 #   'require.resolve(

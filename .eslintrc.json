@@ -43,7 +43,7 @@
         "no-loop-func": 2, // Disallows function declarations within loops
 
         //Stylistic Issues:
-        "quotes": 1, // Enforces the use of single or double quotes consistently.,
+        "quotes": 0, // Enforces the use of single or double quotes consistently.,
         "react/prop-types": "off"
     }
 }

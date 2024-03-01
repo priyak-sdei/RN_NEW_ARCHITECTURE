@@ -1,4 +1,4 @@
-import {IMAGES} from "@assets/images/index";
+import {IMAGES} from '@assets/images/index';
 import {
     CustomButton,
     CustomHeader,
@@ -6,27 +6,27 @@ import {
     CustomTextView,
     ParentContainer,
     SocialSignIn,
-} from "@components/index";
-import analytics from "@react-native-firebase/analytics";
-import {StackParamList} from "@constants/index";
-import {useAuth} from "./hooks/useAuth";
-import {strings} from "@localization/Localization";
-import {Icon} from "@rneui/themed";
-import GLOBAL_THEME from "@theme/index";
-import React, {useEffect, useState} from "react";
-import {Image, TouchableOpacity, View} from "react-native";
-import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
-import styles from "./Login.styles";
+} from '@components/index';
+import analytics from '@react-native-firebase/analytics';
+import {StackParamList} from '@constants/index';
+import {useAuth} from './hooks/useAuth';
+import {strings} from '@localization/Localization';
+import {Icon} from '@rneui/themed';
+import GLOBAL_THEME from '@theme/index';
+import React, {useEffect, useState} from 'react';
+import {Image, TouchableOpacity, View} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import styles from './Login.styles';
 const {COLORS, FONTS, moderateScale} = GLOBAL_THEME;
-import {useNavigation} from "@react-navigation/native";
-import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import crashlytics from "@react-native-firebase/crashlytics";
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import crashlytics from '@react-native-firebase/crashlytics';
 
 import {
     useAllPostQuery,
     useCurrentPostMutation,
     useUpdateCurrentPostMutation,
-} from "@/redux/api/userService";
+} from '@/redux/api/userService';
 
 const leftIcon = (
     <Icon
@@ -46,17 +46,22 @@ function Login(): JSX.Element {
     const [currentPost, {data}] = useCurrentPostMutation();
     const [updateCurrentPost] = useUpdateCurrentPostMutation();
     const {username, password, setUsername, setPassword, onSignInPress} = useAuth();
-    console.log(data, "data........");
-    crashlytics().log("Login scrren enter");
+    console.log(data, 'data........');
+    crashlytics().log('Login scrren enter');
     useEffect(() => {
-        crashlytics().log("App mounted.");
+        crashlytics().log('App mounted.');
         crashlytics().setAttributes({
-            role: "admin",
-            followers: "13",
-            email: "user.email",
-            username: "user.username",
+            role: 'admin',
+            followers: '13',
+            email: 'user.email',
+            username: 'user.username',
         });
     }, []);
+
+    const newTest = () => {
+        console.log('hi');
+        throw new Error('Crashed!!!!');
+    };
     return (
         <ParentContainer>
             <CustomHeader title={strings.login.signIn} />
@@ -86,21 +91,31 @@ function Login(): JSX.Element {
                     <CustomButton
                         title={strings.login.signIn}
                         btnIcon={signInIcon}
-                        onBtnPress={async () => {
-                            navigation.navigate("Home");
-                            // await updateCurrentPost({
-                            //     id: 1,
-                            //     title: 'foo',
-                            //     body: 'bar',
-                            //     userId: 1,
-                            // });
+                        onBtnPress={() => {
+                            try {
+                                // Async operation that might throw an error
+                                newTest();
+                                // Process the data
+                            } catch (error) {
+                                // Handle the error within the async function
+                                throw new Error('Crashed!!!!');
+                            }
+                            // throw new Error('Crashed!!!!');
+                            // let aa = kdfgdgfdg;
+                            // // navigation.navigate('Home');
+                            // // await updateCurrentPost({
+                            // //     id: 1,
+                            // //     title: 'foo',
+                            // //     body: 'bar',
+                            // //     userId: 1,
+                            // // });
                         }}
                     />
 
                     <TouchableOpacity
                         style={styles.signUpContainer}
                         onPress={async () => {
-                            console.log("data", "data");
+                            console.log('data', 'data');
                             // try {
                             //     await analytics().logEvent("basket", {
                             //         id: 3745092,
@@ -130,9 +145,9 @@ function Login(): JSX.Element {
                     </TouchableOpacity>
 
                     <SocialSignIn
-                        onFbSuccess={res => console.log(res, "res fb")}
-                        onGoogleSuccess={res => console.log(res, "res onGoogleSuccess")}
-                        onAppleSuccess={res => console.log(res, "res onAppleSuccess")}
+                        onFbSuccess={res => console.log(res, 'res fb')}
+                        onGoogleSuccess={res => console.log(res, 'res onGoogleSuccess')}
+                        onAppleSuccess={res => console.log(res, 'res onAppleSuccess')}
                     />
                 </View>
             </KeyboardAwareScrollView>
