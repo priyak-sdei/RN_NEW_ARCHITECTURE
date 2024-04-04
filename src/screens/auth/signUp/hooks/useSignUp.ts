@@ -1,41 +1,55 @@
-import {useCreateUserMutation} from "@/redux/api/userAPIs/userAPI";
-import {showToast} from "@helpers/Utility";
-import {useEffect} from "react";
-interface ErrorResponse {
-    data?: {
-        error?: string;
-    };
-}
+import {useRegisterUserMutation} from '@/redux/api/AuthAPIs/authAPI';
+import {useEffect} from 'react';
+import {Alert, Platform} from 'react-native';
+
+import {StackParamList} from '@constants/navigation';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export const useSignUp = () => {
-    const [createUser, {isLoading, error: createUserError, isSuccess, data, status}] =
-        useCreateUserMutation();
+    const navigation = useNavigation<NativeStackNavigationProp<StackParamList>>();
+    const [registerUser, {isLoading, data: registerUserData}] = useRegisterUserMutation();
 
     useEffect(() => {
-        if (!isLoading && createUserError) {
-            if ("data" in createUserError && createUserError.data) {
-                const errorResponse = createUserError.data as ErrorResponse;
-                if (errorResponse && "error" in errorResponse) {
-                    showToast(errorResponse?.error, "error");
-                }
-            }
+        if (registerUserData && !registerUserData.status) Alert.alert(registerUserData.messgae);
+        if (registerUserData) {
+            Alert.alert(registerUserData.message);
+            navigation.navigate('Login');
         }
-        console.log(createUserError, "createUserError...");
-    }, [isLoading, createUserError]);
-
-    useEffect(() => {
-        console.log(isSuccess, "isSuccess...", data, status);
-        if (!isLoading && isSuccess) {
-            showToast("User created succesfully");
-        }
-    }, [isSuccess]);
+    }, [registerUserData]);
 
     const onSignUpPress = async values => {
-        console.log(values, "values......");
-        await createUser(values);
+        const {profile_photo} = values;
+        const registerFormdata = new FormData();
+        registerFormdata.append('name', `${values.firstName}${values.lastName}`);
+        registerFormdata.append('email', `${values.email}`);
+        registerFormdata.append('password', values.password);
+        registerFormdata.append('dateOfBirth', values.dateOfBirth);
+        registerFormdata.append('phone', values.phone);
+        registerFormdata.append('organization', values.organization);
+        registerFormdata.append('state', values.state);
+        registerFormdata.append('city', values.city);
+        if (profile_photo) {
+            registerFormdata.append('profile_photo', {
+                uri:
+                    Platform.OS === 'ios'
+                        ? profile_photo.uri.replace('file://', 'file://')
+                        : profile_photo.uri,
+                name: profile_photo.uri.substring(0, profile_photo.fileName.lastIndexOf('.')),
+                type: profile_photo.type,
+            });
+        }
+
+        try {
+            await registerUser(registerFormdata);
+        } catch (e) {
+            if (__DEV__) console.log('Fail to register user', e);
+        }
+        // await createUser(values);
     };
 
     return {
         onSignUpPress,
+        isLoading,
     };
 };

@@ -1,8 +1,8 @@
-import {IconNode} from "@rneui/base";
-import {Button} from "@rneui/themed";
-import * as React from "react";
-import {StyleProp, ViewStyle} from "react-native";
-import {styles} from "./CustomButton.styles";
+import {IconNode} from '@rneui/base';
+import {Button} from '@rneui/themed';
+import * as React from 'react';
+import {StyleProp, ViewStyle} from 'react-native';
+import {styles} from './CustomButton.styles';
 interface MyComponentProps {
     btnIcon?: IconNode;
     customButtonStyle?: StyleProp<ViewStyle>;
@@ -20,12 +20,13 @@ const CustomButton: React.FC<MyComponentProps> = props => {
         customContainerStyle = {},
         customTitleStyle = {},
         disabled = false,
-        title = "",
+        title = '',
         onBtnPress,
     } = props;
 
     return (
         <Button
+            radius={'sm'}
             buttonStyle={[styles.buttonStyle, customButtonStyle]}
             containerStyle={[styles.containerStyle, customContainerStyle]}
             disabledStyle={styles.disabledStyle}

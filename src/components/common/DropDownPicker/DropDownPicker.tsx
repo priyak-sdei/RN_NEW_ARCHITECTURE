@@ -1,8 +1,8 @@
-import {Icon} from "@rneui/themed";
-import GLOBAL_THEME from "@theme/index";
-import React from "react";
-import {FlatList, Modal, Text, TouchableOpacity, View} from "react-native";
-import styles from "./DropDownPicker.styles";
+import {Icon} from '@rneui/themed';
+import GLOBAL_THEME from '@theme/index';
+import React from 'react';
+import {FlatList, Modal, Text, TouchableOpacity, View} from 'react-native';
+import styles from './DropDownPicker.styles';
 const {COLORS} = GLOBAL_THEME;
 interface DropDownProps {
     showPicker: boolean;
@@ -10,6 +10,7 @@ interface DropDownProps {
     onItemSelected: (data: dropDownOptions) => void;
     options: dropDownOptions[];
     selectedOption: string;
+    multiSelection: boolean;
 }
 interface dropDownOptions {
     key: string;
@@ -23,12 +24,18 @@ const DropDownPicker: React.FC<DropDownProps> = props => {
         options = [],
         selectedOption = {},
         onItemSelected,
+        multiSelection = false,
     } = props;
 
     const renderItem = ({item}: {item: dropDownOptions}) => (
-        <TouchableOpacity style={styles.listContainer} onPress={() => onItemSelected(item)}>
-            <Text style={styles.labelStyle}>{item.key}</Text>
-            {selectedOption && selectedOption === item.key && (
+        <TouchableOpacity
+            style={styles.listContainer}
+            onPress={() => {
+                onItemSelected(item);
+                if (!multiSelection) hideModal();
+            }}>
+            <Text style={styles.labelStyle}>{item.value}</Text>
+            {selectedOption && selectedOption === item.value && (
                 <Icon name="checkmark-sharp" size={25} color={COLORS.BLACK} type="ionicon" />
             )}
         </TouchableOpacity>

@@ -1,6 +1,6 @@
-import urlMapping from "@constants/urlMapping";
-import {clientApi} from "./clientApi";
-import {setMessage} from "src/redux/slices/userSlice";
+import urlMapping from '@constants/urlMapping';
+import {clientApi} from './clientApi';
+import {setMessage} from 'src/redux/slices/userSlice';
 interface Post {
     id: number;
 }
@@ -10,7 +10,7 @@ export const userService = clientApi.injectEndpoints({
             query: ({id, body}) => {
                 return {
                     url: `${urlMapping.UPDATE_PROFILE}/${id}`,
-                    method: "put",
+                    method: 'put',
                     body: body,
                 };
             },
@@ -18,30 +18,30 @@ export const userService = clientApi.injectEndpoints({
         allPost: builder.query<[], void>({
             query: () => ({
                 url: urlMapping.GET_POST,
-                method: "GET",
+                method: 'GET',
             }),
         }),
         currentPost: builder.mutation<object, any>({
             query: param => {
                 return {
-                    url: "posts",
-                    method: "POST",
+                    url: 'posts',
+                    method: 'POST',
                     body: param,
                 };
             },
             transformResponse: rawResult => {
-                console.log(rawResult, "rawResult..");
-                return {response: rawResult};
+                console.log(rawResult, 'rawResult..');
+                return rawResult;
             },
             onQueryStarted: async () => {
-                console.log("onQueryStarted");
+                console.log('onQueryStarted');
             },
         }),
         updateCurrentPost: builder.mutation<object, any>({
             query: param => {
                 return {
-                    url: "posts/1",
-                    method: "PUT",
+                    url: 'posts/1',
+                    method: 'PUT',
                     body: param,
                 };
             },

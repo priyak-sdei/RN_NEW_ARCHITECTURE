@@ -1,6 +1,6 @@
-import GLOBAL_THEME from "@theme/index";
-const {COLORS, moderateScale, scale, FONTS} = GLOBAL_THEME;
-import {StyleSheet} from "react-native";
+import GLOBAL_THEME from '@theme/index';
+const {COLORS, moderateScale, horizontalScale, FONTS} = GLOBAL_THEME;
+import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
     deleteIcon: {
@@ -10,14 +10,13 @@ export const styles = StyleSheet.create({
         color: COLORS.MAROON,
     },
     menuIcon: {
-        height: moderateScale(25),
+        height: moderateScale(20),
         tintColor: COLORS.THEME,
-        width: moderateScale(25),
+        width: moderateScale(20),
     },
     menuItemContainer: {
-        alignItems: "center",
-        flexDirection: "row",
-        paddingHorizontal: moderateScale(10),
+        flexDirection: 'row',
+        paddingHorizontal: moderateScale(20),
         paddingTop: moderateScale(24),
     },
     menuSeparator: {
@@ -28,7 +27,6 @@ export const styles = StyleSheet.create({
         flex: 1,
         fontFamily: FONTS.MEDIUM,
         fontSize: moderateScale(16),
-        lineHeight: moderateScale(16),
-        marginLeft: scale(15),
+        marginLeft: horizontalScale(15),
     },
 });

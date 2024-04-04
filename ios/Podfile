@@ -1,4 +1,4 @@
-ENV['USE_HERMES'] = '1' 
+ENV['USE_HERMES'] = '0' 
 # Resolve react_native_pods.rb with node to allow for hoisting
 # require Pod::Executable.execute_command('node', ['-p',  //Commented due to RN Permission
 #   'require.resolve(
@@ -43,7 +43,7 @@ setup_permissions([
 #   dependencies: {
 #     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
 # ```
-flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
+flipper_config = ENV['NO_FLIPPER'] == "0" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
 
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
@@ -84,6 +84,6 @@ target 'BaseProject' do
       config[:reactNativePath],
       :mac_catalyst_enabled => false
     )
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    # __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end

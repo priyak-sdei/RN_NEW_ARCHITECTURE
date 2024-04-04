@@ -1,6 +1,6 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet} from 'react-native';
 
-import GLOBAL_THEME from "@theme/index";
+import GLOBAL_THEME from '@theme/index';
 const {COLORS, FONTS, moderateScale, SPACING} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
@@ -13,14 +13,21 @@ const styles = StyleSheet.create({
         paddingHorizontal: moderateScale(SPACING.xxs),
         paddingVertical: moderateScale(SPACING.xs),
     },
+    errorStyle: {
+        color: COLORS.ERROR_RED,
+        fontFamily: FONTS.MEDIUM,
+        fontSize: moderateScale(10),
+        paddingHorizontal: moderateScale(SPACING.xxs),
+        top: -moderateScale(SPACING.xs),
+    },
     groupContainer: {
-        alignItems: "center",
-        flexDirection: "row",
+        alignItems: 'center',
+        flexDirection: 'row',
     },
     innerContainer: {
-        alignItems: "center",
-        flexDirection: "row",
-        justifyContent: "space-between",
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     labelStyle: {
         color: COLORS.THEME,

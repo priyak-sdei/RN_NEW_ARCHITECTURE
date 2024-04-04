@@ -5,10 +5,12 @@
  * @format
  */
 import 'react-native-gesture-handler';
-import React from 'react';
+import SplashScreen from 'react-native-splash-screen';
+import React, {useEffect} from 'react';
 import {View, StyleSheet, Text, Button} from 'react-native';
 import {Provider} from 'react-redux';
-import store from './redux/store';
+import {PersistGate} from 'redux-persist/integration/react';
+import store, {persistor} from './redux/store';
 import Navigator from './navigation/Navigator';
 import {SheetProvider} from 'react-native-actions-sheet';
 import '@components/screens/Actionsheets/sheet';
@@ -18,7 +20,7 @@ import {appDB} from './utils//sqliteDb';
 requestUserNotificationPermission();
 // handleDatabase();
 import ErrorBoundary from '@components/common/ErrorBoundary/ErrorBoundary';
-appDB();
+//appDB();
 
 const ErrorFallback = ({error, resetErrorBoundary}) => (
     <View>
@@ -27,15 +29,20 @@ const ErrorFallback = ({error, resetErrorBoundary}) => (
     </View>
 );
 function App(): JSX.Element {
+    useEffect(() => {
+        SplashScreen.hide();
+    });
     return (
         <Provider store={store}>
-            <ErrorBoundary>
-                <View style={styles.container}>
-                    <SheetProvider context="global">
-                        <Navigator />
-                    </SheetProvider>
-                </View>
-            </ErrorBoundary>
+            <PersistGate loading={null} persistor={persistor}>
+                <ErrorBoundary>
+                    <View style={styles.container}>
+                        <SheetProvider context="global">
+                            <Navigator />
+                        </SheetProvider>
+                    </View>
+                </ErrorBoundary>
+            </PersistGate>
         </Provider>
     );
 }

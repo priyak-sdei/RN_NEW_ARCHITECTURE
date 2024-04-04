@@ -1,24 +1,24 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {clientApi} from "../api/clientApi";
-import {userService} from "../api/userService";
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {clientApi} from '../api/clientApi';
+import {userService} from '../api/userService';
+import {authAPIs} from '@/redux/api/AuthAPIs/authAPI';
 // Access the list of injectEndpoints values in slices
 
 const userSlice = createSlice({
-    name: "user",
+    name: 'user',
     initialState: {
-        message: "Initial message",
+        message: 'Initial message',
+        userData: {},
     },
     reducers: {
         setMessage(state, action: PayloadAction<string>) {
-            console.log("actionnnn", action);
             state.message = action.payload;
         },
     },
     extraReducers: builder => {
-        builder.addMatcher(userService.endpoints.currentPost.matchFulfilled, (state, action) => {
-            // Access the injectedEndpoint data from the action payload
-            console.log(state, action, "hiiiiii");
-            state.message = action.payload;
+        /** Access the injectedEndpoint data from the action payload */
+        builder.addMatcher(authAPIs.endpoints.loginUser.matchFulfilled, (state, action) => {
+            state.userData = {...action.payload};
         });
     },
 });

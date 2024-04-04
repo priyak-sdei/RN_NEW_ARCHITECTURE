@@ -1,5 +1,5 @@
-import {AppleRequestResponseFullName} from "@invertase/react-native-apple-authentication";
-import {IconNode, Input} from "@rneui/base";
+import {AppleRequestResponseFullName} from '@invertase/react-native-apple-authentication';
+import {IconNode} from '@rneui/base';
 export interface AppleAuthRequestResponse {
     email: string;
     fullName: AppleRequestResponseFullName;
@@ -20,14 +20,16 @@ export interface DecodedToken {
 }
 
 export interface SignUpFormValues {
-    title: string;
     firstName: string;
     lastName: string;
-    gender: string;
     email: string;
     dateOfBirth: string;
     phone: string;
-    picture: string;
+    password: string;
+    organization: string;
+    state: string;
+    city: string;
+    profile_photo: any;
 }
 
 export interface CustomInputProp {

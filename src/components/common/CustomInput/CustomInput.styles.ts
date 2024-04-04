@@ -1,5 +1,5 @@
-import GLOBAL_THEME from "@theme/index";
-import {StyleSheet} from "react-native";
+import GLOBAL_THEME from '@theme/index';
+import {StyleSheet} from 'react-native';
 const {COLORS, FONTS, moderateScale} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         color: COLORS.THEME,
         fontFamily: FONTS.LIGHT,
         fontSize: moderateScale(13),
-        fontWeight: "400",
+        fontWeight: '400',
     },
     leftIconContainerStyle: {
         paddingLeft: moderateScale(5),

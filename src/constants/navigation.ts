@@ -1,7 +1,7 @@
 export const NAVIGATION = {} as const;
 // If any of these names change make sure to change them above
 type AuthStackParamList = {
-    Login: object;
+    Login: object | undefined;
     Home: object | undefined;
     SignUp: object | undefined;
     ForgotPassword: object | undefined;

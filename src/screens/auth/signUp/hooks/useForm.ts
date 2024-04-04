@@ -1,38 +1,49 @@
-import {strings} from "@localization/Localization";
-import {SignUpFormValues} from "@type/Login";
-import {useFormik} from "formik";
-import * as Yup from "yup";
+import {strings} from '@localization/Localization';
+import {SignUpFormValues} from '@type/Login';
+import {useFormik} from 'formik';
+import * as Yup from 'yup';
 interface UseFormProps {
-    initialValues: SignUpFormValues;
+    // initialValues: SignUpFormValues;
     onSubmit: (values: SignUpFormValues) => void;
 }
+const initialValues = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    dateOfBirth: '',
+    phone: '',
+    organization: '',
+    state: '',
+    city: '',
+    password: '',
+    profile_photo: '',
+};
 
-const useForm = ({initialValues, onSubmit}: UseFormProps) => {
+const useForm = ({onSubmit}: UseFormProps) => {
     const formik = useFormik({
         initialValues,
         onSubmit,
         validationSchema: Yup.object({
-            title: Yup.string()
-                .max(15, "Must be 15 characters or less")
-                .required(strings.validation.require),
             firstName: Yup.string()
-                .max(20, "Must be 20 characters or less")
+                .max(20, 'Must be 20 characters or less')
                 .required(strings.validation.require),
             lastName: Yup.string()
-                .max(20, "Must be 20 characters or less")
+                .max(20, 'Must be 20 characters or less')
                 .required(strings.validation.require),
-            gender: Yup.string().required(strings.validation.require),
+            city: Yup.string().required(strings.validation.require),
+            organization: Yup.string().required(strings.validation.require),
+            password: Yup.string().required(strings.validation.require),
             email: Yup.string()
                 .email(strings.validation.invalid_email)
                 .required(strings.validation.require),
             dateOfBirth: Yup.string().required(strings.validation.require),
             phone: Yup.string().required(strings.validation.require),
-            picture: Yup.string().required(strings.validation.require),
+            state: Yup.string().required(strings.validation.require),
+            //  picture: Yup.string().required(strings.validation.require),
         }),
     });
 
     const setFieldValue = (field: keyof SignUpFormValues, value: string) => {
-        // console.log(formik, 'formik.....');
         formik.setFieldValue(field, value);
     };
     const handleBlur = (field: keyof SignUpFormValues) => {
@@ -40,10 +51,15 @@ const useForm = ({initialValues, onSubmit}: UseFormProps) => {
         formik.setTouched({[field]: true});
     };
 
+    function handleFormError(key) {
+        return formik.errors[key] && formik.touched[key] ? formik.errors[key] : ' ';
+    }
+
     return {
         formik,
         setFieldValue,
         handleBlur,
+        handleFormError,
     };
 };
 

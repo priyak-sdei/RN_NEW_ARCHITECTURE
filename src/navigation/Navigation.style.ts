@@ -1,30 +1,30 @@
-import {StyleSheet} from "react-native";
-import GLOBAL_THEME from "@theme/index";
+import {StyleSheet} from 'react-native';
+import GLOBAL_THEME from '@theme/index';
 const {COLORS, FONTS} = GLOBAL_THEME;
 export const styles = StyleSheet.create({
     bottomContainer: {
-        alignItems: "center",
+        alignItems: 'center',
         backgroundColor: COLORS.THEME,
         borderRadius: 5,
-        flexDirection: "row",
-        marginBottom: "10%",
+        flexDirection: 'row',
+        marginBottom: '10%',
         padding: 10,
     },
     container: {
-        alignItems: "center",
+        alignItems: 'center',
         borderRadius: 5,
-        flexDirection: "row",
-        justifyContent: "flex-start",
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
         margin: 5,
         paddingVertical: 10,
     },
     headerContainer: {
-        flexDirection: "row",
+        flexDirection: 'row',
         flex: 0.2,
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
         marginBottom: 20,
     },
-    headerItems: {alignItems: "center", flexDirection: "row"},
+    headerItems: {alignItems: 'center', flexDirection: 'row'},
     logoStyle: {borderRadius: 5, height: 30, marginRight: 10, width: 30},
     logoText: {fontFamily: FONTS.NUNITO_BOLD, fontSize: 18},
     mainContainer: {
@@ -38,13 +38,13 @@ export const styles = StyleSheet.create({
         paddingRight: 10,
     },
     subMenuContainer: {
-        alignItems: "center",
+        alignItems: 'center',
         borderRadius: 5,
-        flexDirection: "row",
-        justifyContent: "space-between",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         marginLeft: 10,
         marginVertical: 5,
-        paddingLeft: "10%",
+        paddingLeft: '10%',
         paddingVertical: 8,
     },
     subMenuItem: {

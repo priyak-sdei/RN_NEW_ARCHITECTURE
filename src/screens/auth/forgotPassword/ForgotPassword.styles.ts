@@ -1,9 +1,13 @@
-import {StyleSheet} from 'react-native';
-
 import GLOBAL_THEME from '@theme/index';
-const {COLORS, FONTS, moderateScale, SPACING} = GLOBAL_THEME;
+import {StyleSheet} from 'react-native';
+const {COLORS, moderateScale, verticalScale, SPACING} = GLOBAL_THEME;
 
 const styles = StyleSheet.create({
+    innerContainer: {
+        flex: 1,
+        justifyContent: 'space-between',
+        paddingVertical: verticalScale(SPACING.l),
+    },
     logoStyle: {
         alignSelf: 'center',
         backgroundColor: COLORS.ERROR_RED,
@@ -13,10 +17,12 @@ const styles = StyleSheet.create({
         width: moderateScale(120),
     },
     mainContainer: {
-        alignItems: 'center',
         flex: 1,
-        justifyContent: 'center',
-        padding: moderateScale(20),
+    },
+
+    outerContainer: {
+        flex: 1,
+        padding: moderateScale(SPACING.xs),
     },
 });
 

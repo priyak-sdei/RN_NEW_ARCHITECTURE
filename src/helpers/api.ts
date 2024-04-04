@@ -1,21 +1,20 @@
-import {fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import urlMapping from "@constants/urlMapping";
-import GLOBALS from "@constants/index";
+import {fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+import AppConfig from '@helpers/AppConfig';
 
 const createBaseQuery = () => {
     return fetchBaseQuery({
-        baseUrl: urlMapping.API_BASE_URL,
+        baseUrl: AppConfig().API_BASE_URL,
         timeout: 10000,
         prepareHeaders: async headers => {
             try {
-                headers.set("Content-Type", "application/json");
-                headers.set("app-id", "657699cb7cb93a12a0ab982d");
+                headers.set('Content-Type', 'application/json');
+                headers.set('accept', '*/*');
                 return headers;
             } catch (e) {
                 if (__DEV__) {
-                    console.log("Error getting auth headers", e);
+                    console.log('Error getting auth headers', e);
                 }
-                return Promise.reject("Error");
+                return Promise.reject('Error');
             }
         },
     });
