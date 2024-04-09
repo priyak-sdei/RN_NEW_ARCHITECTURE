@@ -2,6 +2,14 @@ import {IMAGES} from '@assets/images/index';
 const CONFIG: {[key: string]: Array<any>} = {
     menu_item: [
         {
+            id: 5,
+            title: 'Paginition with RTK',
+            isSelected: false,
+            icon: IMAGES.bell,
+            sub_menu: [],
+            screen: 'Listing',
+        },
+        {
             id: 0,
             title: 'Home Native Bridge',
             isSelected: false,

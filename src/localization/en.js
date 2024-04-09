@@ -6,6 +6,9 @@ export const en = {
         apiFetchError: 'something went wrong',
         tryAgain: 'Try Again',
         proceed: 'Proceed',
+        listError: "Couldn't fetch data",
+        error: 'error',
+        Error: 'Rrror',
     },
     home: {
         header: 'Home',
@@ -53,6 +56,9 @@ export const en = {
     validation: {
         require: 'Field is required',
         invalid_email: 'Please enter valid mail',
+    },
+    paginition: {
+        title: 'Paginition',
     },
     permission_text: {
         permission_error: 'Permission Error',

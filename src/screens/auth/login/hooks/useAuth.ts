@@ -20,7 +20,7 @@ export const useAuth = () => {
             else
                 navigation.reset({
                     index: 0,
-                    routes: [{name: 'Home'}],
+                    routes: [{name: 'HomeDrawer'}],
                 });
         }
         if (error) {

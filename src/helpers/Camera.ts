@@ -3,6 +3,7 @@ import {Asset} from 'react-native-image-picker';
 import {PERMISSIONS} from 'react-native-permissions';
 import {checkPermission} from './Permission';
 import {showToast} from './Utility';
+import {strings} from '@localization/Localization';
 export const selectImageFromLibrary = (imageOptions): Promise<Asset[]> => {
     return new Promise(resolve => {
         try {
@@ -10,7 +11,8 @@ export const selectImageFromLibrary = (imageOptions): Promise<Asset[]> => {
                 if (isPermission)
                     ImagePicker.launchImageLibrary(imageOptions, result => {
                         if (result.assets) resolve(result.assets);
-                        if (result.errorCode) showToast(result.errorCode, 'error', 'Error');
+                        if (result.errorCode)
+                            showToast(result.errorCode, strings.common.error, strings.common.Error);
                     });
             });
         } catch (err) {

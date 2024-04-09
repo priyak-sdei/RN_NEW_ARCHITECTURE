@@ -5,6 +5,7 @@ type AuthStackParamList = {
     Home: object | undefined;
     SignUp: object | undefined;
     ForgotPassword: object | undefined;
+    HomeDrawer: object | undefined;
 };
 
 export type StackParamList = Record<

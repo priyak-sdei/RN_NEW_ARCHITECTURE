@@ -11,7 +11,7 @@ import {useDispatch, useSelector} from 'react-redux';
 const {COLORS} = GLOBAL_THEME;
 // import CustomHeader from '@components/common/CustomHeader';
 
-import {useLazyLoginQuery, useSignUpMutation} from '@/redux/api/authService';
+import {useLazyLoginQuery} from '@/redux/api/authService';
 import styles from './Profile.style';
 
 type requestBodyType = {

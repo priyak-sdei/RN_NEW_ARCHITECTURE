@@ -27,6 +27,7 @@ function CustomDrawerContent(props): JSX.Element {
         });
         setMenuItems(updatedMenu);
         if (menu_item.screen) {
+            console.log(menu_item, 'menu_item');
             navigation.navigate('HomeDrawer', {
                 screen: menu_item.screen,
             });
