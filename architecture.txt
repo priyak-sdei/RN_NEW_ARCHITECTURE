@@ -1,4 +1,0 @@
-1. Setup ESLint, Prettier, and Husky with React Native to improve code quality.
--->npx husky install
--->npx husky add .husky/pre-commit "npx --no-install lint-staged"
-https://medium.com/@daboigbae/how-to-set-up-eslint-prettier-and-husky-with-react-native-to-improve-code-quality-326ea337ccd3
