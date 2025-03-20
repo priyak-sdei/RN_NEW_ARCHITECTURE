@@ -2,21 +2,27 @@ import { useTheme } from "@/themes/ThemeContext";
 import { useRouter } from "expo-router";
 import { ReactElement } from "react";
 import { View, ViewProps, Text, Pressable } from "react-native";
-import { getStyles } from "./styles";
+import { createStyles } from "./styles";
 import { ChevronLeftIcon } from "@/assets/svgs";
+import { useStyles } from "@/hooks/useStyles";
 
 type HeaderProps = {
   title?: string;
+  showBack?: boolean; // Show back button
   leftIcon?: ReactElement;
   leftIconColor?: string;
   centerComponent?: ReactElement;
   rightComponent?: ReactElement;
   noBottomBorder?: boolean;
+
+  titleAlign?: "left" | "center";
   onLeftPress?: () => void;
 } & ViewProps;
 
 export const Header = ({
   title,
+  showBack = true,
+  titleAlign = "center",
   leftIcon,
   leftIconColor,
   centerComponent,
@@ -27,29 +33,31 @@ export const Header = ({
 }: HeaderProps) => {
   const router = useRouter();
   const { theme } = useTheme();
-  const styles = getStyles(theme); // Generate styles based on the current theme
+  const styles = useStyles(createStyles); // Generate styles based on the current theme
 
   return (
     <View
       style={[
         styles.headerContainer,
-        {
-          borderBottomWidth: noBottomBorder ? 0 : 1,
-        },
+        { borderBottomWidth: noBottomBorder ? 0 : 1 },
       ]}
-      {...rest}
     >
-      <Pressable style={styles.leftContainer}>
-        <ChevronLeftIcon style={{}} width={34} height={34} />
-      </Pressable>
-
-      <View style={styles.shrinkBox}>
-        <View style={styles.centerContainer}>
-          <Text style={styles.titleText}>Hello</Text>
-        </View>
+      <View style={styles.rightLeftContainer}>
+        {showBack && (
+          <Pressable style={styles.leftContainer}>
+            <ChevronLeftIcon style={{}} width={34} height={34} />
+          </Pressable>
+        )}
       </View>
-
-      <View style={styles.rightContainer}>{rightComponent}</View>
+      <View
+        style={[
+          styles.titleContainer,
+          titleAlign === "left" && styles.alignLeft,
+        ]}
+      >
+        <Text style={styles.titleText}>{title}</Text>
+      </View>
+      <View style={[styles.rightLeftContainer]}>{rightComponent}</View>
     </View>
   );
 };

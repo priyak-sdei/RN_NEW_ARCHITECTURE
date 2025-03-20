@@ -1,31 +1,26 @@
 import React, { createContext, useContext, useState } from "react";
-import { lightTheme } from "./lightTheme";
-import { darkTheme } from "./darkTheme";
+import { Theme } from "@react-navigation/native";
+import { theme } from "./theme";
 
-export type Theme = typeof lightTheme;
-
-const ThemeContext = createContext<{
+type ThemeContextType = {
+  themeMode: "light" | "dark";
   theme: Theme;
   toggleTheme: () => void;
-  isDark: boolean;
-}>({
-  theme: lightTheme,
-  toggleTheme: () => {},
-  isDark: false,
-});
+};
 
-// Create the provider component
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [isDark, setIsDark] = useState(false);
-  const theme = isDark ? darkTheme : lightTheme;
+  const [themeMode, setThemeMode] = useState<"light" | "dark">("light");
 
   const toggleTheme = () => {
-    setIsDark((prev) => !prev);
+    setThemeMode((prev) => (prev === "light" ? "dark" : "light"));
   };
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, isDark }}>
+    <ThemeContext.Provider
+      value={{ themeMode, theme: theme[themeMode], toggleTheme }}
+    >
       {children}
     </ThemeContext.Provider>
   );

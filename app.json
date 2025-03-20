@@ -22,9 +22,6 @@
       "output": "static",
       "favicon": "./src/assets/images/favicon.png"
     },
-    "packagerOpts": {
-      "config": "metro.config.js"
-    },
     "plugins": [
       "expo-router",
       [
