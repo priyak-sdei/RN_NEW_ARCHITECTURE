@@ -1,3 +1,4 @@
+import { moderateScale } from "@/themes";
 import { Theme } from "@/themes/ThemeContext";
 import { StyleSheet } from "react-native";
 
@@ -6,6 +7,7 @@ export const getStyles = (theme: Theme) =>
     container: {
       flex: 1,
       backgroundColor: theme.colors.background,
+      padding: moderateScale(10),
     },
     background: {
       flex: 1,

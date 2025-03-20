@@ -11,8 +11,8 @@ export default function Login() {
       <Screen.Header showBack={false} title={"Login"} />
       <Screen.Container>
         <View style={{ flex: 1 }}>
-          <Text>hiiii This is me1ddd</Text>
-          <Input placeholder="Email" />
+          <Input placeholder="Email" labelTitle="Email" />
+          <Input placeholder="Password" labelTitle="Password" />
           <Button buttonTitle="Login" />
         </View>
       </Screen.Container>

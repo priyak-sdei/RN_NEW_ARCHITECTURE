@@ -16,6 +16,7 @@ export const createStyles = (colors: ExtendedTheme["colors"]) =>
       justifyContent: "center",
       marginVertical: verticalScale(10),
       padding: moderateScale(10),
+      borderRadius: moderateScale(10),
     },
     imageWithTextContainer: {
       alignItems: "center",
