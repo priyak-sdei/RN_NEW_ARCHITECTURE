@@ -7,15 +7,16 @@ import {
 import { ExtendedTheme } from "@/types/ColorPalette";
 import { StyleSheet } from "react-native";
 
-export const createStyles = (colors: ExtendedTheme["colors"]) =>
-  StyleSheet.create({
+export const createStyles = (colors: ExtendedTheme["colors"]) => {
+  return StyleSheet.create({
     buttonStyle: {
       alignItems: "center",
       backgroundColor: colors.primary,
+      //  backgroundColor: "#1E4682",
       flexDirection: "row",
       justifyContent: "center",
       marginVertical: verticalScale(10),
-      padding: moderateScale(10),
+      padding: moderateScale(12),
       borderRadius: moderateScale(10),
     },
     imageWithTextContainer: {
@@ -27,7 +28,10 @@ export const createStyles = (colors: ExtendedTheme["colors"]) =>
       width: moderateScale(40),
     },
     textStyle: {
+      fontSize: moderateScale(SPACING.s),
+      fontFamily: "medium",
       color: colors.card,
       includeFontPadding: false,
     },
   });
+};

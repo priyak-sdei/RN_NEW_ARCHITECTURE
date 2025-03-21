@@ -13,13 +13,15 @@ export const createStyles = (colors: ExtendedTheme["colors"]) =>
       marginTop: verticalScale(15),
     },
     labelStyle: {
-      fontFamily: "semibold",
-      color: colors.black,
-      fontSize: moderateScale(14),
+      fontFamily: "regular",
+      color: colors.secondary,
+      fontSize: moderateScale(SPACING.xs),
+      includeFontPadding: false,
+      marginLeft: moderateScale(2),
     },
     textInputContainer: {
       alignItems: "center",
-      borderColor: colors.mutedGrey,
+      borderColor: colors.border,
       borderRadius: moderateScale(10),
       borderWidth: moderateScale(1),
       flexDirection: "row",
@@ -41,6 +43,8 @@ export const createStyles = (colors: ExtendedTheme["colors"]) =>
       includeFontPadding: false,
       margin: moderateScale(12),
       width: "82%",
+      fontSize: moderateScale(SPACING.xs),
+      fontFamily: "regular",
     },
     rightIcon: {
       height: moderateScale(24),

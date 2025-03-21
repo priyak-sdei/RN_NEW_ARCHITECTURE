@@ -1,5 +1,5 @@
-import { colors } from "@/themes/colors";
 import React from "react";
+import { useTheme } from "@/themes/ThemeContext";
 import {
   ActivityIndicator,
   Image,
@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import { createStyles } from "./styles";
 import { useStyles } from "@/hooks/useStyles";
-
+import { colors } from "@/themes/colors";
 type BaseButtonProps = {
   buttonStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
@@ -23,6 +23,7 @@ type BaseButtonProps = {
   imageWithTextSource?: ImageSourcePropType;
   imageWithTextSourceStyle?: StyleProp<ImageStyle>;
   isLoading?: boolean;
+  disabled?: boolean;
 };
 
 type ImageButtonProps = {
@@ -65,14 +66,17 @@ const Button: React.FC<ButtonProps> = ({
   imageWithTextSourceStyle,
   buttonTitle,
   isLoading,
+  disabled = false,
   ...props
 }) => {
   const styles = useStyles(createStyles);
+  const { theme } = useTheme();
   return (
     <TouchableOpacity
+      disabled={disabled}
       onPress={onPress}
       {...props}
-      style={[styles.buttonStyle, buttonStyle]}
+      style={[styles.buttonStyle, buttonStyle, disabled && { opacity: 0.6 }]}
     >
       {imageOnlyButton ? (
         <Image
@@ -90,9 +94,9 @@ const Button: React.FC<ButtonProps> = ({
             />
           )}
           {isLoading ? (
-            <ActivityIndicator color={colors.white} />
+            <ActivityIndicator color={colors.white} size={23} />
           ) : (
-            <Text style={[styles.textStyle, textStyle]}>Login</Text>
+            <Text style={[styles.textStyle, textStyle]}>{buttonTitle}</Text>
           )}
         </View>
       )}

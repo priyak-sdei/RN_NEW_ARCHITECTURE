@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { Theme } from "@react-navigation/native";
 import { theme } from "./theme";
-
+import { useColorScheme } from "react-native";
 type ThemeContextType = {
   themeMode: "light" | "dark";
   theme: Theme;
@@ -12,11 +12,15 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [themeMode, setThemeMode] = useState<"light" | "dark">("light");
+  const scheme = useColorScheme();
+  const [themeMode, setThemeMode] = useState<"light" | "dark">(
+    scheme === "dark" ? "dark" : "light"
+  );
 
   const toggleTheme = () => {
     setThemeMode((prev) => (prev === "light" ? "dark" : "light"));
   };
+
   return (
     <ThemeContext.Provider
       value={{ themeMode, theme: theme[themeMode], toggleTheme }}

@@ -33,7 +33,7 @@ const Screen = ({
   variant = "fixed",
   barStyle = "dark-content",
   children,
-  safeAreaTop = true,
+  safeAreaTop = false,
   safeAreaBottom = false,
   ...rest
 }: ScreenProps) => {

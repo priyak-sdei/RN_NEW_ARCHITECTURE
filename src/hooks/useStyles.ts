@@ -1,4 +1,5 @@
 import { useTheme } from "@react-navigation/native";
+import { useTheme as useThemeContext } from "@/themes/ThemeContext";
 import { StyleSheet } from "react-native";
 import { ExtendedTheme } from "@/types/ColorPalette";
 
@@ -8,6 +9,7 @@ type StyleFunction<T> = (colors: ExtendedTheme["colors"]) => T;
 export const useStyles = <T extends StyleSheet.NamedStyles<T>>(
   stylesFunc: StyleFunction<T>
 ): T => {
-  const { colors } = useTheme() as unknown as ExtendedTheme;
+  const { theme } = useThemeContext();
+  const { colors } = theme as unknown as ExtendedTheme;
   return StyleSheet.create(stylesFunc(colors));
 };

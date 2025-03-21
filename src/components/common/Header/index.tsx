@@ -5,6 +5,7 @@ import { View, ViewProps, Text, Pressable } from "react-native";
 import { createStyles } from "./styles";
 import { ChevronLeftIcon } from "@/assets/svgs";
 import { useStyles } from "@/hooks/useStyles";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type HeaderProps = {
   title?: string;
@@ -27,24 +28,27 @@ export const Header = ({
   leftIconColor,
   centerComponent,
   rightComponent,
-  noBottomBorder,
+  noBottomBorder = true,
   onLeftPress,
   ...rest
 }: HeaderProps) => {
   const router = useRouter();
   const { theme } = useTheme();
   const styles = useStyles(createStyles); // Generate styles based on the current theme
-
+  const areaInsets = useSafeAreaInsets();
   return (
     <View
       style={[
         styles.headerContainer,
-        { borderBottomWidth: noBottomBorder ? 0 : 1 },
+        {
+          borderBottomWidth: noBottomBorder ? 0 : 1,
+          paddingTop: areaInsets.top,
+        },
       ]}
     >
       <View style={styles.rightLeftContainer}>
         {showBack && (
-          <Pressable style={styles.leftContainer}>
+          <Pressable style={styles.leftContainer} onPress={router.back}>
             <ChevronLeftIcon style={{}} width={34} height={34} />
           </Pressable>
         )}

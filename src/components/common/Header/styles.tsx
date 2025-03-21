@@ -14,11 +14,11 @@ export const createStyles = (colors: ExtendedTheme["colors"]) =>
     },
     headerContainer: {
       alignItems: "center",
-      backgroundColor: colors.white,
+      backgroundColor: colors.primary,
       borderBottomWidth: 1,
       borderColor: colors.border,
       flexDirection: "row",
-      height: verticalScale(SPACING.xxxxxxl),
+      paddingBottom: verticalScale(SPACING.xxxs),
       justifyContent: "space-between",
       paddingHorizontal: horizontalScale(SPACING.xs),
       shadowColor: "black",
@@ -37,13 +37,15 @@ export const createStyles = (colors: ExtendedTheme["colors"]) =>
     },
     titleText: {
       textAlign: "center",
-      color: colors.text,
+      color: colors.white,
       fontSize: moderateScale(SPACING.sm),
       fontFamily: "medium",
     },
     rightLeftContainer: {
       flexDirection: "row",
-      height: verticalScale(SPACING.xxl),
+      height: verticalScale(SPACING.xxxl),
       width: verticalScale(SPACING.xxxl),
+      justifyContent: "center",
+      alignItems: "center",
     },
   });

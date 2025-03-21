@@ -58,7 +58,10 @@ const Input: React.FC<CustomTextInputProps> = ({
 
   return (
     <View style={[styles.withLabelContainer, withLabelContainerStyle]}>
-      <Text style={[styles.labelStyle, labelStyle]}>{labelTitle}</Text>
+      {labelTitle && (
+        <Text style={[styles.labelStyle, labelStyle]}>{labelTitle}</Text>
+      )}
+
       <View style={[styles.textInputContainer, textInputContainer]}>
         {sourceLeftIcon && (
           <TouchableOpacity

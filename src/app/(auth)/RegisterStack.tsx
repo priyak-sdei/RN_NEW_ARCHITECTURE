@@ -5,13 +5,14 @@ import Screen from "@/components/common/Screen";
 import Input from "@/components/common/Input";
 import Button from "@/components/common/Button";
 import Login from "@/components/auth/Login";
-export default function LoginStack() {
+import Register from "@/components/auth/Register";
+export default function RegisterStack() {
   const { theme } = useTheme();
   return (
-    <Screen>
-      <Screen.Header showBack={false} title={"Login"} />
+    <Screen variant="scroll">
+      <Screen.Header showBack={true} title={"Register"} />
       <Screen.Container>
-        <Login />
+        <Register />
       </Screen.Container>
     </Screen>
   );

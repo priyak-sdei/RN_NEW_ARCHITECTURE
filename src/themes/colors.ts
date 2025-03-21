@@ -1,11 +1,15 @@
 import { ColorPalette } from "@/types/ColorPalette";
 export const colors: ColorPalette = {
-  primary: "#E89FE4",
+  secondary: "#0A0F0F",
+  border: "#CACACA",
+  primary: "#1E4682",
+  white: "#ffffff",
+
   background: "#f9f9f9",
   mutedGrey: "#CCCCCC",
   darkGrey: "#4D4D4D",
   text: "#083371",
-  border: "#F3F0E8",
+
   notification: "#FF3B30",
   placeholder: "#CCCCCC",
   descriptionText: "#818892",
@@ -15,6 +19,6 @@ export const colors: ColorPalette = {
   expense: "#e74c3c",
   expenseBackground: "rgba(231, 76, 60, 0.2)",
   black: "#000000",
-  white: "#ffffff",
+
   overlayColor: "rgba(0,0,0,0.8)",
 };
