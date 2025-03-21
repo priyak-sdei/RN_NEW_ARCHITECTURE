@@ -1,9 +1,4 @@
-import {
-  horizontalScale,
-  moderateScale,
-  SPACING,
-  verticalScale,
-} from "@/themes";
+import { moderateScale, SPACING, verticalScale } from "@/themes";
 import { ExtendedTheme } from "@/types/ColorPalette";
 import { StyleSheet } from "react-native";
 
@@ -12,7 +7,6 @@ export const createStyles = (colors: ExtendedTheme["colors"]) => {
     buttonStyle: {
       alignItems: "center",
       backgroundColor: colors.primary,
-      //  backgroundColor: "#1E4682",
       flexDirection: "row",
       justifyContent: "center",
       marginVertical: verticalScale(10),
