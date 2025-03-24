@@ -1,8 +1,8 @@
-import { StyleSheet, Image, Platform, View, Text } from "react-native";
-
+import React from 'react';
+import { Text, View } from 'react-native';
 export default function Settings() {
   return (
-    <View style={{ flex: 1, backgroundColor: "red" }}>
+    <View style={{}}>
       <Text>hiiii This is me</Text>
     </View>
   );

@@ -1,20 +1,19 @@
-import React from "react";
-import { useTheme } from "@/themes/ThemeContext";
+import { useStyles } from '@/hooks/useStyles';
+import { colors } from '@/themes/colors';
+import React from 'react';
 import {
   ActivityIndicator,
   Image,
   ImageSourcePropType,
   ImageStyle,
   StyleProp,
+  Text,
   TextStyle,
   TouchableOpacity,
   View,
   ViewStyle,
-  Text,
-} from "react-native";
-import { createStyles } from "./styles";
-import { useStyles } from "@/hooks/useStyles";
-import { colors } from "@/themes/colors";
+} from 'react-native';
+import { createStyles } from './styles';
 type BaseButtonProps = {
   buttonStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
@@ -70,13 +69,12 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const styles = useStyles(createStyles);
-  const { theme } = useTheme();
   return (
     <TouchableOpacity
       disabled={disabled}
       onPress={onPress}
       {...props}
-      style={[styles.buttonStyle, buttonStyle, disabled && { opacity: 0.6 }]}
+      style={[styles.buttonStyle, buttonStyle, disabled && styles.disabledBtn]}
     >
       {imageOnlyButton ? (
         <Image

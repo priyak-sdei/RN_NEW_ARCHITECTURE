@@ -1,45 +1,48 @@
-import React, { createContext, ReactNode, useContext } from "react";
+import { useStyles } from '@/hooks/useStyles';
+import React, { createContext, ReactNode, useContext } from 'react';
 import {
-  View,
-  Text,
-  Button,
-  StyleSheet,
-  ViewProps,
-  StatusBar,
-  KeyboardAvoidingViewProps,
-  StyleProp,
-  ViewStyle,
   KeyboardAvoidingView,
-} from "react-native";
-import { useTheme } from "@/themes/ThemeContext";
-import { getStyles } from "./styles";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+  KeyboardAvoidingViewProps,
+  StatusBar,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewProps,
+  ViewStyle,
+} from 'react-native';
 import {
   KeyboardAwareScrollView,
   KeyboardAwareScrollViewProps,
-} from "react-native-keyboard-aware-scroll-view";
-import { Header } from "../Header";
+} from 'react-native-keyboard-aware-scroll-view';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Header } from '../Header';
+import { createStyles } from './styles';
 
 const ScreenContext = createContext({
-  variant: "fixed",
+  variant: 'fixed',
 });
 type ScreenProps = ViewProps & {
-  variant?: "fixed" | "scroll";
-  barStyle?: "light-content" | "dark-content";
+  variant?: 'fixed' | 'scroll';
+  barStyle?: 'light-content' | 'dark-content';
   safeAreaTop?: boolean;
   safeAreaBottom?: boolean;
 };
 const Screen = ({
-  variant = "fixed",
-  barStyle = "dark-content",
+  variant = 'fixed',
+  barStyle = 'dark-content',
   children,
   safeAreaTop = false,
   safeAreaBottom = false,
   ...rest
 }: ScreenProps) => {
   const areaInsets = useSafeAreaInsets();
-  const { theme } = useTheme();
-  const styles = getStyles(theme); // Generate styles based on the current theme
+
+  const styles = useStyles(createStyles);
+
+  const screenContainerStyle = {
+    paddingTop: safeAreaTop ? areaInsets.top : 0,
+    paddingBottom: safeAreaBottom ? areaInsets.bottom : 0,
+  };
 
   return (
     <ScreenContext.Provider value={{ variant }}>
@@ -49,11 +52,10 @@ const Screen = ({
         backgroundColor="transparent"
       />
       <View
-        style={{
-          flex: 1,
-          paddingTop: safeAreaTop ? areaInsets.top : 0,
-          paddingBottom: safeAreaBottom ? areaInsets.bottom : 0,
-        }}
+        style={[
+          styles.ScreenContainer,
+          screenContainerStyle, // Apply the calculated style here
+        ]}
         {...rest}
       >
         {children}
@@ -73,10 +75,9 @@ const ScreenContainer = ({
   children,
   ...rest
 }: ScreenContainerProps) => {
-  const { theme } = useTheme();
-  const styles = getStyles(theme);
+  const styles = useStyles(createStyles);
   const { variant } = useContext(ScreenContext);
-  return variant === "fixed" ? (
+  return variant === 'fixed' ? (
     <KeyboardAvoidingView
       style={StyleSheet.flatten([styles.container, style])}
       {...rest}

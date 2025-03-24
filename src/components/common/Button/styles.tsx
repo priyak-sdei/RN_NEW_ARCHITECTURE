@@ -1,21 +1,21 @@
-import { moderateScale, SPACING, verticalScale } from "@/themes";
-import { ExtendedTheme } from "@/types/ColorPalette";
-import { StyleSheet } from "react-native";
+import { moderateScale, SPACING, verticalScale } from '@/themes';
+import { ExtendedTheme } from '@/types/ColorPalette';
+import { StyleSheet } from 'react-native';
 
-export const createStyles = (colors: ExtendedTheme["colors"]) => {
+export const createStyles = (colors: ExtendedTheme['colors']) => {
   return StyleSheet.create({
     buttonStyle: {
-      alignItems: "center",
+      alignItems: 'center',
       backgroundColor: colors.primary,
-      flexDirection: "row",
-      justifyContent: "center",
+      flexDirection: 'row',
+      justifyContent: 'center',
       marginVertical: verticalScale(10),
       padding: moderateScale(12),
       borderRadius: moderateScale(10),
     },
     imageWithTextContainer: {
-      alignItems: "center",
-      flexDirection: "row",
+      alignItems: 'center',
+      flexDirection: 'row',
     },
     singleImageStyle: {
       height: moderateScale(40),
@@ -23,9 +23,10 @@ export const createStyles = (colors: ExtendedTheme["colors"]) => {
     },
     textStyle: {
       fontSize: moderateScale(SPACING.s),
-      fontFamily: "medium",
+      fontFamily: 'medium',
       color: colors.card,
       includeFontPadding: false,
     },
+    disabledBtn: { opacity: 0.6 },
   });
 };

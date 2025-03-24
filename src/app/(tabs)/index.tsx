@@ -1,16 +1,14 @@
-import type { ReactNode } from "react";
-import { StyleSheet, Image, Platform, View, Text } from "react-native";
-import { useTheme } from "@/themes/ThemeContext";
-import Screen from "@/components/common/Screen";
-import Input from "@/components/common/Input";
-import Button from "@/components/common/Button";
+import Button from '@/components/common/Button';
+import Input from '@/components/common/Input';
+import Screen from '@/components/common/Screen';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 export default function Home() {
-  const { theme } = useTheme();
   return (
     <Screen>
-      <Screen.Header showBack={false} title={"Login"} />
+      <Screen.Header showBack={false} title={'Login'} />
       <Screen.Container>
-        <View style={{ flex: 1 }}>
+        <View style={styles.container}>
           <Text>hiiii This is me1</Text>
           <Input placeholder="Email" />
           <Button buttonTitle="Login" />
@@ -19,3 +17,7 @@ export default function Home() {
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+});

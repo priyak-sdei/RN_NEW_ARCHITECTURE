@@ -1,28 +1,22 @@
-import { useTheme } from "@/themes/ThemeContext";
-import { colors } from "@/themes/colors";
-import { useRouter } from "expo-router";
-import { ReactElement } from "react";
+import { colors } from '@/themes/colors';
 
+import { useStyles } from '@/hooks/useStyles';
 import {
-  View,
-  ViewProps,
-  Text,
-  Pressable,
-  TextInputProps,
-  StyleProp,
-  ViewStyle,
-  TextStyle,
+  Image,
   ImageSourcePropType,
   ImageStyle,
-  Image,
-  TouchableOpacity,
+  StyleProp,
+  Text,
   TextInput,
-} from "react-native";
-import { createStyles } from "./styles";
-import { useStyles } from "@/hooks/useStyles";
+  TextInputProps,
+  TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from 'react-native';
+import { createStyles } from './styles';
 
 type CustomTextInputProps = TextInputProps & {
-  withLabel?: boolean;
   textInputContainer?: StyleProp<ViewStyle>;
   labelTitle?: string;
   labelStyle?: StyleProp<TextStyle>;
@@ -39,7 +33,6 @@ type CustomTextInputProps = TextInputProps & {
 };
 
 const Input: React.FC<CustomTextInputProps> = ({
-  withLabel = true,
   textInputContainer,
   labelTitle,
   labelStyle,

@@ -1,20 +1,10 @@
-import type { ReactNode } from "react";
-import { StyleSheet, Image, Platform, View, Text } from "react-native";
-import { useTheme } from "@/themes/ThemeContext";
-import Screen from "@/components/common/Screen";
-import Input from "@/components/common/Input";
-import Button from "@/components/common/Button";
-import {
-  horizontalScale,
-  moderateScale,
-  SPACING,
-  verticalScale,
-} from "@/themes";
-import { ExtendedTheme } from "@/types/ColorPalette";
-import { useStyles } from "@/hooks/useStyles";
-import { IMAGES } from "@/assets";
-import { useLogin } from "../hooks/useLogin";
-import { useRegister } from "../hooks/useRegister";
+import Button from '@/components/common/Button';
+import Input from '@/components/common/Input';
+import { useStyles } from '@/hooks/useStyles';
+import { moderateScale, SPACING } from '@/themes';
+import { ExtendedTheme } from '@/types/ColorPalette';
+import { StyleSheet, View } from 'react-native';
+import { useRegister } from '../hooks/useRegister';
 export default function Register() {
   const styles = useStyles(createStyles);
   const {
@@ -71,14 +61,14 @@ export default function Register() {
   );
 }
 
-const createStyles = (colors: ExtendedTheme["colors"]) =>
+const createStyles = (colors: ExtendedTheme['colors']) =>
   StyleSheet.create({
     buttonContainer: {
       marginVertical: moderateScale(SPACING.m),
     },
     container: {},
     imageContainer: {
-      alignSelf: "center",
+      alignSelf: 'center',
       marginVertical: moderateScale(SPACING.m),
     },
   });
