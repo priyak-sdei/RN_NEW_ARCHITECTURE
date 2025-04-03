@@ -6,7 +6,7 @@ export const useLogin = () => {
   const [password, setPassword] = useState<string>('');
 
   function onLogin() {
-    router.push('RegisterStack');
+    router.replace('/(tabs)');
     if (email && password) {
       console.warn('Login success');
       router.push('RegisterStack');
@@ -15,11 +15,16 @@ export const useLogin = () => {
     }
   }
 
+  function onSignUp() {
+    router.push('RegisterStack');
+  }
+
   return {
     email,
     setEmail,
     password,
     setPassword,
     onLogin,
+    onSignUp,
   };
 };

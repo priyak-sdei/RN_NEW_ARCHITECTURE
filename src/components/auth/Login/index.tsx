@@ -1,6 +1,7 @@
 import { IMAGES } from '@/assets';
 import Button from '@/components/common/Button';
 import Input from '@/components/common/Input';
+import Text from '@/components/common/Text';
 import { useStyles } from '@/hooks/useStyles';
 import { moderateScale, SPACING } from '@/themes';
 import { ExtendedTheme } from '@/types/ColorPalette';
@@ -8,7 +9,8 @@ import { Image, StyleSheet, View } from 'react-native';
 import { useLogin } from '../hooks/useLogin';
 export default function Login() {
   const styles = useStyles(createStyles);
-  const { email, setEmail, password, setPassword, onLogin } = useLogin();
+  const { email, setEmail, password, setPassword, onLogin, onSignUp } =
+    useLogin();
   return (
     <View style={styles.container}>
       <Image source={IMAGES.logo} style={styles.imageContainer} />
@@ -30,6 +32,9 @@ export default function Login() {
         onPress={onLogin}
         // disabled={!email || !password}
       />
+      <Text style={styles.textStyle} onPress={onSignUp}>
+        Don’t have an account? Sign Up
+      </Text>
     </View>
   );
 }
@@ -43,5 +48,10 @@ const createStyles = (colors: ExtendedTheme['colors']) =>
     imageContainer: {
       alignSelf: 'center',
       marginVertical: moderateScale(SPACING.m),
+    },
+    textStyle: {
+      textAlign: 'center',
+      fontSize: moderateScale(SPACING.xs),
+      color: colors.secondary,
     },
   });
