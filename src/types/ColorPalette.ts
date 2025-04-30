@@ -12,6 +12,7 @@ export interface ColorPalette {
   notification: string;
   placeholder: string;
   descriptionText: string;
+  shadowColor: string;
   buttonBackground: string;
   income: string;
   incomeBackground: string;

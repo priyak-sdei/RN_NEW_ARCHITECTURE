@@ -5,6 +5,7 @@ export const colors: ColorPalette = {
   primary: '#1E4682',
   white: '#ffffff',
   descriptionText: '#818892',
+  shadowColor: '#E8E8E8',
 
   background: '#f9f9f9',
   mutedGrey: '#CCCCCC',
