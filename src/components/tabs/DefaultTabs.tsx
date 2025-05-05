@@ -2,27 +2,28 @@ import { BasketIcon, BasketIconFocused } from '@/assets/svgs';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { colors } from '@/themes';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform, StyleSheet } from 'react-native';
+import Text from '../common/Text';
 
 const tabScreen = [
   {
     name: 'index',
     optionStyle: {
-      title: 'Home',
+      title: 'Home11',
       tabBarIcon: ({ focused }: { focused: boolean }) =>
         focused ? <BasketIconFocused /> : <BasketIcon />,
-      // tabBarLabel: ({ focused }: { focused: boolean }) => (
-      //   <Text
-      //     style={
-      //       focused ? styles.focusedCustomLabelStyle : styles.customLabelStyle
-      //     }
-      //   >
-      //     Home
-      //   </Text>
-      // ),
+      tabBarLabel: ({ focused }: { focused: boolean }): ReactNode => (
+        <Text
+          style={[
+            focused ? styles.focusedCustomLabelStyle : styles.customLabelStyle,
+            { textAlign: 'center' },
+          ]}
+        >
+          Home
+        </Text>
+      ),
     },
   },
   // {
@@ -110,40 +111,39 @@ export default function DefaultTabs() {
 }
 
 const styles = StyleSheet.create({
-  customLabelStyle: {
-    // ...Fonts.medium,
-    color: colors.black,
-    fontSize: 12,
-    marginTop: 5,
-    width: '100%',
-  },
-
-  tabBarStyle: {
-    backgroundColor: colors.white,
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
-    paddingHorizontal: 5,
-    // paddingTop: 8,
-  },
-  tabContainer: {
-    backgroundColor: colors.white,
-    flex: 1,
-  },
-  tabIconStyle: {
-    height: 25,
-    width: 25,
-  },
-  tabItemStyle: {
-    alignItems: 'center',
-    marginTop: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 15,
-  },
-  focusedCustomLabelStyle: {
-    color: colors.black,
-    fontSize: 12,
-    marginTop: 5,
-    width: '100%',
-    fontFamily: 'bold',
-  },
+  // customLabelStyle: {
+  //   // ...Fonts.medium,
+  //   color: colors.black,
+  //   fontSize: 12,
+  //   marginTop: 5,
+  //   width: '100%',
+  // },
+  // tabBarStyle: {
+  //   backgroundColor: colors.white,
+  //   borderTopLeftRadius: 25,
+  //   borderTopRightRadius: 25,
+  //   paddingHorizontal: 5,
+  //   // paddingTop: 8,
+  // },
+  // tabContainer: {
+  //   backgroundColor: colors.white,
+  //   flex: 1,
+  // },
+  // tabIconStyle: {
+  //   height: 25,
+  //   width: 25,
+  // },
+  // tabItemStyle: {
+  //   alignItems: 'center',
+  //   marginTop: 10,
+  //   paddingHorizontal: 10,
+  //   paddingVertical: 15,
+  // },
+  // focusedCustomLabelStyle: {
+  //   color: colors.black,
+  //   fontSize: 12,
+  //   marginTop: 5,
+  //   width: '100%',
+  //   fontFamily: 'bold',
+  // },
 });
